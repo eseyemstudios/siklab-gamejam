@@ -1,3 +1,223 @@
-[gd_scene format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=9 format=3 uid="uid://ddxkhg5xeu2vu"]
+
+[ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
+[ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
+[ext_resource type="Texture2D" uid="uid://cyakbejgoovvn" path="res://dev/logo/godot.png" id="3_lawus"]
+[ext_resource type="AudioStream" uid="uid://cmoysdjb7anmk" path="res://assets/common/sfx/public_announcements/PA1.wav" id="4_y6dqa"]
+[ext_resource type="AudioStream" uid="uid://j6t6dmlhjpmx" path="res://assets/common/sfx/mob/marching.wav" id="5_lln6m"]
+
+[sub_resource type="Animation" id="Animation_suexf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../objects/camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, -1453)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../godot:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../logo_animation/main_pa:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../logo_animation/walk_sfx:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nqqsa"]
+resource_name = "intro"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.1, 3.1, 6.1, 7.1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../godot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.13333, 8, 11, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../objects/camera:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.466667, 14.9667),
+"transitions": PackedFloat32Array(0.65, 0.65),
+"update": 0,
+"values": [Vector2(576, -1453), Vector2(576, 320)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../logo_animation/main_pa:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../logo_animation/walk_sfx:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lawus"]
+_data = {
+&"RESET": SubResource("Animation_suexf"),
+&"intro": SubResource("Animation_nqqsa")
+}
 
 [node name="mainmenu_tutorial" type="Node"]
+script = ExtResource("1_suexf")
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="camera" type="Camera2D" parent="objects"]
+position = Vector2(576, -1453)
+
+[node name="background" type="Node2D" parent="objects"]
+
+[node name="foreground" type="Node2D" parent="objects"]
+
+[node name="godot" type="Sprite2D" parent="objects"]
+position = Vector2(595, -684)
+rotation = 1.5789
+texture = ExtResource("3_lawus")
+
+[node name="gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="logo_sticky" type="CanvasLayer" parent="gui"]
+
+[node name="siklab" type="TextureRect" parent="gui/logo_sticky"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(540, 540)
+texture = ExtResource("1_knm4p")
+stretch_mode = 5
+
+[node name="godot" type="TextureRect" parent="gui/logo_sticky"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(1266.5, 540)
+texture = ExtResource("3_lawus")
+stretch_mode = 5
+
+[node name="logo_animation" type="AnimationPlayer" parent="gui/logo_sticky"]
+root_node = NodePath("../siklab")
+libraries = {
+&"": SubResource("AnimationLibrary_lawus")
+}
+autoplay = "intro"
+
+[node name="main_pa" type="AudioStreamPlayer" parent="gui/logo_sticky/logo_animation"]
+stream = ExtResource("4_y6dqa")
+volume_db = 2.0
+
+[node name="walk_sfx" type="AudioStreamPlayer2D" parent="gui/logo_sticky/logo_animation"]
+position = Vector2(592, 647)
+stream = ExtResource("5_lln6m")
+volume_db = -5.0
+max_distance = 3000.0
+
+[connection signal="animation_finished" from="gui/logo_sticky/logo_animation" to="." method="_on_logo_animation_animation_finished"]
