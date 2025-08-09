@@ -1,6 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://buihw70l3xuk"]
+[gd_scene load_steps=10 format=3 uid="uid://buihw70l3xuk"]
 
+[ext_resource type="Script" uid="uid://b8thd5gy5bwog" path="res://assets/obj/player/player.gd" id="1_b4olg"]
 [ext_resource type="Texture2D" uid="uid://b2t8k3jcuha0v" path="res://assets/obj/npc/walk.png" id="1_xje4b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4olg"]
+atlas = ExtResource("1_xje4b")
+region = Rect2(0, 0, 16, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kuwa"]
 atlas = ExtResource("1_xje4b")
@@ -22,6 +27,14 @@ region = Rect2(48, 0, 16, 25)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_b4olg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5kuwa")
 }, {
 "duration": 1.0,
@@ -34,18 +47,20 @@ animations = [{
 "texture": SubResource("AtlasTexture_mqxeu")
 }],
 "loop": false,
-"name": &"default",
-"speed": 5.0
+"name": &"walk",
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xje4b"]
 size = Vector2(6, 21)
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_b4olg")
 
 [node name="texture" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.963199, 0.963199)
 sprite_frames = SubResource("SpriteFrames_b4olg")
+animation = &"walk"
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
