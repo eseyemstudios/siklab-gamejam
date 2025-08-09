@@ -1,12 +1,131 @@
-[gd_scene format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=10 format=3 uid="uid://n1eoac3rraic"]
+
+[ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
+[ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://buihw70l3xuk" path="res://assets/obj/player/player.tscn" id="3_0sr1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sr1o"]
+atlas = ExtResource("1_7h61r")
+region = Rect2(0, 0, 128, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kelw5"]
+atlas = ExtResource("1_7h61r")
+region = Rect2(128, 0, 128, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfrn8"]
+atlas = ExtResource("1_7h61r")
+region = Rect2(256, 0, 128, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i0tg"]
+atlas = ExtResource("1_7h61r")
+region = Rect2(385, 0, 127, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhmt"]
+atlas = ExtResource("1_7h61r")
+region = Rect2(512, 0, 128, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
+size = Vector2(3632, 112)
 
 [node name="game" type="Node"]
 metadata/_edit_horizontal_guides_ = [241.0]
 
 [node name="objects" type="Node2D" parent="."]
 
+[node name="background" type="Node2D" parent="objects"]
+
+[node name="back" type="Parallax2D" parent="objects/background"]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="text" type="Sprite2D" parent="objects/background/back"]
+position = Vector2(1816, 376)
+scale = Vector2(28.375, 5.21318)
+texture = SubResource("AtlasTexture_0sr1o")
+
+[node name="back_2" type="Parallax2D" parent="objects/background"]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="text" type="Sprite2D" parent="objects/background/back_2"]
+position = Vector2(1816, 196.25)
+scale = Vector2(28.375, 6.60659)
+texture = SubResource("AtlasTexture_kelw5")
+
+[node name="back_3" type="Parallax2D" parent="objects/background"]
+scroll_scale = Vector2(0.5, 0.5)
+
+[node name="text" type="Sprite2D" parent="objects/background/back_3"]
+position = Vector2(1816, 528.25)
+scale = Vector2(28.375, 4.03295)
+texture = SubResource("AtlasTexture_lfrn8")
+
+[node name="back_4" type="Parallax2D" parent="objects/background"]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="text" type="Sprite2D" parent="objects/background/back_4"]
+position = Vector2(1816, 276)
+scale = Vector2(28.375, 2.07752)
+texture = SubResource("AtlasTexture_5i0tg")
+
+[node name="back_5" type="Parallax2D" parent="objects/background"]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="text" type="Sprite2D" parent="objects/background/back_5"]
+position = Vector2(1816, 300)
+scale = Vector2(28.375, 2.26357)
+texture = SubResource("AtlasTexture_bdhmt")
+
+[node name="platform" type="Node2D" parent="objects"]
+
+[node name="platform" type="Sprite2D" parent="objects/platform"]
+position = Vector2(318.671, 599.451)
+scale = Vector2(9.95848, 9.24182)
+texture = ExtResource("1_sul5r")
+
+[node name="platform_2" type="Sprite2D" parent="objects/platform"]
+position = Vector2(955.671, 599.451)
+scale = Vector2(9.95848, 9.24182)
+texture = ExtResource("1_sul5r")
+
+[node name="platform_3" type="Sprite2D" parent="objects/platform"]
+position = Vector2(1592.67, 599.402)
+scale = Vector2(9.95848, 9.23365)
+texture = ExtResource("1_sul5r")
+
+[node name="platform_4" type="Sprite2D" parent="objects/platform"]
+position = Vector2(2229.67, 599.402)
+scale = Vector2(9.95848, 9.23365)
+texture = ExtResource("1_sul5r")
+
+[node name="platform_5" type="Sprite2D" parent="objects/platform"]
+position = Vector2(2867, 599.451)
+scale = Vector2(9.95848, 9.24182)
+texture = ExtResource("1_sul5r")
+
+[node name="platform_6" type="Sprite2D" parent="objects/platform"]
+position = Vector2(3409.5, 599.451)
+scale = Vector2(7.01562, 9.24182)
+texture = ExtResource("1_sul5r")
+
+[node name="physics" type="Node2D" parent="objects"]
+
+[node name="platform" type="StaticBody2D" parent="objects/physics"]
+
+[node name="shape" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(1816, 600)
+shape = SubResource("RectangleShape2D_7h61r")
+
+[node name="player" parent="objects/physics" instance=ExtResource("3_0sr1o")]
+position = Vector2(168, 448)
+scale = Vector2(6, 6)
+
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2

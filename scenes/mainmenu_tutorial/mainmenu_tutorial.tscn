@@ -455,13 +455,6 @@ position = Vector2(584, 597)
 scale = Vector2(3.63281, 5.46094)
 texture = ExtResource("2_ac0w5")
 
-[node name="wires_2" type="Sprite2D" parent="objects/environment/background"]
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(601.337, 30.879)
-rotation = -3.22793
-scale = Vector2(3.35174, 6.66598)
-texture = ExtResource("3_5rooo")
-
 [node name="wires_3" type="Sprite2D" parent="objects/environment/background"]
 self_modulate = Color(1, 1, 1, 0.678431)
 position = Vector2(601.337, 30.879)
