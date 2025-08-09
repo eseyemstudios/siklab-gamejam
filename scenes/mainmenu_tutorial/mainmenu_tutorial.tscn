@@ -1,10 +1,204 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=46 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
+[ext_resource type="Texture2D" uid="uid://cc4q4ar4mrhaa" path="res://assets/common/textures/wires.png" id="2_ac0w5"]
+[ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="3_5rooo"]
+[ext_resource type="Texture2D" uid="uid://w6b81fw7rrqg" path="res://assets/common/textures/tv_left.png" id="3_573gn"]
 [ext_resource type="Texture2D" uid="uid://cyakbejgoovvn" path="res://dev/logo/godot.png" id="3_lawus"]
+[ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="4_5rooo"]
+[ext_resource type="Texture2D" uid="uid://cx46o8yas3rml" path="res://assets/common/textures/background.png" id="4_utgvn"]
 [ext_resource type="AudioStream" uid="uid://cmoysdjb7anmk" path="res://assets/common/sfx/public_announcements/PA1.wav" id="4_y6dqa"]
 [ext_resource type="AudioStream" uid="uid://j6t6dmlhjpmx" path="res://assets/common/sfx/mob/marching.wav" id="5_lln6m"]
+[ext_resource type="Texture2D" uid="uid://dx3ap2s3r60v8" path="res://assets/common/textures/tv_right.png" id="5_utgvn"]
+[ext_resource type="Texture2D" uid="uid://dltdqn4nro8wf" path="res://assets/common/textures/tv_center.png" id="6_003fc"]
+[ext_resource type="Texture2D" uid="uid://8nxfsjmn8deg" path="res://assets/common/textures/building_01.png" id="9_003fc"]
+[ext_resource type="Texture2D" uid="uid://b2t8k3jcuha0v" path="res://assets/obj/npc/walk.png" id="9_pbrxs"]
+[ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/download.png" id="14_003fc"]
+
+[sub_resource type="Environment" id="Environment_utgvn"]
+background_mode = 3
+glow_intensity = 0.9
+glow_bloom = 0.35
+glow_hdr_threshold = 0.0
+
+[sub_resource type="Gradient" id="Gradient_pbrxs"]
+colors = PackedColorArray(0.768627, 0.768627, 0.768627, 1, 0.960784, 0.960784, 0.960784, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_luc16"]
+gradient = SubResource("Gradient_pbrxs")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbrxs"]
+atlas = ExtResource("3_573gn")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luc16"]
+atlas = ExtResource("3_573gn")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp0uh"]
+atlas = ExtResource("3_573gn")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h85db"]
+atlas = ExtResource("3_573gn")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5kuwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbrxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luc16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp0uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h85db")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fmfj"]
+atlas = ExtResource("5_utgvn")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bja3k"]
+atlas = ExtResource("5_utgvn")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3yay"]
+atlas = ExtResource("5_utgvn")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms3su"]
+atlas = ExtResource("5_utgvn")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcx18"]
+atlas = ExtResource("5_utgvn")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvmmw"]
+atlas = ExtResource("5_utgvn")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xkwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fmfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bja3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3yay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms3su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcx18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvmmw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwxt4"]
+atlas = ExtResource("6_003fc")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln8l6"]
+atlas = ExtResource("6_003fc")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtgiv"]
+atlas = ExtResource("6_003fc")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r3cy"]
+atlas = ExtResource("6_003fc")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dav1i"]
+atlas = ExtResource("6_003fc")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qla1x"]
+atlas = ExtResource("6_003fc")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0305q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwxt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln8l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtgiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r3cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dav1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qla1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kuwa"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xkwi"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0305q"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqxeu"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fh73u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kuwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xkwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0305q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqxeu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_suexf"]
 length = 0.001
@@ -23,14 +217,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../../objects/camera:position")
+tracks/1/path = NodePath("../../../camera:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(576, -1453)]
+"values": [Vector2(576, -2500)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -68,10 +262,58 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(281.795, 23.3209)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(845.891, 306.278)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(872.966, 319.128)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.40355, -119.108)]
+}
 
 [sub_resource type="Animation" id="Animation_nqqsa"]
 resource_name = "intro"
-length = 15.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -99,14 +341,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../../../objects/camera:position")
+tracks/2/path = NodePath("../../../camera:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.466667, 14.9667),
+"times": PackedFloat32Array(2.13333, 20),
 "transitions": PackedFloat32Array(0.65, 0.65),
 "update": 0,
-"values": [Vector2(576, -1453), Vector2(576, 320)]
+"values": [Vector2(576, -2500), Vector2(576, 320)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -132,6 +374,54 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.166667, 19.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(281.795, 23.3209), Vector2(1059.5, 412.287)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../../objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.166667, 19.9667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(845.891, 306.278), Vector2(-272.775, -254.136)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.166667, 19.5333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(872.966, 319.128), Vector2(-274.427, -255.416)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.166667, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.40355, -119.108), Vector2(1014.4, 390.155)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lawus"]
 _data = {
@@ -142,14 +432,1204 @@ _data = {
 [node name="mainmenu_tutorial" type="Node"]
 script = ExtResource("1_suexf")
 
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_utgvn")
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(576, -2500)
+limit_left = 0
+limit_top = -2824
+limit_right = 3122
+limit_bottom = 648
+editor_draw_limits = true
+
 [node name="objects" type="Node2D" parent="."]
 
-[node name="camera" type="Camera2D" parent="objects"]
-position = Vector2(576, -1453)
+[node name="environment" type="Node2D" parent="objects"]
 
-[node name="background" type="Node2D" parent="objects"]
+[node name="background" type="Node2D" parent="objects/environment"]
 
-[node name="foreground" type="Node2D" parent="objects"]
+[node name="wires" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0.678431)
+position = Vector2(584, 597)
+scale = Vector2(3.63281, 5.46094)
+texture = ExtResource("2_ac0w5")
+
+[node name="wires_2" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(601.337, 30.879)
+rotation = -3.22793
+scale = Vector2(3.35174, 6.66598)
+texture = ExtResource("3_5rooo")
+
+[node name="wires_3" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0.678431)
+position = Vector2(601.337, 30.879)
+rotation = -3.22793
+scale = Vector2(3.35174, 6.66598)
+texture = ExtResource("3_5rooo")
+
+[node name="background" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0.466667)
+z_index = -4
+position = Vector2(576, -777)
+scale = Vector2(9, 10.6212)
+texture = ExtResource("4_utgvn")
+
+[node name="gradient" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(1264, 323.75)
+scale = Vector2(0.875, 648.5)
+texture = SubResource("GradientTexture1D_luc16")
+
+[node name="background_2" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0.466667)
+position = Vector2(2058.25, 112.5)
+scale = Vector2(14.168, 4.20543)
+texture = ExtResource("4_utgvn")
+
+[node name="building_01" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(3026, 338)
+scale = Vector2(10.2734, 10.2734)
+texture = ExtResource("9_003fc")
+
+[node name="foreground" type="Node2D" parent="objects/environment"]
+
+[node name="tv" type="Node2D" parent="objects/environment/foreground"]
+position = Vector2(590, 166.305)
+scale = Vector2(0.83, 0.83)
+
+[node name="tv_left" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-302.905, 83.0262)
+rotation = -0.00477506
+scale = Vector2(8.22787, 8.22787)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.545805
+
+[node name="tv_left_2" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(483.133, -56.6265)
+rotation = 0.0922451
+scale = Vector2(4.99238, 4.99238)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.420735
+
+[node name="tv_left_3" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-499.905, 196.026)
+rotation = 0.0922451
+scale = Vector2(3.69818, 3.69818)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.435743
+
+[node name="tv_left_4" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-506.905, 17.0262)
+rotation = 0.0922451
+scale = Vector2(3.69818, 3.69818)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.146106
+
+[node name="tv_left_5" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-270.905, -215.974)
+rotation = 0.0922451
+scale = Vector2(4.75147, 4.75147)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.328009
+
+[node name="tv_left_9" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 1
+position = Vector2(-579.518, -1281.09)
+rotation = 0.0922451
+scale = Vector2(4.43427, 4.43427)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.328009
+
+[node name="tv_left_10" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 1
+position = Vector2(-466.265, -1246.15)
+rotation = -0.0191906
+scale = Vector2(2.3839, 2.3839)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.328009
+
+[node name="tv_left_11" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 1
+position = Vector2(-472.289, -1335.31)
+rotation = 0.252169
+scale = Vector2(1.60081, 1.60081)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.328009
+
+[node name="tv_right" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(276.095, 125.026)
+scale = Vector2(6.5, 6.5)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.119961
+
+[node name="tv_right_2" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(275.904, -138.554)
+scale = Vector2(4.84375, 4.84375)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.359386
+
+[node name="tv_right_7" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 2
+position = Vector2(591.566, -808.801)
+rotation = -0.177342
+scale = Vector2(4.84375, 4.84375)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.359386
+
+[node name="tv_right_8" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 2
+position = Vector2(633.735, -1536.51)
+rotation = 0.0604743
+scale = Vector2(3.58862, 3.58862)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.359386
+
+[node name="tv_right_9" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 2
+position = Vector2(534.94, -1550.97)
+rotation = 0.0604743
+scale = Vector2(2.33731, 2.33731)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.359386
+
+[node name="tv_right_5" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-81.9278, -322.892)
+rotation = -0.185299
+scale = Vector2(4.29688, 4.29688)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.890356
+
+[node name="tv_right_6" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+z_index = 1
+position = Vector2(2831.33, 59.8735)
+rotation = -0.116825
+scale = Vector2(7.31856, 7.31856)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.890356
+
+[node name="tv_right_3" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-471.905, -195.974)
+scale = Vector2(4.81641, 4.68797)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.387968
+
+[node name="tv_right_4" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(477.108, 179.518)
+scale = Vector2(4.84375, 4.84375)
+sprite_frames = SubResource("SpriteFrames_1xkwi")
+autoplay = "default"
+frame_progress = 0.47273
+
+[node name="tv_left_6" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(96.3854, -325.301)
+scale = Vector2(3.86591, 3.86591)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.612964
+
+[node name="tv_left_7" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(444.578, -274.699)
+rotation = 0.232384
+scale = Vector2(3.86591, 3.86591)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.961224
+
+[node name="tv_left_8" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(3014.46, -0.367462)
+scale = Vector2(3.86591, 3.86591)
+sprite_frames = SubResource("SpriteFrames_5kuwa")
+autoplay = "default"
+frame_progress = 0.961224
+
+[node name="tv_front" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(-1.90491, 25.0262)
+scale = Vector2(10.875, 10.875)
+sprite_frames = SubResource("SpriteFrames_0305q")
+autoplay = "default"
+frame_progress = 0.256993
+
+[node name="tv_front_2" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
+position = Vector2(3034.94, 179.151)
+scale = Vector2(3.85618, 3.85618)
+sprite_frames = SubResource("SpriteFrames_0305q")
+autoplay = "default"
+frame_progress = 0.256993
+
+[node name="walkways" type="Node2D" parent="objects/environment/foreground"]
+
+[node name="walkway_1" type="Node2D" parent="objects/environment/foreground/walkways"]
+position = Vector2(560, -685)
+
+[node name="polygon_2d" type="Polygon2D" parent="objects/environment/foreground/walkways/walkway_1"]
+position = Vector2(-363.817, 33.6858)
+rotation = -0.261799
+color = Color(1, 0, 0, 0.678431)
+polygon = PackedVector2Array(-164.784, -153.893, 903.681, 382.938, 938.88, 251.572, -126.29, -293.693)
+
+[node name="npcs" type="Node2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d"]
+z_index = -1
+position = Vector2(-1.40355, -119.108)
+rotation = 0.462512
+
+[node name="texture" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(-140.144, -0.849333)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+
+[node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(-101, -0.849348)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(-65, -0.849361)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(-28, -0.849377)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(7.99997, -0.84939)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(43, -0.849403)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(78, -0.849417)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(112, -0.84943)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
+position = Vector2(149, -0.849445)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_1"]
+position = Vector2(-377, -37)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Node2D" parent="objects/environment/foreground/walkways/walkway_1"]
+position = Vector2(-396, -181)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_1/platform_2"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="walkway_4" type="Node2D" parent="objects/environment/foreground/walkways"]
+position = Vector2(560, -1281)
+
+[node name="polygon_2d" type="Polygon2D" parent="objects/environment/foreground/walkways/walkway_4"]
+position = Vector2(-363.817, 33.6858)
+rotation = -0.261799
+color = Color(1, 0, 0, 0.678431)
+polygon = PackedVector2Array(-164.784, -153.893, 903.681, 382.938, 938.88, 251.572, -126.29, -293.693)
+
+[node name="npcs" type="Node2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d"]
+z_index = -1
+position = Vector2(872.966, 319.128)
+rotation = 0.462512
+
+[node name="texture" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(-140.144, -0.849333)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.727305
+flip_h = true
+
+[node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(-101, -0.849348)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(-65, -0.849361)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(-28, -0.849377)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(7.99997, -0.84939)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(43, -0.849403)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(78, -0.849417)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(112, -0.84943)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
+position = Vector2(149, -0.849445)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_4"]
+position = Vector2(-377, -37)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Node2D" parent="objects/environment/foreground/walkways/walkway_4"]
+position = Vector2(-396, -181)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_4/platform_2"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="walkway_2" type="Node2D" parent="objects/environment/foreground/walkways"]
+position = Vector2(560, -357)
+rotation = -0.261799
+
+[node name="polygon_2d" type="Polygon2D" parent="objects/environment/foreground/walkways/walkway_2"]
+position = Vector2(-363.817, 33.6858)
+rotation = -0.261799
+color = Color(1, 0, 0, 0.678431)
+polygon = PackedVector2Array(-164.784, -153.893, 903.681, 382.938, 938.88, 251.572, -126.29, -293.693)
+
+[node name="npcs" type="Node2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d"]
+z_index = -1
+position = Vector2(845.891, 306.278)
+rotation = 0.462512
+
+[node name="texture" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(-140.144, -0.849333)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.727305
+flip_h = true
+
+[node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(-101, -0.849348)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(-65, -0.849361)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(-28, -0.849377)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(7.99997, -0.84939)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(43, -0.849403)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(78, -0.849417)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(112, -0.84943)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
+position = Vector2(149, -0.849445)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+flip_h = true
+
+[node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_2"]
+position = Vector2(-377, -37)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Node2D" parent="objects/environment/foreground/walkways/walkway_2"]
+position = Vector2(-396, -181)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_2/platform_2"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="walkway_3" type="Node2D" parent="objects/environment/foreground/walkways"]
+position = Vector2(560, -972)
+rotation = -0.261799
+
+[node name="polygon_2d" type="Polygon2D" parent="objects/environment/foreground/walkways/walkway_3"]
+position = Vector2(-363.817, 33.6858)
+rotation = -0.261799
+color = Color(1, 0, 0, 0.678431)
+polygon = PackedVector2Array(-164.784, -153.893, 903.681, 382.938, 938.88, 251.572, -126.29, -293.693)
+
+[node name="npcs" type="Node2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d"]
+z_index = -1
+position = Vector2(281.795, 23.3209)
+rotation = 0.462512
+
+[node name="texture" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(-140.144, -0.849333)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.816158
+
+[node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(-101, -0.849348)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(-65, -0.849361)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(-28, -0.849377)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(7.99997, -0.84939)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(43, -0.849403)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(78, -0.849417)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(112, -0.84943)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
+position = Vector2(149, -0.849445)
+scale = Vector2(2.73205, 2.73205)
+sprite_frames = SubResource("SpriteFrames_fh73u")
+autoplay = "default"
+frame_progress = 0.209767
+
+[node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_3"]
+position = Vector2(-377, -37)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Node2D" parent="objects/environment/foreground/walkways/walkway_3"]
+position = Vector2(-396, -181)
+rotation = 0.202469
+scale = Vector2(0.145, 0.145)
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(-1053.74, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(-416.743, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(220.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(857.258, 13.5219)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(1494.59, 13.6201)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_6" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(2128.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_7" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(2765.18, 14.3407)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_8" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(3402.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_9" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(4039.18, 14.2425)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_10" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(4676.51, 14.3408)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_11" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(5310.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_12" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(5947.72, 15.7781)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_13" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(6584.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_14" type="Sprite2D" parent="objects/environment/foreground/walkways/walkway_3/platform_2"]
+position = Vector2(7221.72, 15.68)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform" type="Node2D" parent="objects/environment/foreground"]
+
+[node name="platform" type="Sprite2D" parent="objects/environment/foreground/platform"]
+position = Vector2(259.671, 600)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/platform"]
+position = Vector2(896.671, 600)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/platform"]
+position = Vector2(1533.67, 599.902)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/platform"]
+position = Vector2(2170.67, 599.902)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/platform"]
+position = Vector2(2808, 600)
+scale = Vector2(9.95848, 9.15031)
+texture = ExtResource("4_5rooo")
+
+[node name="physics" type="Node2D" parent="objects"]
 
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
@@ -210,9 +1690,21 @@ stream = ExtResource("4_y6dqa")
 volume_db = 2.0
 
 [node name="walk_sfx" type="AudioStreamPlayer2D" parent="gui/logo_sticky/logo_animation"]
-position = Vector2(592, 647)
+position = Vector2(592, -1047)
 stream = ExtResource("5_lln6m")
 volume_db = -5.0
 max_distance = 3000.0
+
+[node name="fx" type="CanvasLayer" parent="gui"]
+
+[node name="noise" type="TextureRect" parent="gui/fx"]
+self_modulate = Color(1, 1, 1, 0.0862745)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_003fc")
+expand_mode = 1
 
 [connection signal="animation_finished" from="gui/logo_sticky/logo_animation" to="." method="_on_logo_animation_animation_finished"]
