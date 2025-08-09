@@ -151,11 +151,6 @@ position = Vector2(576, -1453)
 
 [node name="foreground" type="Node2D" parent="objects"]
 
-[node name="godot" type="Sprite2D" parent="objects"]
-position = Vector2(595, -684)
-rotation = 1.5789
-texture = ExtResource("3_lawus")
-
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
