@@ -10,7 +10,7 @@ func _on_logo_animation_animation_finished(_anim_name: StringName) -> void:
 
 func _on_play_pressed() -> void:
 	# Play backwards (The UI Animation).
-	$gui/menu/ui_panel_animation.play_backwards("intro")
+	$gui/menu/ui_panel/ui_panel_animation.play_backwards("intro")
 	$gui/menu/ui_panel/ui_screen/screen_text/text_animation.stop(false)
 	
 	# Gameplay related stuff.
