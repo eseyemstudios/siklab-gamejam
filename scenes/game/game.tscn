@@ -6,23 +6,23 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sr1o"]
 atlas = ExtResource("1_7h61r")
-region = Rect2(0, 0, 128, 258)
+region = Rect2(0, 0, 512, 258)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kelw5"]
 atlas = ExtResource("1_7h61r")
-region = Rect2(128, 0, 128, 258)
+region = Rect2(512, 0, 512, 258)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfrn8"]
 atlas = ExtResource("1_7h61r")
-region = Rect2(256, 0, 128, 258)
+region = Rect2(1024, 0, 511, 258)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5i0tg"]
 atlas = ExtResource("1_7h61r")
-region = Rect2(385, 0, 127, 258)
+region = Rect2(1, 258, 512, 259)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdhmt"]
 atlas = ExtResource("1_7h61r")
-region = Rect2(512, 0, 128, 258)
+region = Rect2(512, 258, 513, 259)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
 size = Vector2(3632, 112)
@@ -41,40 +41,42 @@ metadata/_edit_horizontal_guides_ = [241.0]
 scroll_scale = Vector2(0.1, 0.1)
 
 [node name="text" type="Sprite2D" parent="objects/background/back"]
-position = Vector2(1816, 376)
-scale = Vector2(28.375, 5.21318)
+position = Vector2(1816, 329.773)
+scale = Vector2(7.10156, 2.54651)
 texture = SubResource("AtlasTexture_0sr1o")
 
 [node name="back_2" type="Parallax2D" parent="objects/background"]
 scroll_scale = Vector2(0.3, 0.3)
 
-[node name="text" type="Sprite2D" parent="objects/background/back_2"]
-position = Vector2(1816, 196.25)
-scale = Vector2(28.375, 6.60659)
+[node name="text_2" type="Sprite2D" parent="objects/background/back_2"]
+position = Vector2(1816, 328.137)
+scale = Vector2(7.10156, 2.53382)
 texture = SubResource("AtlasTexture_kelw5")
 
 [node name="back_3" type="Parallax2D" parent="objects/background"]
 scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-1056, 0)
 
-[node name="text" type="Sprite2D" parent="objects/background/back_3"]
-position = Vector2(1816, 528.25)
-scale = Vector2(28.375, 4.03295)
+[node name="text_3" type="Sprite2D" parent="objects/background/back_3"]
+position = Vector2(2873, 329.387)
+scale = Vector2(7.11155, 2.52413)
 texture = SubResource("AtlasTexture_lfrn8")
 
 [node name="back_4" type="Parallax2D" parent="objects/background"]
 scroll_scale = Vector2(0.7, 0.7)
 
-[node name="text" type="Sprite2D" parent="objects/background/back_4"]
-position = Vector2(1816, 276)
-scale = Vector2(28.375, 2.07752)
+[node name="text_4" type="Sprite2D" parent="objects/background/back_4"]
+position = Vector2(1816, 327.5)
+scale = Vector2(7.10156, 2.52896)
 texture = SubResource("AtlasTexture_5i0tg")
 
 [node name="back_5" type="Parallax2D" parent="objects/background"]
 scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(-666, 0)
 
-[node name="text" type="Sprite2D" parent="objects/background/back_5"]
-position = Vector2(1816, 300)
-scale = Vector2(28.375, 2.26357)
+[node name="text_5" type="Sprite2D" parent="objects/background/back_5"]
+position = Vector2(2480.44, 327.5)
+scale = Vector2(7.09379, 2.52896)
 texture = SubResource("AtlasTexture_bdhmt")
 
 [node name="platform" type="Node2D" parent="objects"]

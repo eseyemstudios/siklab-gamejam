@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=135 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
@@ -18,21 +18,29 @@
 [ext_resource type="Texture2D" uid="uid://dltdqn4nro8wf" path="res://assets/common/textures/tv_center.png" id="6_003fc"]
 [ext_resource type="Texture2D" uid="uid://b7352metwr3ib" path="res://assets/common/textures/cables.png" id="6_5kuwa"]
 [ext_resource type="AudioStream" uid="uid://bysypk78c7x8t" path="res://assets/common/sfx/public_announcements/tutorial/failure.wav" id="6_mqxeu"]
+[ext_resource type="AudioStream" uid="uid://brr44bkcd6lah" path="res://assets/common/sfx/public_announcements/tutorial/follow.wav" id="7_7pnuk"]
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="7_bja3k"]
+[ext_resource type="AudioStream" uid="uid://cu8upj5n7b5qc" path="res://assets/common/sfx/public_announcements/tutorial/deviation.wav" id="8_y6dcy"]
 [ext_resource type="Texture2D" uid="uid://8nxfsjmn8deg" path="res://assets/common/textures/building_01.png" id="9_003fc"]
 [ext_resource type="Texture2D" uid="uid://b2t8k3jcuha0v" path="res://assets/obj/npc/walk.png" id="9_pbrxs"]
 [ext_resource type="Texture2D" uid="uid://bc54mqt6ogsou" path="res://assets/common/textures/drone.png" id="11_luc16"]
 [ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="12_dp0uh"]
 [ext_resource type="Texture2D" uid="uid://bmakbxugd3cg7" path="res://assets/common/textures/button.png" id="13_h85db"]
 [ext_resource type="PackedScene" uid="uid://buihw70l3xuk" path="res://assets/obj/player/player.tscn" id="15_4fmfj"]
+[ext_resource type="Texture2D" uid="uid://dv0cmi2ss1o6v" path="res://assets/common/textures/tutorial_station.png" id="15_7kcq7"]
 [ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/noise.png" id="16_1xkwi"]
+[ext_resource type="Texture2D" uid="uid://caqu25g23dwl8" path="res://assets/obj/npc/walk_red.png" id="21_mqxeu"]
 [ext_resource type="Texture2D" uid="uid://br0w60eqetm0d" path="res://assets/common/ui/next_button.png" id="22_iwxt4"]
 [ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="22_u3yay"]
+[ext_resource type="Texture2D" uid="uid://cuyalntldllt1" path="res://assets/common/ui/movement_interact_buttons.png" id="23_fh73u"]
 [ext_resource type="Texture2D" uid="uid://di4lka2n12m7b" path="res://assets/common/ui/ui_screen.png" id="24_gcx18"]
 [ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="25_rvmmw"]
 [ext_resource type="Script" uid="uid://2g1fxn62ey16" path="res://scenes/mainmenu_tutorial/scr/screen_loop.gd" id="26_1xkwi"]
 [ext_resource type="FontFile" uid="uid://clfg4nisvbn5s" path="res://assets/common/fonts/bstyle/BStyle_R.ttf" id="26_iwxt4"]
 [ext_resource type="Script" uid="uid://bkp1u1q7po8p6" path="res://scenes/mainmenu_tutorial/scr/dialog.gd" id="26_ln8l6"]
+[ext_resource type="Texture2D" uid="uid://dbo6jv8ml3im5" path="res://assets/common/ui/sound_button.png" id="31_swsa4"]
+[ext_resource type="Texture2D" uid="uid://dwyxnechl6s1w" path="res://assets/common/ui/icon_button.png" id="34_o5f4m"]
+[ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="39_21qtn"]
 
 [sub_resource type="Gradient" id="Gradient_ms3su"]
 offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
@@ -51,6 +59,42 @@ adjustment_color_correction = SubResource("GradientTexture1D_gcx18")
 
 [sub_resource type="Animation" id="Animation_mtgiv"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/fx/vignette/deviation:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gui/fx/vignette:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ln8l6"]
 resource_name = "tutorial_0"
@@ -78,10 +122,10 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
+"start_offset": 0.34734,
 "stream": ExtResource("2_mtgiv")
 }],
-"times": PackedFloat32Array(0.866667)
+"times": PackedFloat32Array(1.21401)
 }
 tracks/1/use_blend = true
 
@@ -111,10 +155,10 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.43,
-"start_offset": 0.0,
+"start_offset": 0.488699,
 "stream": ExtResource("3_8r3cy")
 }],
-"times": PackedFloat32Array(0.233333)
+"times": PackedFloat32Array(0.722032)
 }
 tracks/1/use_blend = true
 
@@ -177,10 +221,10 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
+"start_offset": 0.399844,
 "stream": ExtResource("5_0305q")
 }],
-"times": PackedFloat32Array(0.0666667)
+"times": PackedFloat32Array(0.466511)
 }
 tracks/1/use_blend = true
 
@@ -217,14 +261,164 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_y6dcy"]
+resource_name = "tutorial_6"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["You must follow the line until the end."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_7pnuk")
+}],
+"times": PackedFloat32Array(0.233333)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ghpet"]
+resource_name = "deviation"
+length = 10.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game_animation/tutorial_pa")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 1.03272,
+"stream": ExtResource("8_y6dcy")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/fx/fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 9.43333, 10),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8.16667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_reset"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/vignette:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.36667, 8.04429, 8.76667),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gui/fx/vignette/deviation:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.566667, 8.65833, 9.2),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("gui/fx/vignette/desc:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.600205, 9.16256, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_21qtn"]
+resource_name = "tutorial_9"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [""],
+"method": &"dialog"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_powrj"]
+resource_name = "tutorial_8"
+length = 5.0
+
+[sub_resource type="Animation" id="Animation_x4qm4"]
+resource_name = "tutorial_7"
+length = 5.0
+
+[sub_resource type="Animation" id="Animation_04f3a"]
+resource_name = "tutorial_5"
+length = 5.0
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mtgiv"]
 _data = {
 &"RESET": SubResource("Animation_mtgiv"),
+&"deviation": SubResource("Animation_ghpet"),
 &"tutorial_0": SubResource("Animation_ln8l6"),
 &"tutorial_1": SubResource("Animation_qla1x"),
 &"tutorial_2": SubResource("Animation_0305q"),
 &"tutorial_3": SubResource("Animation_mqxeu"),
-&"tutorial_4": SubResource("Animation_fh73u")
+&"tutorial_4": SubResource("Animation_fh73u"),
+&"tutorial_5": SubResource("Animation_04f3a"),
+&"tutorial_6": SubResource("Animation_y6dcy"),
+&"tutorial_7": SubResource("Animation_x4qm4"),
+&"tutorial_8": SubResource("Animation_powrj"),
+&"tutorial_9": SubResource("Animation_21qtn")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swsa4"]
@@ -441,6 +635,437 @@ size = Vector2(154.377, 657)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fmfj"]
 size = Vector2(252.255, 657)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7yua"]
+atlas = ExtResource("23_fh73u")
+region = Rect2(50, 0, 50, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7py5"]
+atlas = ExtResource("23_fh73u")
+region = Rect2(100, 0, 50, 62)
+
+[sub_resource type="Animation" id="Animation_swsa4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("a:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("d:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("a:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("d:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7pnuk"]
+resource_name = "show_buttons"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("a:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 9.4, 10),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(-0.166417, -0.333023), Vector2(-10.5, -4.66667), Vector2(-10.5, -4.66667), Vector2(-0.166417, -0.333023)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("d:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 9.33333, 10),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(-0.166417, -0.333023), Vector2(9.66667, -4.66667), Vector2(9.66667, -4.66667), Vector2(-0.166417, -0.333023)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("a:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667, 6.9, 10),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.105071, 0.105071), Vector2(0.105071, 0.105071), Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("d:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 6.8, 10),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.105071, 0.105071), Vector2(0.105071, 0.105071), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6dcy"]
+_data = {
+&"RESET": SubResource("Animation_swsa4"),
+&"show_buttons": SubResource("Animation_7pnuk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuw44"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4qm4"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04f3a"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yi7g"]
+atlas = ExtResource("9_pbrxs")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsnsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuw44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4qm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04f3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yi7g")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7muw4"]
+atlas = ExtResource("21_mqxeu")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s8ue"]
+atlas = ExtResource("21_mqxeu")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0834"]
+atlas = ExtResource("21_mqxeu")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jg6w"]
+atlas = ExtResource("21_mqxeu")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7yua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7muw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s8ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0834")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jg6w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqxeu"]
+size = Vector2(20, 143)
+
+[sub_resource type="Animation" id="Animation_7kcq7"]
+resource_name = "walk"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.03333, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1122, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("npcs:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 0, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("npcs/npc:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("npcs/npc_2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("npcs/npc_3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("npcs/npc_4:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("npcs/npc_5:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("npcs/npc_6:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("highlight")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.06667, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [&"walk", 1.0, false],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_o5f4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("npcs:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("npcs/npc:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("npcs/npc_2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("npcs/npc_3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("npcs/npc_4:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("npcs/npc_5:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("npcs/npc_6:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("highlight")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghpet"]
+_data = {
+&"RESET": SubResource("Animation_o5f4m"),
+&"walk": SubResource("Animation_7kcq7")
+}
 
 [sub_resource type="Animation" id="Animation_suexf"]
 length = 0.001
@@ -784,6 +1409,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [0.0, -0.413344, 0.308219]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../fx/fade:color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lawus"]
 _data = {
@@ -809,6 +1446,26 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_powrj"]
 atlas = ExtResource("22_iwxt4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuukc"]
+atlas = ExtResource("31_swsa4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luumm"]
+atlas = ExtResource("31_swsa4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2ekj"]
+atlas = ExtResource("31_swsa4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsnsg"]
+atlas = ExtResource("34_o5f4m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuc0o"]
+atlas = ExtResource("34_o5f4m")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_iwxt4"]
@@ -1049,7 +1706,7 @@ tracks/3/path = NodePath("skip:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.82),
+"times": PackedFloat32Array(1.03333, 1.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -1061,7 +1718,7 @@ tracks/4/path = NodePath("skip:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.83),
+"times": PackedFloat32Array(1.03333, 1.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -1101,49 +1758,49 @@ editor_draw_limits = true
 
 [node name="background" type="Node2D" parent="objects/environment"]
 
-[node name="background_2" type="Node2D" parent="objects/environment/background"]
+[node name="landscape" type="Node2D" parent="objects/environment/background"]
 z_index = -8
 z_as_relative = false
 position = Vector2(-59, -27)
 
-[node name="back" type="Parallax2D" parent="objects/environment/background/background_2"]
+[node name="back" type="Parallax2D" parent="objects/environment/background/landscape"]
 scroll_scale = Vector2(0.1, 0.1)
 
-[node name="text" type="Sprite2D" parent="objects/environment/background/background_2/back"]
+[node name="text" type="Sprite2D" parent="objects/environment/background/landscape/back"]
 position = Vector2(1591, 351)
 scale = Vector2(6.22266, 2.54651)
 texture = SubResource("AtlasTexture_swsa4")
 
-[node name="back_2" type="Parallax2D" parent="objects/environment/background/background_2"]
+[node name="back_2" type="Parallax2D" parent="objects/environment/background/landscape"]
 scroll_scale = Vector2(0.3, 0.3)
 
-[node name="text_2" type="Sprite2D" parent="objects/environment/background/background_2/back_2"]
+[node name="text_2" type="Sprite2D" parent="objects/environment/background/landscape/back_2"]
 position = Vector2(1591, 351)
 scale = Vector2(6.22266, 2.54651)
 texture = SubResource("AtlasTexture_y6dcy")
 
-[node name="back_3" type="Parallax2D" parent="objects/environment/background/background_2"]
+[node name="back_3" type="Parallax2D" parent="objects/environment/background/landscape"]
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-1056, 0)
 
-[node name="text_3" type="Sprite2D" parent="objects/environment/background/background_2/back_3"]
+[node name="text_3" type="Sprite2D" parent="objects/environment/background/landscape/back_3"]
 position = Vector2(2645.89, 353.5)
 scale = Vector2(6.22266, 2.54651)
 texture = SubResource("AtlasTexture_21qtn")
 
-[node name="back_4" type="Parallax2D" parent="objects/environment/background/background_2"]
+[node name="back_4" type="Parallax2D" parent="objects/environment/background/landscape"]
 scroll_scale = Vector2(0.7, 0.7)
 
-[node name="text_4" type="Sprite2D" parent="objects/environment/background/background_2/back_4"]
+[node name="text_4" type="Sprite2D" parent="objects/environment/background/landscape/back_4"]
 position = Vector2(1591, 351)
 scale = Vector2(6.22266, 2.54651)
 texture = SubResource("AtlasTexture_7kcq7")
 
-[node name="back_5" type="Parallax2D" parent="objects/environment/background/background_2"]
+[node name="back_5" type="Parallax2D" parent="objects/environment/background/landscape"]
 scroll_scale = Vector2(0.9, 0.9)
 scroll_offset = Vector2(-666, 0)
 
-[node name="text_5" type="Sprite2D" parent="objects/environment/background/background_2/back_5"]
+[node name="text_5" type="Sprite2D" parent="objects/environment/background/landscape/back_5"]
 position = Vector2(2257, 351)
 scale = Vector2(6.22266, 2.54651)
 texture = SubResource("AtlasTexture_o5f4m")
@@ -1193,6 +1850,21 @@ texture = SubResource("AtlasTexture_fh73u")
 position = Vector2(2166, 68)
 scale = Vector2(4.5, 4.625)
 texture = SubResource("AtlasTexture_7pnuk")
+
+[node name="tutorial_station_2" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(2603.5, 430)
+scale = Vector2(7.90624, 7.90624)
+texture = ExtResource("15_7kcq7")
+
+[node name="tutorial_station_3" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(2246, 430)
+scale = Vector2(7.90624, 7.90624)
+texture = ExtResource("15_7kcq7")
+
+[node name="tutorial_station_4" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(1884, 430)
+scale = Vector2(7.90624, 7.90624)
+texture = ExtResource("15_7kcq7")
 
 [node name="foreground" type="Node2D" parent="objects/environment"]
 
@@ -1396,7 +2068,8 @@ position = Vector2(-140.144, -0.849333)
 scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
-speed_scale = 2.0
+frame_progress = 0.648855
+speed_scale = 1.5
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(-101, -0.849348)
@@ -1404,7 +2077,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(-65, -0.849361)
@@ -1412,7 +2085,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(-28, -0.849377)
@@ -1420,7 +2093,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(7.99997, -0.84939)
@@ -1428,7 +2101,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(43, -0.849403)
@@ -1436,7 +2109,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(78, -0.849417)
@@ -1444,7 +2117,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(112, -0.84943)
@@ -1452,7 +2125,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(149, -0.849445)
@@ -1460,7 +2133,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_1"]
 position = Vector2(-377, -37)
@@ -1632,7 +2305,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.727305
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1641,7 +2314,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1650,7 +2323,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1659,7 +2332,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1668,7 +2341,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1677,7 +2350,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1686,7 +2359,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1695,7 +2368,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -1704,7 +2377,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_4"]
@@ -1878,7 +2551,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.727305
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1887,7 +2560,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1896,7 +2569,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1905,7 +2578,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1914,7 +2587,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1923,7 +2596,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1932,7 +2605,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1941,7 +2614,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1950,7 +2623,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 flip_h = true
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_2"]
@@ -2124,7 +2797,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.816158
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(-101, -0.849348)
@@ -2132,7 +2805,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(-65, -0.849361)
@@ -2140,7 +2813,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(-28, -0.849377)
@@ -2148,7 +2821,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(7.99997, -0.84939)
@@ -2156,7 +2829,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(43, -0.849403)
@@ -2164,7 +2837,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(78, -0.849417)
@@ -2172,7 +2845,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(112, -0.84943)
@@ -2180,7 +2853,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(149, -0.849445)
@@ -2188,7 +2861,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
-speed_scale = 2.0
+speed_scale = 1.5
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_3"]
 position = Vector2(-377, -37)
@@ -2401,11 +3074,6 @@ rotation = 3.14159
 stream = ExtResource("12_dp0uh")
 max_distance = 1500.0
 
-[node name="button" type="Sprite2D" parent="objects/environment/foreground"]
-position = Vector2(2886, 453)
-scale = Vector2(7.93751, 7.93751)
-texture = ExtResource("13_h85db")
-
 [node name="physics" type="Node2D" parent="objects"]
 
 [node name="platform" type="StaticBody2D" parent="objects/physics"]
@@ -2423,8 +3091,98 @@ position = Vector2(3045.13, 323.5)
 shape = SubResource("RectangleShape2D_4fmfj")
 
 [node name="player" parent="objects/physics" instance=ExtResource("15_4fmfj")]
+z_index = 1
 position = Vector2(303, 459)
 scale = Vector2(6, 6)
+
+[node name="d" type="Sprite2D" parent="objects/physics/player"]
+z_index = -1
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("AtlasTexture_n7yua")
+
+[node name="a" type="Sprite2D" parent="objects/physics/player"]
+z_index = -1
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("AtlasTexture_y7py5")
+
+[node name="button_animation" type="AnimationPlayer" parent="objects/physics/player"]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_y6dcy")
+}
+
+[node name="tutorial" type="Node2D" parent="objects/physics"]
+
+[node name="button" type="Sprite2D" parent="objects/physics/tutorial"]
+position = Vector2(2886, 453)
+scale = Vector2(7.93751, 7.93751)
+texture = ExtResource("13_h85db")
+
+[node name="anchor" type="Node2D" parent="objects/physics/tutorial"]
+
+[node name="npcs" type="Node2D" parent="objects/physics/tutorial/anchor"]
+process_mode = 4
+
+[node name="npc" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor/npcs"]
+position = Vector2(1243, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vsnsg")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="npc_2" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor/npcs"]
+position = Vector2(1335, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vsnsg")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="npc_3" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor/npcs"]
+position = Vector2(1506, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vsnsg")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="npc_4" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor/npcs"]
+position = Vector2(1600, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vsnsg")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="npc_5" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor/npcs"]
+position = Vector2(1682, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vsnsg")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="npc_6" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor/npcs"]
+position = Vector2(1682, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_vsnsg")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="highlight" type="AnimatedSprite2D" parent="objects/physics/tutorial/anchor"]
+self_modulate = Color(1, 1, 1, 0.709804)
+position = Vector2(1420, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_n7yua")
+animation = &"walk"
+
+[node name="checker" type="Area2D" parent="objects/physics/tutorial/anchor/highlight"]
+scale = Vector2(0.166667, 0.166667)
+
+[node name="shape" type="CollisionShape2D" parent="objects/physics/tutorial/anchor/highlight/checker"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_mqxeu")
+
+[node name="animation_player" type="AnimationPlayer" parent="objects/physics/tutorial/anchor"]
+libraries = {
+&"": SubResource("AnimationLibrary_ghpet")
+}
 
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
@@ -2475,6 +3233,7 @@ stretch_mode = 5
 
 [node name="logo_animation" type="AnimationPlayer" parent="gui/logo_sticky"]
 root_node = NodePath("../siklab")
+callback_mode_process = 0
 libraries = {
 &"": SubResource("AnimationLibrary_lawus")
 }
@@ -2512,12 +3271,35 @@ texture = ExtResource("22_u3yay")
 
 [node name="play" type="TextureButton" parent="gui/menu/ui_panel"]
 layout_mode = 1
-offset_left = 85.0
+offset_left = 73.0
 offset_top = 77.0
-offset_right = 193.0
+offset_right = 181.0
 offset_bottom = 185.0
 texture_normal = SubResource("AtlasTexture_ghpet")
 texture_hover = SubResource("AtlasTexture_powrj")
+stretch_mode = 0
+
+[node name="sound" type="TextureButton" parent="gui/menu/ui_panel"]
+layout_mode = 1
+offset_left = 217.0
+offset_top = 82.0
+offset_right = 325.0
+offset_bottom = 190.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_uuukc")
+texture_pressed = SubResource("AtlasTexture_luumm")
+texture_hover = SubResource("AtlasTexture_d2ekj")
+stretch_mode = 0
+
+[node name="about" type="TextureButton" parent="gui/menu/ui_panel"]
+layout_mode = 1
+offset_left = 362.0
+offset_top = 82.0
+offset_right = 470.0
+offset_bottom = 190.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_vsnsg")
+texture_hover = SubResource("AtlasTexture_nuc0o")
 stretch_mode = 0
 
 [node name="ui_screen" type="TextureRect" parent="gui/menu/ui_panel"]
@@ -2563,6 +3345,7 @@ autoplay = "loop"
 
 [node name="ui_panel_animation" type="AnimationPlayer" parent="gui/menu/ui_panel"]
 root_node = NodePath("../..")
+callback_mode_process = 0
 libraries = {
 &"": SubResource("AnimationLibrary_1xkwi")
 }
@@ -2631,6 +3414,67 @@ texture = ExtResource("16_1xkwi")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
+[node name="fade" type="ColorRect" parent="gui/fx"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 0)
+
+[node name="vignette" type="TextureRect" parent="gui/fx"]
+self_modulate = Color(1, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("39_21qtn")
+expand_mode = 1
+
+[node name="deviation" type="Label" parent="gui/fx/vignette"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 34.0
+offset_bottom = 515.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_iwxt4")
+theme_override_font_sizes/font_size = 451
+text = "DEVIATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc" type="Label" parent="gui/fx/vignette"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 444.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("26_iwxt4")
+theme_override_font_sizes/font_size = 191
+text = "YOU MUST BE PROPER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="body_entered" from="objects/physics/tutorial/anchor/highlight/checker" to="." method="_on_checker_body_entered"]
+[connection signal="body_exited" from="objects/physics/tutorial/anchor/highlight/checker" to="." method="_on_checker_body_exited"]
+[connection signal="animation_finished" from="objects/physics/tutorial/anchor/animation_player" to="." method="_on_walking_animation_finished"]
 [connection signal="animation_finished" from="gui/logo_sticky/logo_animation" to="." method="_on_logo_animation_animation_finished"]
 [connection signal="pressed" from="gui/menu/ui_panel/play" to="." method="_on_play_pressed"]
 [connection signal="animation_finished" from="gui/menu/ui_panel/ui_screen/screen_text/text_animation" to="gui/menu/ui_panel/ui_screen/screen_text" method="_on_text_animation_animation_finished"]
