@@ -1,32 +1,195 @@
-[gd_scene load_steps=46 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=93 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
 [ext_resource type="Texture2D" uid="uid://cc4q4ar4mrhaa" path="res://assets/common/textures/wires.png" id="2_ac0w5"]
+[ext_resource type="AudioStream" uid="uid://f1ivee7cgr7f" path="res://assets/common/sfx/public_announcements/tutorial/citizen.wav" id="2_mtgiv"]
 [ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="3_5rooo"]
+[ext_resource type="AudioStream" uid="uid://ofddfqrysulk" path="res://assets/common/sfx/public_announcements/tutorial/selected.wav" id="3_8r3cy"]
 [ext_resource type="Texture2D" uid="uid://w6b81fw7rrqg" path="res://assets/common/textures/tv_left.png" id="3_573gn"]
 [ext_resource type="Texture2D" uid="uid://cyakbejgoovvn" path="res://dev/logo/godot.png" id="3_lawus"]
 [ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="4_5rooo"]
+[ext_resource type="AudioStream" uid="uid://cdxvn2ttm5gx6" path="res://assets/common/sfx/public_announcements/tutorial/corridor.wav" id="4_dav1i"]
 [ext_resource type="Texture2D" uid="uid://cx46o8yas3rml" path="res://assets/common/textures/background.png" id="4_utgvn"]
-[ext_resource type="AudioStream" uid="uid://cmoysdjb7anmk" path="res://assets/common/sfx/public_announcements/PA1.wav" id="4_y6dqa"]
+[ext_resource type="AudioStream" uid="uid://cmoysdjb7anmk" path="res://assets/common/sfx/public_announcements/propaganda/PA1.wav" id="4_y6dqa"]
 [ext_resource type="AudioStream" uid="uid://j6t6dmlhjpmx" path="res://assets/common/sfx/mob/marching.wav" id="5_lln6m"]
 [ext_resource type="Texture2D" uid="uid://dx3ap2s3r60v8" path="res://assets/common/textures/tv_right.png" id="5_utgvn"]
 [ext_resource type="Texture2D" uid="uid://dltdqn4nro8wf" path="res://assets/common/textures/tv_center.png" id="6_003fc"]
+[ext_resource type="Texture2D" uid="uid://b7352metwr3ib" path="res://assets/common/textures/cables.png" id="6_5kuwa"]
+[ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="7_bja3k"]
 [ext_resource type="Texture2D" uid="uid://8nxfsjmn8deg" path="res://assets/common/textures/building_01.png" id="9_003fc"]
 [ext_resource type="Texture2D" uid="uid://b2t8k3jcuha0v" path="res://assets/obj/npc/walk.png" id="9_pbrxs"]
-[ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/download.png" id="14_003fc"]
+[ext_resource type="Texture2D" uid="uid://bc54mqt6ogsou" path="res://assets/common/textures/drone.png" id="11_luc16"]
+[ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="12_dp0uh"]
+[ext_resource type="Texture2D" uid="uid://bmakbxugd3cg7" path="res://assets/common/textures/button.png" id="13_h85db"]
+[ext_resource type="PackedScene" uid="uid://buihw70l3xuk" path="res://assets/obj/player/player.tscn" id="15_4fmfj"]
+[ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/noise.png" id="16_1xkwi"]
+[ext_resource type="Texture2D" uid="uid://br0w60eqetm0d" path="res://assets/common/ui/next_button.png" id="22_iwxt4"]
+[ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="22_u3yay"]
+[ext_resource type="Texture2D" uid="uid://di4lka2n12m7b" path="res://assets/common/ui/ui_screen.png" id="24_gcx18"]
+[ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="25_rvmmw"]
+[ext_resource type="Script" uid="uid://2g1fxn62ey16" path="res://scenes/mainmenu_tutorial/scr/screen_loop.gd" id="26_1xkwi"]
+[ext_resource type="FontFile" uid="uid://clfg4nisvbn5s" path="res://assets/common/fonts/bstyle/BStyle_R.ttf" id="26_iwxt4"]
+[ext_resource type="Script" uid="uid://bkp1u1q7po8p6" path="res://scenes/mainmenu_tutorial/scr/dialog.gd" id="26_ln8l6"]
+
+[sub_resource type="Gradient" id="Gradient_ms3su"]
+offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
+colors = PackedColorArray(0, 0.606816, 0.969364, 1, 1, 0.654318, 0.273672, 1, 0.962899, 0.901133, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcx18"]
+gradient = SubResource("Gradient_ms3su")
 
 [sub_resource type="Environment" id="Environment_utgvn"]
 background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
 glow_intensity = 0.9
-glow_bloom = 0.35
-glow_hdr_threshold = 0.0
+glow_bloom = 0.15
+adjustment_color_correction = SubResource("GradientTexture1D_gcx18")
+
+[sub_resource type="Animation" id="Animation_mtgiv"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ln8l6"]
+resource_name = "tutorial_0"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Citizen!"],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_mtgiv")
+}],
+"times": PackedFloat32Array(1.66667)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_qla1x"]
+resource_name = "tutorial_1"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["You have been selected for routine calibration."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.43,
+"start_offset": 0.0,
+"stream": ExtResource("3_8r3cy")
+}],
+"times": PackedFloat32Array(1.1)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_0305q"]
+resource_name = "tutorial_2"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Please proceed to the corridor on your right."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_dav1i")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtgiv"]
+_data = {
+&"RESET": SubResource("Animation_mtgiv"),
+&"tutorial_0": SubResource("Animation_ln8l6"),
+&"tutorial_1": SubResource("Animation_qla1x"),
+&"tutorial_2": SubResource("Animation_0305q")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swsa4"]
+atlas = ExtResource("7_bja3k")
+region = Rect2(0, 0, 512, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6dcy"]
+atlas = ExtResource("7_bja3k")
+region = Rect2(512, 0, 512, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21qtn"]
+atlas = ExtResource("7_bja3k")
+region = Rect2(1024, 0, 511, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kcq7"]
+atlas = ExtResource("7_bja3k")
+region = Rect2(1, 258, 512, 259)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5f4m"]
+atlas = ExtResource("7_bja3k")
+region = Rect2(512, 258, 513, 259)
 
 [sub_resource type="Gradient" id="Gradient_pbrxs"]
-colors = PackedColorArray(0.768627, 0.768627, 0.768627, 1, 0.960784, 0.960784, 0.960784, 1)
+colors = PackedColorArray(0.552941, 0.552941, 0.552941, 1, 0.960784, 0.960784, 0.960784, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_luc16"]
 gradient = SubResource("Gradient_pbrxs")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh73u"]
+atlas = ExtResource("6_5kuwa")
+region = Rect2(0, 0, 129, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pnuk"]
+atlas = ExtResource("6_5kuwa")
+region = Rect2(126, 0, 130, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbrxs"]
 atlas = ExtResource("3_573gn")
@@ -200,6 +363,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kuwa"]
+size = Vector2(3177.5, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwxt4"]
+size = Vector2(154.377, 657)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fmfj"]
+size = Vector2(252.255, 657)
+
 [sub_resource type="Animation" id="Animation_suexf"]
 length = 0.001
 tracks/0/type = "value"
@@ -310,6 +482,66 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(-1.40355, -119.108)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../objects/environment/foreground/drone/drone:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-154, -1801)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../objects/environment/foreground/drone/drone:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.02632, 3.02632)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../objects/environment/foreground/drone/drone/cone:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../../objects/environment/foreground/drone/drone:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../../objects/environment/foreground/drone/drone/drone_sfx:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_nqqsa"]
 resource_name = "intro"
@@ -369,7 +601,7 @@ tracks/4/path = NodePath("../logo_animation/walk_sfx:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(-0.0333333, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -377,50 +609,110 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../../../objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs:position")
+tracks/5/path = NodePath("../../../objects/environment/foreground/drone/drone/drone_sfx:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.166667, 19.6),
+"times": PackedFloat32Array(0, 0.13),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(281.795, 23.3209), Vector2(1059.5, 412.287)]
+"update": 1,
+"values": [false, true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../../../objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs:position")
+tracks/6/path = NodePath("../../../objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.166667, 19.9667),
+"times": PackedFloat32Array(0, 19.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(845.891, 306.278), Vector2(-272.775, -254.136)]
+"values": [Vector2(281.795, 23.3209), Vector2(1059.5, 412.287)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../../../objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs:position")
+tracks/7/path = NodePath("../../../objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.166667, 19.5333),
+"times": PackedFloat32Array(0, 19.9667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(872.966, 319.128), Vector2(-274.427, -255.416)]
+"values": [Vector2(845.891, 306.278), Vector2(-272.775, -254.136)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../../../objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs:position")
+tracks/8/path = NodePath("../../../objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.166667, 20),
+"times": PackedFloat32Array(0, 19.5333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(872.966, 319.128), Vector2(-274.427, -255.416)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 20),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1.40355, -119.108), Vector2(1014.4, 390.155)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../objects/environment/foreground/drone/drone:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(4.33333, 5.43333, 5.64044, 6.52651, 8, 8.4, 9.7, 12.4333),
+"transitions": PackedFloat32Array(1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(-154, -1801), Vector2(1070, -1489), Vector2(1032, -1489), Vector2(1032, -1489), Vector2(165.565, -1145), Vector2(238, -1145), Vector2(238, -1145), Vector2(1381, -612)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../objects/environment/foreground/drone/drone:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5.63333, 6.51941, 7.56667),
+"transitions": PackedFloat32Array(1, 1, 0.5, 0.5),
+"update": 1,
+"values": [Vector2(3.02632, 3.02632), Vector2(-3.026, 3.026), Vector2(-3.026, 3.026), Vector2(3.026, 3.026)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../../objects/environment/foreground/drone/drone/cone:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(5.64, 5.76, 5.85, 5.96941, 6.54726, 6.66667, 6.75941, 7.38941, 7.59941, 7.71882, 7.83466, 7.95406, 8.28941, 8.40882, 8.50156, 8.6, 9.67669),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, false, false, true, false, true, false, true, false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../../objects/environment/foreground/drone/drone:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(6.22941, 6.49941, 7.56667),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [0.0, -0.413344, 0.308219]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lawus"]
@@ -429,11 +721,300 @@ _data = {
 &"intro": SubResource("Animation_nqqsa")
 }
 
+[sub_resource type="Gradient" id="Gradient_u3yay"]
+offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ms3su"]
+gradient = SubResource("Gradient_u3yay")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(1, 0.422414)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghpet"]
+atlas = ExtResource("22_iwxt4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_powrj"]
+atlas = ExtResource("22_iwxt4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="Animation" id="Animation_iwxt4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1xkwi"]
+resource_name = "loop"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ln8l6"]
+_data = {
+&"RESET": SubResource("Animation_iwxt4"),
+&"loop": SubResource("Animation_1xkwi")
+}
+
+[sub_resource type="Animation" id="Animation_rvmmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui_panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.5),
+"update": 0,
+"values": [Vector2(570, 685)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ui_panel/ui_screen:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_gcx18"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui_panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(570, 685), Vector2(570, 247), Vector2(570, 268.975)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ui_panel/ui_screen:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.466667, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(56, 25), Vector2(56, -231)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xkwi"]
+_data = {
+&"RESET": SubResource("Animation_rvmmw"),
+&"intro": SubResource("Animation_gcx18")
+}
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xkwi"]
+gradient = SubResource("Gradient_u3yay")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(0.965517, 0)
+fill_to = Vector2(1, 0.347701)
+
+[sub_resource type="Animation" id="Animation_dav1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("skip:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8r3cy"]
+resource_name = "show_dialog"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.573333, 1.03333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.03333, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("skip:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.82),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.83),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qla1x"]
+_data = {
+&"RESET": SubResource("Animation_dav1i"),
+&"show_dialog": SubResource("Animation_8r3cy")
+}
+
 [node name="mainmenu_tutorial" type="Node"]
 script = ExtResource("1_suexf")
 
 [node name="world_environment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_utgvn")
+
+[node name="game_animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mtgiv")
+}
+
+[node name="tutorial_pa" type="AudioStreamPlayer" parent="game_animation"]
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(576, -2500)
@@ -441,6 +1022,7 @@ limit_left = 0
 limit_top = -2824
 limit_right = 3122
 limit_bottom = 648
+limit_smoothed = true
 editor_draw_limits = true
 
 [node name="objects" type="Node2D" parent="."]
@@ -449,41 +1031,98 @@ editor_draw_limits = true
 
 [node name="background" type="Node2D" parent="objects/environment"]
 
+[node name="background_2" type="Node2D" parent="objects/environment/background"]
+z_index = -8
+z_as_relative = false
+position = Vector2(-59, -27)
+
+[node name="back" type="Parallax2D" parent="objects/environment/background/background_2"]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="text" type="Sprite2D" parent="objects/environment/background/background_2/back"]
+position = Vector2(1591, 351)
+scale = Vector2(6.22266, 2.54651)
+texture = SubResource("AtlasTexture_swsa4")
+
+[node name="back_2" type="Parallax2D" parent="objects/environment/background/background_2"]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="text_2" type="Sprite2D" parent="objects/environment/background/background_2/back_2"]
+position = Vector2(1591, 351)
+scale = Vector2(6.22266, 2.54651)
+texture = SubResource("AtlasTexture_y6dcy")
+
+[node name="back_3" type="Parallax2D" parent="objects/environment/background/background_2"]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-1056, 0)
+
+[node name="text_3" type="Sprite2D" parent="objects/environment/background/background_2/back_3"]
+position = Vector2(2645.89, 353.5)
+scale = Vector2(6.22266, 2.54651)
+texture = SubResource("AtlasTexture_21qtn")
+
+[node name="back_4" type="Parallax2D" parent="objects/environment/background/background_2"]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="text_4" type="Sprite2D" parent="objects/environment/background/background_2/back_4"]
+position = Vector2(1591, 351)
+scale = Vector2(6.22266, 2.54651)
+texture = SubResource("AtlasTexture_7kcq7")
+
+[node name="back_5" type="Parallax2D" parent="objects/environment/background/background_2"]
+scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(-666, 0)
+
+[node name="text_5" type="Sprite2D" parent="objects/environment/background/background_2/back_5"]
+position = Vector2(2257, 351)
+scale = Vector2(6.22266, 2.54651)
+texture = SubResource("AtlasTexture_o5f4m")
+
 [node name="wires" type="Sprite2D" parent="objects/environment/background"]
-self_modulate = Color(1, 1, 1, 0.678431)
+self_modulate = Color(1, 1, 1, 0.305882)
 position = Vector2(584, 597)
 scale = Vector2(3.63281, 5.46094)
 texture = ExtResource("2_ac0w5")
 
-[node name="wires_3" type="Sprite2D" parent="objects/environment/background"]
+[node name="wires_2" type="Sprite2D" parent="objects/environment/background"]
 self_modulate = Color(1, 1, 1, 0.678431)
+position = Vector2(3023, 335)
+scale = Vector2(3.63281, 5.46094)
+texture = ExtResource("2_ac0w5")
+
+[node name="wires_3" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0.305882)
 position = Vector2(601.337, 30.879)
 rotation = -3.22793
 scale = Vector2(3.35174, 6.66598)
 texture = ExtResource("3_5rooo")
 
 [node name="background" type="Sprite2D" parent="objects/environment/background"]
-self_modulate = Color(1, 1, 1, 0.466667)
-z_index = -4
+z_index = -1
 position = Vector2(576, -777)
 scale = Vector2(9, 10.6212)
 texture = ExtResource("4_utgvn")
 
 [node name="gradient" type="Sprite2D" parent="objects/environment/background"]
-position = Vector2(1264, 323.75)
-scale = Vector2(0.875, 648.5)
+z_index = -1
+position = Vector2(1264, 321)
+scale = Vector2(0.875, 654)
 texture = SubResource("GradientTexture1D_luc16")
 
-[node name="background_2" type="Sprite2D" parent="objects/environment/background"]
-self_modulate = Color(1, 1, 1, 0.466667)
-position = Vector2(2058.25, 112.5)
-scale = Vector2(14.168, 4.20543)
-texture = ExtResource("4_utgvn")
-
 [node name="building_01" type="Sprite2D" parent="objects/environment/background"]
-position = Vector2(3026, 338)
-scale = Vector2(10.2734, 10.2734)
+position = Vector2(3027, 353)
+scale = Vector2(9.958, 9.15)
 texture = ExtResource("9_003fc")
+
+[node name="wires_4" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(1540, 49.5)
+scale = Vector2(3.375, 3.46875)
+texture = SubResource("AtlasTexture_fh73u")
+
+[node name="wires_5" type="Sprite2D" parent="objects/environment/background"]
+position = Vector2(2166, 68)
+scale = Vector2(4.5, 4.625)
+texture = SubResource("AtlasTexture_7pnuk")
 
 [node name="foreground" type="Node2D" parent="objects/environment"]
 
@@ -516,7 +1155,7 @@ autoplay = "default"
 frame_progress = 0.435743
 
 [node name="tv_left_4" type="AnimatedSprite2D" parent="objects/environment/foreground/tv"]
-position = Vector2(-506.905, 17.0262)
+position = Vector2(-496.386, 24.9337)
 rotation = 0.0922451
 scale = Vector2(3.69818, 3.69818)
 sprite_frames = SubResource("SpriteFrames_5kuwa")
@@ -687,6 +1326,7 @@ position = Vector2(-140.144, -0.849333)
 scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
+speed_scale = 2.0
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(-101, -0.849348)
@@ -694,6 +1334,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(-65, -0.849361)
@@ -701,6 +1342,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(-28, -0.849377)
@@ -708,6 +1350,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(7.99997, -0.84939)
@@ -715,6 +1358,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(43, -0.849403)
@@ -722,6 +1366,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(78, -0.849417)
@@ -729,6 +1374,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(112, -0.84943)
@@ -736,6 +1382,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_1/polygon_2d/npcs"]
 position = Vector2(149, -0.849445)
@@ -743,6 +1390,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_1"]
 position = Vector2(-377, -37)
@@ -914,6 +1562,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.727305
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -922,6 +1571,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -930,6 +1580,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -938,6 +1589,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -946,6 +1598,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -954,6 +1607,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -962,6 +1616,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -970,6 +1625,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_4/polygon_2d/npcs"]
@@ -978,6 +1634,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_4"]
@@ -1151,6 +1808,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.727305
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1159,6 +1817,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1167,6 +1826,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1175,6 +1835,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1183,6 +1844,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1191,6 +1853,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1199,6 +1862,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1207,6 +1871,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_2/polygon_2d/npcs"]
@@ -1215,6 +1880,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 flip_h = true
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_2"]
@@ -1388,6 +2054,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.816158
+speed_scale = 2.0
 
 [node name="texture_2" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(-101, -0.849348)
@@ -1395,6 +2062,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_3" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(-65, -0.849361)
@@ -1402,6 +2070,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_4" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(-28, -0.849377)
@@ -1409,6 +2078,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_5" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(7.99997, -0.84939)
@@ -1416,6 +2086,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_6" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(43, -0.849403)
@@ -1423,6 +2094,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_7" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(78, -0.849417)
@@ -1430,6 +2102,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_8" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(112, -0.84943)
@@ -1437,6 +2110,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="texture_9" type="AnimatedSprite2D" parent="objects/environment/foreground/walkways/walkway_3/polygon_2d/npcs"]
 position = Vector2(149, -0.849445)
@@ -1444,6 +2118,7 @@ scale = Vector2(2.73205, 2.73205)
 sprite_frames = SubResource("SpriteFrames_fh73u")
 autoplay = "default"
 frame_progress = 0.209767
+speed_scale = 2.0
 
 [node name="platform" type="Node2D" parent="objects/environment/foreground/walkways/walkway_3"]
 position = Vector2(-377, -37)
@@ -1598,31 +2273,88 @@ texture = ExtResource("4_5rooo")
 [node name="platform" type="Node2D" parent="objects/environment/foreground"]
 
 [node name="platform" type="Sprite2D" parent="objects/environment/foreground/platform"]
-position = Vector2(259.671, 600)
-scale = Vector2(9.95848, 9.15031)
+position = Vector2(259.671, 599.451)
+scale = Vector2(9.95848, 9.24182)
 texture = ExtResource("4_5rooo")
 
 [node name="platform_2" type="Sprite2D" parent="objects/environment/foreground/platform"]
-position = Vector2(896.671, 600)
-scale = Vector2(9.95848, 9.15031)
+position = Vector2(896.671, 599.451)
+scale = Vector2(9.95848, 9.24182)
 texture = ExtResource("4_5rooo")
 
 [node name="platform_3" type="Sprite2D" parent="objects/environment/foreground/platform"]
-position = Vector2(1533.67, 599.902)
-scale = Vector2(9.95848, 9.15031)
+position = Vector2(1533.67, 599.402)
+scale = Vector2(9.95848, 9.23365)
 texture = ExtResource("4_5rooo")
 
 [node name="platform_4" type="Sprite2D" parent="objects/environment/foreground/platform"]
-position = Vector2(2170.67, 599.902)
-scale = Vector2(9.95848, 9.15031)
+position = Vector2(2170.67, 599.402)
+scale = Vector2(9.95848, 9.23365)
 texture = ExtResource("4_5rooo")
 
 [node name="platform_5" type="Sprite2D" parent="objects/environment/foreground/platform"]
-position = Vector2(2808, 600)
-scale = Vector2(9.95848, 9.15031)
+position = Vector2(2808, 599.451)
+scale = Vector2(9.95848, 9.24182)
 texture = ExtResource("4_5rooo")
 
+[node name="drone" type="Node2D" parent="objects/environment/foreground"]
+
+[node name="drone" type="Sprite2D" parent="objects/environment/foreground/drone"]
+z_index = 6
+position = Vector2(-154, -1801)
+scale = Vector2(3.02632, 3.02632)
+texture = ExtResource("11_luc16")
+
+[node name="cone" type="Polygon2D" parent="objects/environment/foreground/drone/drone"]
+visible = false
+color = Color(1, 0.117647, 0.117647, 0.878431)
+polygon = PackedVector2Array(5.28693, 4.6261, 992.296, -186.035, 987.339, 273.27, 5.28693, 9.58264)
+
+[node name="drone_sfx" type="AudioStreamPlayer2D" parent="objects/environment/foreground/drone/drone"]
+rotation = 3.14159
+stream = ExtResource("12_dp0uh")
+max_distance = 1500.0
+
+[node name="drone_2" type="Sprite2D" parent="objects/environment/foreground/drone"]
+z_index = 6
+position = Vector2(105, -543)
+rotation = 0.10065
+scale = Vector2(3.02632, 3.02632)
+texture = ExtResource("11_luc16")
+
+[node name="cone" type="Polygon2D" parent="objects/environment/foreground/drone/drone_2"]
+color = Color(1, 0.117647, 0.117647, 0.878431)
+polygon = PackedVector2Array(5.28693, 4.6261, 450.684, -62.453, 419.222, 109.439, 5.28693, 9.58264)
+
+[node name="drone_sfx" type="AudioStreamPlayer2D" parent="objects/environment/foreground/drone/drone_2"]
+rotation = 3.14159
+stream = ExtResource("12_dp0uh")
+max_distance = 1500.0
+
+[node name="button" type="Sprite2D" parent="objects/environment/foreground"]
+position = Vector2(2886, 453)
+scale = Vector2(7.93751, 7.93751)
+texture = ExtResource("13_h85db")
+
 [node name="physics" type="Node2D" parent="objects"]
+
+[node name="platform" type="StaticBody2D" parent="objects/physics"]
+
+[node name="shape" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(1532.25, 598)
+shape = SubResource("RectangleShape2D_5kuwa")
+
+[node name="shape_2" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(-77.1887, 323.5)
+shape = SubResource("RectangleShape2D_iwxt4")
+
+[node name="shape_3" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(3045.13, 323.5)
+shape = SubResource("RectangleShape2D_4fmfj")
+
+[node name="player" parent="objects/physics" instance=ExtResource("15_4fmfj")]
+position = Vector2(303, 459)
+scale = Vector2(6, 6)
 
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
@@ -1680,24 +2412,156 @@ autoplay = "intro"
 
 [node name="main_pa" type="AudioStreamPlayer" parent="gui/logo_sticky/logo_animation"]
 stream = ExtResource("4_y6dqa")
-volume_db = 2.0
+volume_db = 1.5
+bus = &"Propaganda"
 
 [node name="walk_sfx" type="AudioStreamPlayer2D" parent="gui/logo_sticky/logo_animation"]
 position = Vector2(592, -1047)
 stream = ExtResource("5_lln6m")
 volume_db = -5.0
-max_distance = 3000.0
+max_distance = 1500.0
 
-[node name="fx" type="CanvasLayer" parent="gui"]
+[node name="menu" type="CanvasLayer" parent="gui"]
 
-[node name="noise" type="TextureRect" parent="gui/fx"]
-self_modulate = Color(1, 1, 1, 0.0862745)
+[node name="fade" type="TextureRect" parent="gui/menu"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("14_003fc")
+texture = SubResource("GradientTexture2D_ms3su")
+
+[node name="ui_panel" type="TextureRect" parent="gui/menu"]
+offset_left = 570.0
+offset_top = 685.0
+offset_right = 1114.0
+offset_bottom = 1093.0
+texture = ExtResource("22_u3yay")
+
+[node name="play" type="TextureButton" parent="gui/menu/ui_panel"]
+layout_mode = 1
+offset_left = 85.0
+offset_top = 77.0
+offset_right = 193.0
+offset_bottom = 185.0
+texture_normal = SubResource("AtlasTexture_ghpet")
+texture_hover = SubResource("AtlasTexture_powrj")
+stretch_mode = 0
+
+[node name="ui_screen" type="TextureRect" parent="gui/menu/ui_panel"]
+z_index = -1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 13.0
+offset_right = 493.0
+offset_bottom = 231.0
+texture = ExtResource("24_gcx18")
+
+[node name="wires" type="TextureRect" parent="gui/menu/ui_panel/ui_screen"]
+z_index = -1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 200.0
+offset_right = 430.0
+offset_bottom = 256.0
+texture = ExtResource("3_5rooo")
+
+[node name="screen_text" type="Label" parent="gui/menu/ui_panel/ui_screen"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 414.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("25_rvmmw")
+theme_override_font_sizes/font_size = 181
+text = "OBEY"
+horizontal_alignment = 1
+vertical_alignment = 2
+clip_text = true
+uppercase = true
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("26_1xkwi")
+
+[node name="text_animation" type="AnimationPlayer" parent="gui/menu/ui_panel/ui_screen/screen_text"]
+libraries = {
+&"": SubResource("AnimationLibrary_ln8l6")
+}
+autoplay = "loop"
+
+[node name="ui_panel_animation" type="AnimationPlayer" parent="gui/menu/ui_panel"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_1xkwi")
+}
+
+[node name="gameplay" type="CanvasLayer" parent="gui"]
+
+[node name="dialog_fade" type="TextureRect" parent="gui/gameplay"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_1xkwi")
+script = ExtResource("26_ln8l6")
+
+[node name="dialog" type="Label" parent="gui/gameplay/dialog_fade"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 43.0
+offset_top = 47.0
+offset_right = -182.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("26_iwxt4")
+theme_override_font_sizes/font_size = 41
+text = "Script."
+autowrap_mode = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="dialog_animation" type="AnimationPlayer" parent="gui/gameplay/dialog_fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_qla1x")
+}
+
+[node name="skip" type="TextureButton" parent="gui/gameplay/dialog_fade"]
+visible = false
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 50.0
+offset_right = 1103.0
+offset_bottom = 88.0
+disabled = true
+texture_normal = SubResource("AtlasTexture_ghpet")
+texture_hover = SubResource("AtlasTexture_powrj")
+stretch_mode = 0
+
+[node name="fx" type="CanvasLayer" parent="gui"]
+
+[node name="noise" type="TextureRect" parent="gui/fx"]
+self_modulate = Color(1, 1, 1, 0.129412)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_1xkwi")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [connection signal="animation_finished" from="gui/logo_sticky/logo_animation" to="." method="_on_logo_animation_animation_finished"]
+[connection signal="pressed" from="gui/menu/ui_panel/play" to="." method="_on_play_pressed"]
+[connection signal="animation_finished" from="gui/menu/ui_panel/ui_screen/screen_text/text_animation" to="gui/menu/ui_panel/ui_screen/screen_text" method="_on_text_animation_animation_finished"]
+[connection signal="pressed" from="gui/gameplay/dialog_fade/skip" to="gui/gameplay/dialog_fade" method="_on_skip_pressed"]

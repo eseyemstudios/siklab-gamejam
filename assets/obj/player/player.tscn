@@ -7,10 +7,6 @@
 atlas = ExtResource("1_xje4b")
 region = Rect2(0, 0, 16, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5kuwa"]
-atlas = ExtResource("1_xje4b")
-region = Rect2(0, 0, 16, 25)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xkwi"]
 atlas = ExtResource("1_xje4b")
 region = Rect2(16, 0, 16, 25)
@@ -22,6 +18,10 @@ region = Rect2(32, 0, 16, 25)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqxeu"]
 atlas = ExtResource("1_xje4b")
 region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kuwa"]
+atlas = ExtResource("1_xje4b")
+region = Rect2(0, 0, 16, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b4olg"]
 animations = [{
@@ -35,9 +35,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5kuwa")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1xkwi")
 }, {
 "duration": 1.0,
@@ -45,6 +42,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mqxeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kuwa")
 }],
 "loop": false,
 "name": &"walk",
@@ -61,6 +61,8 @@ script = ExtResource("1_b4olg")
 scale = Vector2(0.963199, 0.963199)
 sprite_frames = SubResource("SpriteFrames_b4olg")
 animation = &"walk"
+frame = 3
+frame_progress = 1.0
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=11 format=3 uid="uid://n1eoac3rraic"]
 
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
 [ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="1_sul5r"]
@@ -26,6 +26,9 @@ region = Rect2(512, 0, 128, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
 size = Vector2(3632, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sr1o"]
+size = Vector2(73, 544)
 
 [node name="game" type="Node"]
 metadata/_edit_horizontal_guides_ = [241.0]
@@ -114,9 +117,31 @@ texture = ExtResource("1_sul5r")
 position = Vector2(1816, 600)
 shape = SubResource("RectangleShape2D_7h61r")
 
+[node name="shape_2" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(3661, 272)
+shape = SubResource("RectangleShape2D_0sr1o")
+
+[node name="shape_3" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(-36.5, 272)
+shape = SubResource("RectangleShape2D_0sr1o")
+
 [node name="player" parent="objects/physics" instance=ExtResource("3_0sr1o")]
-position = Vector2(168, 448)
+position = Vector2(565, 313)
 scale = Vector2(6, 6)
+
+[node name="camera" type="Camera2D" parent="objects/physics/player"]
+scale = Vector2(0.166667, 0.166667)
+limit_left = 0
+limit_top = 0
+limit_right = 3625
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_left_margin = 0.04
+drag_right_margin = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
