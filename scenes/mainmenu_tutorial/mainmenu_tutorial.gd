@@ -26,7 +26,11 @@ func _tutorial_manager() -> void:
 	# Sequence changes.
 	if _count == 0: 
 		create_tween().tween_property($gui/logo_sticky/logo_animation/main_pa, "volume_db", -20, 2)
+	elif _count == 4:
+		$objects/physics/player.can_move = true
 	
 	# Animate.
-	$game_animation.play("tutorial_" + str(_count))
-	_count += 1
+	var _next_animation: String = "tutorial_" + str(_count)
+	if $game_animation.has_animation(_next_animation):
+		$game_animation.play(_next_animation)
+		_count += 1

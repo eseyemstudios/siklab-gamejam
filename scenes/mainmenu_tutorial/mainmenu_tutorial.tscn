@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=97 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
@@ -12,10 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://cdxvn2ttm5gx6" path="res://assets/common/sfx/public_announcements/tutorial/corridor.wav" id="4_dav1i"]
 [ext_resource type="Texture2D" uid="uid://cx46o8yas3rml" path="res://assets/common/textures/background.png" id="4_utgvn"]
 [ext_resource type="AudioStream" uid="uid://cmoysdjb7anmk" path="res://assets/common/sfx/public_announcements/propaganda/PA1.wav" id="4_y6dqa"]
+[ext_resource type="AudioStream" uid="uid://dsvll2bmvg0me" path="res://assets/common/sfx/public_announcements/tutorial/spot.wav" id="5_0305q"]
 [ext_resource type="AudioStream" uid="uid://j6t6dmlhjpmx" path="res://assets/common/sfx/mob/marching.wav" id="5_lln6m"]
 [ext_resource type="Texture2D" uid="uid://dx3ap2s3r60v8" path="res://assets/common/textures/tv_right.png" id="5_utgvn"]
 [ext_resource type="Texture2D" uid="uid://dltdqn4nro8wf" path="res://assets/common/textures/tv_center.png" id="6_003fc"]
 [ext_resource type="Texture2D" uid="uid://b7352metwr3ib" path="res://assets/common/textures/cables.png" id="6_5kuwa"]
+[ext_resource type="AudioStream" uid="uid://bysypk78c7x8t" path="res://assets/common/sfx/public_announcements/tutorial/failure.wav" id="6_mqxeu"]
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="7_bja3k"]
 [ext_resource type="Texture2D" uid="uid://8nxfsjmn8deg" path="res://assets/common/textures/building_01.png" id="9_003fc"]
 [ext_resource type="Texture2D" uid="uid://b2t8k3jcuha0v" path="res://assets/obj/npc/walk.png" id="9_pbrxs"]
@@ -79,7 +81,7 @@ tracks/1/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("2_mtgiv")
 }],
-"times": PackedFloat32Array(1.66667)
+"times": PackedFloat32Array(0.866667)
 }
 tracks/1/use_blend = true
 
@@ -112,7 +114,7 @@ tracks/1/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("3_8r3cy")
 }],
-"times": PackedFloat32Array(1.1)
+"times": PackedFloat32Array(0.233333)
 }
 tracks/1/use_blend = true
 
@@ -142,10 +144,76 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
+"start_offset": 0.54,
 "stream": ExtResource("4_dav1i")
 }],
-"times": PackedFloat32Array(0.5)
+"times": PackedFloat32Array(0.4)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_mqxeu"]
+resource_name = "tutorial_3"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["You must be in your designated spot at all times."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_0305q")
+}],
+"times": PackedFloat32Array(0.0666667)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_fh73u"]
+resource_name = "tutorial_4"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Failure to obey will guarantee punishment."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.8,
+"stream": ExtResource("6_mqxeu")
+}],
+"times": PackedFloat32Array(0.666667)
 }
 tracks/1/use_blend = true
 
@@ -154,7 +222,9 @@ _data = {
 &"RESET": SubResource("Animation_mtgiv"),
 &"tutorial_0": SubResource("Animation_ln8l6"),
 &"tutorial_1": SubResource("Animation_qla1x"),
-&"tutorial_2": SubResource("Animation_0305q")
+&"tutorial_2": SubResource("Animation_0305q"),
+&"tutorial_3": SubResource("Animation_mqxeu"),
+&"tutorial_4": SubResource("Animation_fh73u")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swsa4"]
