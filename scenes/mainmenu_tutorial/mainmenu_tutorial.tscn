@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=150 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
@@ -42,6 +42,7 @@
 [ext_resource type="Script" uid="uid://2g1fxn62ey16" path="res://scenes/mainmenu_tutorial/scr/screen_loop.gd" id="26_1xkwi"]
 [ext_resource type="FontFile" uid="uid://clfg4nisvbn5s" path="res://assets/common/fonts/bstyle/BStyle_R.ttf" id="26_iwxt4"]
 [ext_resource type="Script" uid="uid://bkp1u1q7po8p6" path="res://scenes/mainmenu_tutorial/scr/dialog.gd" id="26_ln8l6"]
+[ext_resource type="Texture2D" uid="uid://onlwdkg1e77v" path="res://assets/common/vfx/light_2.png" id="27_nuw44"]
 [ext_resource type="Texture2D" uid="uid://dbo6jv8ml3im5" path="res://assets/common/ui/sound_button.png" id="31_swsa4"]
 [ext_resource type="Texture2D" uid="uid://dwyxnechl6s1w" path="res://assets/common/ui/icon_button.png" id="34_o5f4m"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="39_21qtn"]
@@ -51,7 +52,7 @@
 offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
 colors = PackedColorArray(0, 0.606816, 0.969364, 1, 1, 0.654318, 0.273672, 1, 0.962899, 0.901133, 0, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcx18"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0yi7g"]
 gradient = SubResource("Gradient_ms3su")
 
 [sub_resource type="Environment" id="Environment_utgvn"]
@@ -60,7 +61,7 @@ tonemap_mode = 3
 glow_enabled = true
 glow_intensity = 0.9
 glow_bloom = 0.15
-adjustment_color_correction = SubResource("GradientTexture1D_gcx18")
+adjustment_color_correction = SubResource("GradientTexture1D_0yi7g")
 
 [sub_resource type="Animation" id="Animation_mtgiv"]
 length = 0.001
@@ -3387,6 +3388,50 @@ rotation = 3.14159
 stream = ExtResource("12_dp0uh")
 max_distance = 1500.0
 
+[node name="light" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(594, 173)
+scale = Vector2(11.6873, 11.6873)
+texture = ExtResource("27_nuw44")
+
+[node name="light_2" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(594, 173)
+scale = Vector2(1.34258, 1.95493)
+texture = ExtResource("27_nuw44")
+
+[node name="light_3" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(312, 216)
+rotation = 0.179063
+scale = Vector2(1.34258, 1.95493)
+texture = ExtResource("27_nuw44")
+
+[node name="light_4" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(826, 189)
+rotation = -0.119507
+scale = Vector2(1.34258, 1.95493)
+texture = ExtResource("27_nuw44")
+
+[node name="light_5" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(1871, 406)
+scale = Vector2(1.64345, 1.76543)
+texture = ExtResource("27_nuw44")
+
+[node name="light_6" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(2235, 406)
+scale = Vector2(1.64345, 1.76543)
+texture = ExtResource("27_nuw44")
+
+[node name="light_7" type="Sprite2D" parent="objects/environment/foreground"]
+self_modulate = Color(1, 0, 0, 0.345098)
+position = Vector2(2570, 406)
+scale = Vector2(1.64345, 1.76543)
+texture = ExtResource("27_nuw44")
+
 [node name="physics" type="Node2D" parent="objects"]
 
 [node name="platform" type="StaticBody2D" parent="objects/physics"]
@@ -3843,8 +3888,6 @@ self_modulate = Color(1, 0, 0, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -3901,7 +3944,7 @@ z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
+offset_right = 4.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2

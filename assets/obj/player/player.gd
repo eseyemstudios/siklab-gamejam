@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed := 100.0
 @export var gravity := 980.0
 
-var can_move = false
+@export var can_move = false
 
 func _physics_process(delta: float) -> void:
 	var direction := Vector2.ZERO

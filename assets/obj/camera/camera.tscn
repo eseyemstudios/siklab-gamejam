@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf5k6msb0mbp"]
+
+[ext_resource type="Texture2D" uid="uid://dvyymtnlj8y2l" path="res://assets/common/textures/main_camera.png" id="1_sm5o6"]
+[ext_resource type="Texture2D" uid="uid://clk4d8pd1d505" path="res://assets/common/textures/camera.png" id="2_xcnur"]
+
+[node name="camera" type="Node2D"]
+z_index = 1
+
+[node name="main_camera" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("1_sm5o6")
+
+[node name="camera" type="Sprite2D" parent="main_camera"]
+position = Vector2(1.50001, 13.5)
+rotation = -0.480086
+texture = ExtResource("2_xcnur")
+offset = Vector2(-13.445, 0)
+
+[node name="detector" type="Area2D" parent="main_camera/camera"]
+z_index = -1
+position = Vector2(-312.5, -29.5)
+scale = Vector2(0.166667, 0.166667)
+monitorable = false
+
+[node name="shape" type="CollisionPolygon2D" parent="main_camera/camera/detector"]
+polygon = PackedVector2Array(1735, 138, -812, 3.00001, -817, 670, 1757, 217)
+
+[node name="shape_2" type="Polygon2D" parent="main_camera/camera/detector"]
+color = Color(1, 0, 0, 0.607843)
+polygon = PackedVector2Array(1735, 138, -812, 3.00001, -817, 670, 1757, 217)
