@@ -1120,7 +1120,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqxeu"]
-size = Vector2(20, 143)
+size = Vector2(17.9999, 143)
 
 [sub_resource type="Animation" id="Animation_o5f4m"]
 length = 0.001
@@ -3490,7 +3490,7 @@ animation = &"walk"
 scale = Vector2(0.166667, 0.166667)
 
 [node name="shape" type="CollisionShape2D" parent="objects/physics/tutorial/anchor/highlight/checker"]
-position = Vector2(0, 3.5)
+position = Vector2(-3, 3.5)
 shape = SubResource("RectangleShape2D_mqxeu")
 
 [node name="animation_player" type="AnimationPlayer" parent="objects/physics/tutorial/anchor"]
@@ -3620,9 +3620,9 @@ stretch_mode = 0
 z_index = -1
 layout_mode = 0
 offset_left = 56.0
-offset_top = 25.0
+offset_top = 13.0
 offset_right = 493.0
-offset_bottom = 243.0
+offset_bottom = 231.0
 texture = ExtResource("24_gcx18")
 
 [node name="wires" type="TextureRect" parent="gui/menu/ui_panel/ui_screen"]
@@ -3688,9 +3688,9 @@ texture = ExtResource("22_u3yay")
 z_index = -1
 layout_mode = 0
 offset_left = 56.0
-offset_top = 25.0
+offset_top = 13.0
 offset_right = 493.0
-offset_bottom = 243.0
+offset_bottom = 231.0
 texture = ExtResource("24_gcx18")
 
 [node name="tutorial_station_4" type="Sprite2D" parent="gui/task/ui_panel/ui_screen"]
