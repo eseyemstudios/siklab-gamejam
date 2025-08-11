@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=149 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
@@ -347,6 +347,152 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_0yi7g"]
+resource_name = "tutorial_10"
+
+[sub_resource type="Animation" id="Animation_nuw44"]
+resource_name = "tutorial_11"
+length = 7.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/task/ui_panel/ui_panel_animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("intro"),
+"times": PackedFloat32Array(0.266667)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/gameplay/dialog_fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.63333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Please do the task with precision and accuracy."],
+"method": &"dialog"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game_animation/tutorial_pa")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.819604,
+"stream": ExtResource("11_04f3a")
+}],
+"times": PackedFloat32Array(1.63333)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("objects/physics/player/e:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.7, 2.22932),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, -17.36), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("objects/physics/player/e:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.26667, 2.22932),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0.105, 0.105), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_8s8ue"]
+resource_name = "tutorial_12"
+
+[sub_resource type="Animation" id="Animation_vsnsg"]
+resource_name = "tutorial_13"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Your compliance is noted. Cooperation is a must."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_0yi7g")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/1/use_blend = true
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gui/task/ui_panel/ui_panel_animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"intro", -1],
+"method": &"play_backwards"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/fade:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.49171, 5.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_to_main"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_0305q"]
 resource_name = "tutorial_2"
 length = 5.0
@@ -544,152 +690,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1e-05, 1e-05), Vector2(0.105, 0.105)]
 }
-
-[sub_resource type="Animation" id="Animation_0yi7g"]
-resource_name = "tutorial_10"
-
-[sub_resource type="Animation" id="Animation_nuw44"]
-resource_name = "tutorial_11"
-length = 7.0
-tracks/0/type = "animation"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gui/task/ui_panel/ui_panel_animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": PackedStringArray("intro"),
-"times": PackedFloat32Array(0.266667)
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gui/gameplay/dialog_fade")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.63333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["Please do the task with precision and accuracy."],
-"method": &"dialog"
-}]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("game_animation/tutorial_pa")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.819604,
-"stream": ExtResource("11_04f3a")
-}],
-"times": PackedFloat32Array(1.63333)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("objects/physics/player/e:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.7, 2.22932),
-"transitions": PackedFloat32Array(0.5, 0.5),
-"update": 0,
-"values": [Vector2(0, -17.36), Vector2(0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("objects/physics/player/e:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1.26667, 2.22932),
-"transitions": PackedFloat32Array(0.5, 0.5),
-"update": 0,
-"values": [Vector2(0.105, 0.105), Vector2(1e-05, 1e-05)]
-}
-
-[sub_resource type="Animation" id="Animation_vsnsg"]
-resource_name = "tutorial_13"
-length = 6.0
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gui/gameplay/dialog_fade")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.866667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["Your compliance is noted. Cooperation is a must."],
-"method": &"dialog"
-}]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("game_animation/tutorial_pa")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("12_0yi7g")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/1/use_blend = true
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gui/task/ui_panel/ui_panel_animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.9),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"intro", -1],
-"method": &"play_backwards"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gui/fx/fade:color")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4.49171, 5.36667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(5.6),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"change_to_main"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_8s8ue"]
-resource_name = "tutorial_12"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mtgiv"]
 _data = {
@@ -1722,12 +1722,12 @@ _data = {
 &"intro": SubResource("Animation_nqqsa")
 }
 
-[sub_resource type="Gradient" id="Gradient_u3yay"]
+[sub_resource type="Gradient" id="Gradient_0yi7g"]
 offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ms3su"]
-gradient = SubResource("Gradient_u3yay")
+gradient = SubResource("Gradient_0yi7g")
 width = 128
 height = 128
 use_hdr = true
@@ -1897,6 +1897,10 @@ region = Rect2(0, 0, 14, 31)
 atlas = ExtResource("41_04f3a")
 region = Rect2(14, 0, 14, 31)
 
+[sub_resource type="Gradient" id="Gradient_u3yay"]
+offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1xkwi"]
 gradient = SubResource("Gradient_u3yay")
 width = 128
@@ -2014,7 +2018,7 @@ tracks/3/path = NodePath("skip:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.03333, 1.96667),
+"times": PackedFloat32Array(0, 1.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -2026,7 +2030,7 @@ tracks/4/path = NodePath("skip:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.03333, 1.96667),
+"times": PackedFloat32Array(0, 1.96667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -3709,6 +3713,7 @@ offset_bottom = 256.0
 texture = ExtResource("3_5rooo")
 
 [node name="screen_text" type="Label" parent="gui/task/ui_panel/ui_screen"]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 22.0
 offset_right = 414.0
@@ -3799,7 +3804,7 @@ offset_bottom = 140.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("26_iwxt4")
 theme_override_font_sizes/font_size = 41
-text = "Script."
+text = "Lorem"
 autowrap_mode = 1
 visible_characters = 0
 visible_ratio = 0.0

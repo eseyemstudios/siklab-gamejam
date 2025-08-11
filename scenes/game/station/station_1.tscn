@@ -1,0 +1,246 @@
+[gd_scene load_steps=17 format=3 uid="uid://dbvulrs8xbgp2"]
+
+[ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="1_gvy64"]
+[ext_resource type="Texture2D" uid="uid://cuyalntldllt1" path="res://assets/common/ui/movement_interact_buttons.png" id="1_wpubl"]
+[ext_resource type="Texture2D" uid="uid://coa02cijdor2m" path="res://assets/obj/stations/station_1.png" id="1_xf5h8"]
+[ext_resource type="Texture2D" uid="uid://di4lka2n12m7b" path="res://assets/common/ui/ui_screen.png" id="2_xf5h8"]
+[ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="4_q18rl"]
+[ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="5_bnhpa"]
+[ext_resource type="Texture2D" uid="uid://if8tmnhe2who" path="res://assets/common/ui/lever.png" id="6_yoj1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
+size = Vector2(192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q18rl"]
+atlas = ExtResource("1_wpubl")
+region = Rect2(0, 0, 50, 62)
+
+[sub_resource type="Gradient" id="Gradient_u3yay"]
+offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pphws"]
+gradient = SubResource("Gradient_u3yay")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(1, 0.422414)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_rvmmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui_panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.5),
+"update": 0,
+"values": [Vector2(570, 685)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ui_panel/ui_screen:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_gcx18"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ui_panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(570, 685), Vector2(570, 247), Vector2(570, 268.975)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ui_panel/ui_screen:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.466667, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(56, 25), Vector2(56, -231)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77brv"]
+_data = {
+&"RESET": SubResource("Animation_rvmmw"),
+&"intro": SubResource("Animation_gcx18")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmm74"]
+atlas = ExtResource("6_yoj1l")
+region = Rect2(0, 0, 14, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atdf7"]
+atlas = ExtResource("6_yoj1l")
+region = Rect2(14, 0, 14, 31)
+
+[node name="station_1" type="Area2D"]
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_gvy64")
+
+[node name="e" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -128)
+texture = SubResource("AtlasTexture_q18rl")
+
+[node name="tutorial_station" type="Sprite2D" parent="."]
+z_index = -2
+scale = Vector2(6, 6)
+texture = ExtResource("1_xf5h8")
+
+[node name="task" type="CanvasLayer" parent="."]
+
+[node name="fade" type="TextureRect" parent="task"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_pphws")
+
+[node name="ui_panel" type="TextureRect" parent="task"]
+offset_left = 570.0
+offset_top = 685.0
+offset_right = 1114.0
+offset_bottom = 1093.0
+texture = ExtResource("1_gvy64")
+
+[node name="ui_screen" type="TextureRect" parent="task/ui_panel"]
+z_index = -1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 13.0
+offset_right = 493.0
+offset_bottom = 231.0
+texture = ExtResource("2_xf5h8")
+
+[node name="tutorial_station" type="Sprite2D" parent="task/ui_panel/ui_screen"]
+z_index = -2
+position = Vector2(-252.094, 324.119)
+scale = Vector2(18.6309, 18.6309)
+texture = ExtResource("1_xf5h8")
+
+[node name="wires" type="TextureRect" parent="task/ui_panel/ui_screen"]
+z_index = -1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 200.0
+offset_right = 430.0
+offset_bottom = 256.0
+texture = ExtResource("4_q18rl")
+
+[node name="screen_text" type="Label" parent="task/ui_panel/ui_screen"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 414.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("5_bnhpa")
+theme_override_font_sizes/font_size = 51
+text = "Press ALL THE LEVERS.
+EFFICIENT PRESSING IS A MUST."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="ui_panel_animation" type="AnimationPlayer" parent="task/ui_panel"]
+root_node = NodePath("../..")
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_77brv")
+}
+
+[node name="lever" type="TextureButton" parent="task/ui_panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 38.025
+offset_right = 147.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_kmm74")
+texture_pressed = SubResource("AtlasTexture_atdf7")
+stretch_mode = 0
+
+[node name="lever_2" type="TextureButton" parent="task/ui_panel"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 38.025
+offset_right = 265.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_kmm74")
+texture_pressed = SubResource("AtlasTexture_atdf7")
+stretch_mode = 0
+
+[node name="lever_3" type="TextureButton" parent="task/ui_panel"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 38.025
+offset_right = 382.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_kmm74")
+texture_pressed = SubResource("AtlasTexture_atdf7")
+stretch_mode = 0
+
+[node name="lever_4" type="TextureButton" parent="task/ui_panel"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 38.025
+offset_right = 500.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_kmm74")
+texture_pressed = SubResource("AtlasTexture_atdf7")
+stretch_mode = 0

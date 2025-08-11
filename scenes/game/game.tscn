@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=15 format=3 uid="uid://n1eoac3rraic"]
 
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
 [ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="1_sul5r"]
+[ext_resource type="Texture2D" uid="uid://cc4q4ar4mrhaa" path="res://assets/common/textures/wires.png" id="2_kelw5"]
 [ext_resource type="PackedScene" uid="uid://buihw70l3xuk" path="res://assets/obj/player/player.tscn" id="3_0sr1o"]
+[ext_resource type="Texture2D" uid="uid://b7352metwr3ib" path="res://assets/common/textures/cables.png" id="3_lfrn8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sr1o"]
 atlas = ExtResource("1_7h61r")
@@ -24,6 +26,14 @@ region = Rect2(1, 258, 512, 259)
 atlas = ExtResource("1_7h61r")
 region = Rect2(512, 258, 513, 259)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_87uf6"]
+atlas = ExtResource("3_lfrn8")
+region = Rect2(0, 0, 129, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a8rs"]
+atlas = ExtResource("3_lfrn8")
+region = Rect2(126, 0, 130, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
 size = Vector2(3632, 112)
 
@@ -37,47 +47,70 @@ metadata/_edit_horizontal_guides_ = [241.0]
 
 [node name="background" type="Node2D" parent="objects"]
 
-[node name="back" type="Parallax2D" parent="objects/background"]
+[node name="landscape" type="Node2D" parent="objects/background"]
+
+[node name="back" type="Parallax2D" parent="objects/background/landscape"]
 scroll_scale = Vector2(0.1, 0.1)
 
-[node name="text" type="Sprite2D" parent="objects/background/back"]
+[node name="text" type="Sprite2D" parent="objects/background/landscape/back"]
 position = Vector2(1816, 329.773)
 scale = Vector2(7.10156, 2.54651)
 texture = SubResource("AtlasTexture_0sr1o")
 
-[node name="back_2" type="Parallax2D" parent="objects/background"]
+[node name="back_2" type="Parallax2D" parent="objects/background/landscape"]
 scroll_scale = Vector2(0.3, 0.3)
 
-[node name="text_2" type="Sprite2D" parent="objects/background/back_2"]
+[node name="text_2" type="Sprite2D" parent="objects/background/landscape/back_2"]
 position = Vector2(1816, 328.137)
 scale = Vector2(7.10156, 2.53382)
 texture = SubResource("AtlasTexture_kelw5")
 
-[node name="back_3" type="Parallax2D" parent="objects/background"]
+[node name="back_3" type="Parallax2D" parent="objects/background/landscape"]
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-1056, 0)
 
-[node name="text_3" type="Sprite2D" parent="objects/background/back_3"]
+[node name="text_3" type="Sprite2D" parent="objects/background/landscape/back_3"]
 position = Vector2(2873, 329.387)
 scale = Vector2(7.11155, 2.52413)
 texture = SubResource("AtlasTexture_lfrn8")
 
-[node name="back_4" type="Parallax2D" parent="objects/background"]
+[node name="back_4" type="Parallax2D" parent="objects/background/landscape"]
 scroll_scale = Vector2(0.7, 0.7)
 
-[node name="text_4" type="Sprite2D" parent="objects/background/back_4"]
+[node name="text_4" type="Sprite2D" parent="objects/background/landscape/back_4"]
 position = Vector2(1816, 327.5)
 scale = Vector2(7.10156, 2.52896)
 texture = SubResource("AtlasTexture_5i0tg")
 
-[node name="back_5" type="Parallax2D" parent="objects/background"]
+[node name="back_5" type="Parallax2D" parent="objects/background/landscape"]
 scroll_scale = Vector2(0.9, 0.9)
 scroll_offset = Vector2(-666, 0)
 
-[node name="text_5" type="Sprite2D" parent="objects/background/back_5"]
+[node name="text_5" type="Sprite2D" parent="objects/background/landscape/back_5"]
 position = Vector2(2480.44, 327.5)
 scale = Vector2(7.09379, 2.52896)
 texture = SubResource("AtlasTexture_bdhmt")
+
+[node name="wires_2" type="Sprite2D" parent="objects/background"]
+self_modulate = Color(1, 1, 1, 0.678431)
+position = Vector2(1911, 235)
+scale = Vector2(3.63281, 4.82812)
+texture = ExtResource("2_kelw5")
+
+[node name="wires_4" type="Sprite2D" parent="objects/background"]
+position = Vector2(1144, 49.5)
+scale = Vector2(3.375, 3.46875)
+texture = SubResource("AtlasTexture_87uf6")
+
+[node name="wires_5" type="Sprite2D" parent="objects/background"]
+position = Vector2(2634, 70)
+scale = Vector2(4.5, 4.625)
+texture = SubResource("AtlasTexture_2a8rs")
+
+[node name="wires_6" type="Sprite2D" parent="objects/background"]
+position = Vector2(556, 50.5)
+scale = Vector2(4.5, 3.40625)
+texture = SubResource("AtlasTexture_2a8rs")
 
 [node name="platform" type="Node2D" parent="objects"]
 
