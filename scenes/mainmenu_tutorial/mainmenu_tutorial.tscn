@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=148 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="3_5rooo"]
 [ext_resource type="AudioStream" uid="uid://ofddfqrysulk" path="res://assets/common/sfx/public_announcements/tutorial/selected.wav" id="3_8r3cy"]
 [ext_resource type="Texture2D" uid="uid://w6b81fw7rrqg" path="res://assets/common/textures/tv_left.png" id="3_573gn"]
+[ext_resource type="AudioStream" uid="uid://bf72srrio622y" path="res://assets/common/sfx/alarm/619096__badjefferboat__blaring-facility-emergency-alarm.wav" id="3_ghpet"]
 [ext_resource type="Texture2D" uid="uid://cyakbejgoovvn" path="res://dev/logo/godot.png" id="3_lawus"]
 [ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="4_5rooo"]
 [ext_resource type="AudioStream" uid="uid://cdxvn2ttm5gx6" path="res://assets/common/sfx/public_announcements/tutorial/corridor.wav" id="4_dav1i"]
@@ -23,7 +24,10 @@
 [ext_resource type="AudioStream" uid="uid://cu8upj5n7b5qc" path="res://assets/common/sfx/public_announcements/tutorial/deviation.wav" id="8_y6dcy"]
 [ext_resource type="Texture2D" uid="uid://8nxfsjmn8deg" path="res://assets/common/textures/building_01.png" id="9_003fc"]
 [ext_resource type="Texture2D" uid="uid://b2t8k3jcuha0v" path="res://assets/obj/npc/walk.png" id="9_pbrxs"]
+[ext_resource type="AudioStream" uid="uid://bsbprfcsxedxq" path="res://assets/common/sfx/public_announcements/tutorial/interact.wav" id="10_x4qm4"]
+[ext_resource type="AudioStream" uid="uid://bd6a78hmxnuf7" path="res://assets/common/sfx/public_announcements/tutorial/precision.wav" id="11_04f3a"]
 [ext_resource type="Texture2D" uid="uid://bc54mqt6ogsou" path="res://assets/common/textures/drone.png" id="11_luc16"]
+[ext_resource type="AudioStream" uid="uid://dmq00bx3b683e" path="res://assets/common/sfx/public_announcements/tutorial/compliance.wav" id="12_0yi7g"]
 [ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="12_dp0uh"]
 [ext_resource type="Texture2D" uid="uid://bmakbxugd3cg7" path="res://assets/common/textures/button.png" id="13_h85db"]
 [ext_resource type="PackedScene" uid="uid://buihw70l3xuk" path="res://assets/obj/player/player.tscn" id="15_4fmfj"]
@@ -41,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://dbo6jv8ml3im5" path="res://assets/common/ui/sound_button.png" id="31_swsa4"]
 [ext_resource type="Texture2D" uid="uid://dwyxnechl6s1w" path="res://assets/common/ui/icon_button.png" id="34_o5f4m"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="39_21qtn"]
+[ext_resource type="Texture2D" uid="uid://if8tmnhe2who" path="res://assets/common/ui/lever.png" id="41_04f3a"]
 
 [sub_resource type="Gradient" id="Gradient_ms3su"]
 offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
@@ -95,6 +100,186 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/vignette/desc:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("objects/physics/player/e:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("objects/physics/player/e:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("gui/fx/vignette/tv_front:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ghpet"]
+resource_name = "deviation"
+length = 10.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("game_animation/tutorial_pa")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 1.03272,
+"stream": ExtResource("8_y6dcy")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/fx/fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 9.43333, 10),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8.16667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_reset"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/vignette:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.36667, 8.04429, 8.76667),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gui/fx/vignette/deviation:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.566667, 8.65833, 9.2),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("gui/fx/vignette/desc:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.600205, 9.16256, 9.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("objects/physics/player/e:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.1637),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("objects/physics/player/e:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.1637),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("gui/fx/vignette/tv_front:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.26274, 9.23534, 9.95337),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 0.345098), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("game_animation/tutorial_pa")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 52.3214,
+"start_offset": 0.0,
+"stream": ExtResource("3_ghpet")
+}],
+"times": PackedFloat32Array(0.333333)
+}
+tracks/9/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ln8l6"]
 resource_name = "tutorial_0"
@@ -261,6 +446,9 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_04f3a"]
+resource_name = "tutorial_5"
+
 [sub_resource type="Animation" id="Animation_y6dcy"]
 resource_name = "tutorial_6"
 length = 5.0
@@ -294,89 +482,11 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_ghpet"]
-resource_name = "deviation"
-length = 10.0
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("game_animation/tutorial_pa")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 1.03272,
-"stream": ExtResource("8_y6dcy")
-}],
-"times": PackedFloat32Array(0.2)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gui/fx/fade:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 9.43333, 10),
-"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
-"update": 0,
-"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(8.16667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_reset"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gui/fx/vignette:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.36667, 8.04429, 8.76667),
-"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
-"update": 0,
-"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("gui/fx/vignette/deviation:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.566667, 8.65833, 9.2),
-"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
-"update": 0,
-"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("gui/fx/vignette/desc:self_modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.600205, 9.16256, 9.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
+[sub_resource type="Animation" id="Animation_x4qm4"]
+resource_name = "tutorial_7"
 
 [sub_resource type="Animation" id="Animation_21qtn"]
-resource_name = "tutorial_9"
+resource_name = "tutorial_8"
 length = 5.0
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -385,25 +495,201 @@ tracks/0/path = NodePath("gui/gameplay/dialog_fade")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.4),
+"times": PackedFloat32Array(0.866667),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [""],
+"args": ["Interact with the station nearest to you."],
 "method": &"dialog"
 }]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.262273,
+"stream": ExtResource("10_x4qm4")
+}],
+"times": PackedFloat32Array(0.0710602)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_powrj"]
-resource_name = "tutorial_8"
-length = 5.0
+resource_name = "tutorial_9"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("objects/physics/player/e:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00833333, 0.533333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -17.36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("objects/physics/player/e:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00833333, 0.733333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.105, 0.105)]
+}
 
-[sub_resource type="Animation" id="Animation_x4qm4"]
-resource_name = "tutorial_7"
-length = 5.0
+[sub_resource type="Animation" id="Animation_0yi7g"]
+resource_name = "tutorial_10"
 
-[sub_resource type="Animation" id="Animation_04f3a"]
-resource_name = "tutorial_5"
-length = 5.0
+[sub_resource type="Animation" id="Animation_nuw44"]
+resource_name = "tutorial_11"
+length = 7.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/task/ui_panel/ui_panel_animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("intro"),
+"times": PackedFloat32Array(0.266667)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/gameplay/dialog_fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.63333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Please do the task with precision and accuracy."],
+"method": &"dialog"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game_animation/tutorial_pa")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.819604,
+"stream": ExtResource("11_04f3a")
+}],
+"times": PackedFloat32Array(1.63333)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("objects/physics/player/e:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.7, 2.22932),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, -17.36), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("objects/physics/player/e:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.26667, 2.22932),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0.105, 0.105), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_vsnsg"]
+resource_name = "tutorial_13"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/gameplay/dialog_fade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Your compliance is noted. Cooperation is a must."],
+"method": &"dialog"
+}]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_animation/tutorial_pa")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_0yi7g")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/1/use_blend = true
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gui/task/ui_panel/ui_panel_animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"intro", -1],
+"method": &"play_backwards"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/fade:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.49171, 5.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_to_main"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8s8ue"]
+resource_name = "tutorial_12"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mtgiv"]
 _data = {
@@ -411,14 +697,18 @@ _data = {
 &"deviation": SubResource("Animation_ghpet"),
 &"tutorial_0": SubResource("Animation_ln8l6"),
 &"tutorial_1": SubResource("Animation_qla1x"),
+&"tutorial_10": SubResource("Animation_0yi7g"),
+&"tutorial_11": SubResource("Animation_nuw44"),
+&"tutorial_12": SubResource("Animation_8s8ue"),
+&"tutorial_13": SubResource("Animation_vsnsg"),
 &"tutorial_2": SubResource("Animation_0305q"),
 &"tutorial_3": SubResource("Animation_mqxeu"),
 &"tutorial_4": SubResource("Animation_fh73u"),
 &"tutorial_5": SubResource("Animation_04f3a"),
 &"tutorial_6": SubResource("Animation_y6dcy"),
 &"tutorial_7": SubResource("Animation_x4qm4"),
-&"tutorial_8": SubResource("Animation_powrj"),
-&"tutorial_9": SubResource("Animation_21qtn")
+&"tutorial_8": SubResource("Animation_21qtn"),
+&"tutorial_9": SubResource("Animation_powrj")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swsa4"]
@@ -636,6 +926,10 @@ size = Vector2(154.377, 657)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fmfj"]
 size = Vector2(252.255, 657)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6r83"]
+atlas = ExtResource("23_fh73u")
+region = Rect2(0, 0, 50, 62)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7yua"]
 atlas = ExtResource("23_fh73u")
 region = Rect2(50, 0, 50, 62)
@@ -828,6 +1122,119 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqxeu"]
 size = Vector2(20, 143)
 
+[sub_resource type="Animation" id="Animation_o5f4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("npcs:process_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("npcs/npc:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("npcs/npc_2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("npcs/npc_3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("npcs/npc_4:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("npcs/npc_5:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("npcs/npc_6:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("highlight")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_7kcq7"]
 resource_name = "walk"
 length = 20.0
@@ -943,119 +1350,6 @@ tracks/8/keys = {
 "args": [&"walk", 1.0, false],
 "method": &"play"
 }, {
-"args": [],
-"method": &"stop"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_o5f4m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("npcs:process_mode")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("npcs/npc:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("npcs/npc_2:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("npcs/npc_3:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("npcs/npc_4:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("npcs/npc_5:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("npcs/npc_6:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("highlight")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
 "args": [],
 "method": &"stop"
 }]
@@ -1589,6 +1883,20 @@ _data = {
 &"intro": SubResource("Animation_gcx18")
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5f4m"]
+_data = {
+&"RESET": SubResource("Animation_rvmmw"),
+&"intro": SubResource("Animation_gcx18")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ctd"]
+atlas = ExtResource("41_04f3a")
+region = Rect2(0, 0, 14, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8834"]
+atlas = ExtResource("41_04f3a")
+region = Rect2(14, 0, 14, 31)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1xkwi"]
 gradient = SubResource("Gradient_u3yay")
 width = 128
@@ -1742,6 +2050,7 @@ libraries = {
 }
 
 [node name="tutorial_pa" type="AudioStreamPlayer" parent="game_animation"]
+max_polyphony = 2
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(576, -2500)
@@ -3095,6 +3404,11 @@ z_index = 1
 position = Vector2(303, 459)
 scale = Vector2(6, 6)
 
+[node name="e" type="Sprite2D" parent="objects/physics/player"]
+z_index = -1
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("AtlasTexture_u6r83")
+
 [node name="d" type="Sprite2D" parent="objects/physics/player"]
 z_index = -1
 scale = Vector2(1e-05, 1e-05)
@@ -3306,9 +3620,9 @@ stretch_mode = 0
 z_index = -1
 layout_mode = 0
 offset_left = 56.0
-offset_top = 13.0
+offset_top = 25.0
 offset_right = 493.0
-offset_bottom = 231.0
+offset_bottom = 243.0
 texture = ExtResource("24_gcx18")
 
 [node name="wires" type="TextureRect" parent="gui/menu/ui_panel/ui_screen"]
@@ -3349,6 +3663,115 @@ callback_mode_process = 0
 libraries = {
 &"": SubResource("AnimationLibrary_1xkwi")
 }
+
+[node name="task" type="CanvasLayer" parent="gui"]
+
+[node name="fade" type="TextureRect" parent="gui/task"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_ms3su")
+
+[node name="ui_panel" type="TextureRect" parent="gui/task"]
+offset_left = 570.0
+offset_top = 685.0
+offset_right = 1114.0
+offset_bottom = 1093.0
+texture = ExtResource("22_u3yay")
+
+[node name="ui_screen" type="TextureRect" parent="gui/task/ui_panel"]
+z_index = -1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 25.0
+offset_right = 493.0
+offset_bottom = 243.0
+texture = ExtResource("24_gcx18")
+
+[node name="tutorial_station_4" type="Sprite2D" parent="gui/task/ui_panel/ui_screen"]
+z_index = -2
+position = Vector2(-252.094, 324.119)
+scale = Vector2(18.6309, 18.6309)
+texture = ExtResource("15_7kcq7")
+
+[node name="wires" type="TextureRect" parent="gui/task/ui_panel/ui_screen"]
+z_index = -1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 200.0
+offset_right = 430.0
+offset_bottom = 256.0
+texture = ExtResource("3_5rooo")
+
+[node name="screen_text" type="Label" parent="gui/task/ui_panel/ui_screen"]
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 414.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("25_rvmmw")
+theme_override_font_sizes/font_size = 51
+text = "Press ALL THE LEVERS.
+EFFICIENT PRESSING IS A MUST."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="ui_panel_animation" type="AnimationPlayer" parent="gui/task/ui_panel"]
+root_node = NodePath("../..")
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_o5f4m")
+}
+
+[node name="lever" type="TextureButton" parent="gui/task/ui_panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 38.025
+offset_right = 147.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_b2ctd")
+texture_pressed = SubResource("AtlasTexture_h8834")
+stretch_mode = 0
+
+[node name="lever_2" type="TextureButton" parent="gui/task/ui_panel"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 38.025
+offset_right = 265.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_b2ctd")
+texture_pressed = SubResource("AtlasTexture_h8834")
+stretch_mode = 0
+
+[node name="lever_3" type="TextureButton" parent="gui/task/ui_panel"]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 38.025
+offset_right = 382.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_b2ctd")
+texture_pressed = SubResource("AtlasTexture_h8834")
+stretch_mode = 0
+
+[node name="lever_4" type="TextureButton" parent="gui/task/ui_panel"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 38.025
+offset_right = 500.0
+offset_bottom = 257.025
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_b2ctd")
+texture_pressed = SubResource("AtlasTexture_h8834")
+stretch_mode = 0
 
 [node name="gameplay" type="CanvasLayer" parent="gui"]
 
@@ -3399,20 +3822,7 @@ texture_hover = SubResource("AtlasTexture_powrj")
 stretch_mode = 0
 
 [node name="fx" type="CanvasLayer" parent="gui"]
-
-[node name="noise" type="TextureRect" parent="gui/fx"]
-self_modulate = Color(1, 1, 1, 0.129412)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("16_1xkwi")
-expand_mode = 1
-metadata/_edit_lock_ = true
+layer = 2
 
 [node name="fade" type="ColorRect" parent="gui/fx"]
 anchors_preset = 15
@@ -3436,6 +3846,14 @@ mouse_filter = 2
 texture = ExtResource("39_21qtn")
 expand_mode = 1
 
+[node name="tv_front" type="AnimatedSprite2D" parent="gui/fx/vignette"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(583.5, 327.5)
+scale = Vector2(38.3438, 14.0625)
+sprite_frames = SubResource("SpriteFrames_0305q")
+autoplay = "default"
+frame_progress = 0.256993
+
 [node name="deviation" type="Label" parent="gui/fx/vignette"]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 6
@@ -3447,7 +3865,7 @@ offset_top = 34.0
 offset_bottom = 515.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("26_iwxt4")
+theme_override_fonts/font = ExtResource("25_rvmmw")
 theme_override_font_sizes/font_size = 451
 text = "DEVIATION"
 horizontal_alignment = 1
@@ -3465,12 +3883,27 @@ offset_top = 444.0
 offset_bottom = 648.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("26_iwxt4")
+theme_override_fonts/font = ExtResource("25_rvmmw")
 theme_override_font_sizes/font_size = 191
 text = "YOU MUST BE PROPER"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
+
+[node name="noise" type="TextureRect" parent="gui/fx"]
+self_modulate = Color(1, 1, 1, 0.129412)
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_1xkwi")
+expand_mode = 1
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="objects/physics/tutorial/anchor/highlight/checker" to="." method="_on_checker_body_entered"]
 [connection signal="body_exited" from="objects/physics/tutorial/anchor/highlight/checker" to="." method="_on_checker_body_exited"]

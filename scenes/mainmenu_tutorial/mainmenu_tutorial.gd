@@ -2,6 +2,7 @@ extends Node
 
 var _count: int = 0
 var _deviated: bool = false
+var _tut_levers_enabled = false
 
 # This triggers when logo intro finishes.
 func _on_logo_animation_animation_finished(_anim_name: StringName) -> void:
@@ -34,6 +35,8 @@ func _tutorial_manager() -> void:
 		$objects/physics/player.can_move = true
 	elif _count == 7:
 		$objects/physics/tutorial/anchor/animation_player.play("walk")
+	elif _count == 9:
+		$objects/physics/player.can_move = false
 	
 	# Animate.
 	var _next_animation: String = "tutorial_" + str(_count)
@@ -55,10 +58,25 @@ func _on_checker_body_exited(body: Node2D) -> void:
 func _reset():
 	$objects/physics/tutorial/anchor/animation_player.play("RESET")
 	$gui/gameplay/dialog_fade/dialog_animation.play_backwards("show_dialog")
-	_count = 5
+	_count = 6
 	$objects/physics/player.position = Vector2(303, 459)
 	_deviated = false
 
 func _on_walking_animation_finished(_anim_name: StringName) -> void:
-	if _count == 7 and not _deviated:
+	if _count == 8 and not _deviated:
 		_tutorial_manager()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.keycode == KEY_E:
+		if _count == 10 and not _deviated:
+			_count += 1
+			_tutorial_manager()
+
+func _physics_process(_delta: float) -> void:
+	if _count == 13:
+		_tut_levers_enabled = $gui/task/ui_panel/lever.button_pressed and $gui/task/ui_panel/lever_2.button_pressed and $gui/task/ui_panel/lever_3.button_pressed and $gui/task/ui_panel/lever_4.button_pressed
+		if _tut_levers_enabled:
+			_tutorial_manager()
+
+func change_to_main() -> void:
+	get_tree().change_scene_to_file("res://scenes/game/game.tscn")

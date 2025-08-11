@@ -128,22 +128,17 @@ position = Vector2(-36.5, 272)
 shape = SubResource("RectangleShape2D_0sr1o")
 
 [node name="player" parent="objects/physics" instance=ExtResource("3_0sr1o")]
-position = Vector2(565, 313)
+position = Vector2(179, 457)
 scale = Vector2(6, 6)
 
 [node name="camera" type="Camera2D" parent="objects/physics/player"]
-scale = Vector2(0.166667, 0.166667)
+position = Vector2(62.8333, -22.1667)
 limit_left = 0
 limit_top = 0
-limit_right = 3625
+limit_right = 3632
 limit_bottom = 648
 limit_smoothed = true
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_left_margin = 0.04
-drag_right_margin = 0.0
 editor_draw_limits = true
-editor_draw_drag_margin = true
 
 [node name="gui" type="Control" parent="."]
 layout_mode = 3
