@@ -1212,12 +1212,13 @@ autoplay = "sound"
 
 [node name="drone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_8b66f")
-volume_db = -15.0
+volume_db = -25.0
 autoplay = true
 
 [node name="instruction" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
 autoplay = true
+bus = &"Propaganda"
 
 [node name="game_animation" type="AnimationPlayer" parent="."]
 libraries = {

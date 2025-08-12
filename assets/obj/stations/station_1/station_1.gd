@@ -99,13 +99,13 @@ func _lever_toggled(_toggled: bool, _identifier: int, _button: TextureButton) ->
 				_leave()
 			else:
 				$buzzer.play()
+				_untoggle_btns()
 				if $task/ui_panel/ui_panel_animation.is_playing():
 					await $task/ui_panel/ui_panel_animation.animation_finished
 				$task/ui_panel/ui_panel_animation.play("shake")
 				failed.emit()
 				_create_timer()
 				_randomize_order()
-				_untoggle_btns()
 
 func _create_timer() -> void:
 	randomize()
@@ -124,9 +124,9 @@ func _physics_process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if is_doing:
+		_untoggle_btns()
 		$task/ui_panel/ui_panel_animation.play("shake")
 		failed.emit()
 		_create_timer()
 		_randomize_order()
-		_untoggle_btns()
 		$buzzer.play()
