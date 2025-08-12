@@ -166,7 +166,7 @@ monitorable = false
 polygon = PackedVector2Array(1735, 138, -812, 3.00001, -817, 670, 1757, 217)
 
 [node name="shape_2" type="Polygon2D" parent="main_camera/camera/detector"]
-color = Color(1, 0, 0, 0.607843)
+color = Color(1, 0, 0, 0.341176)
 polygon = PackedVector2Array(1735, 138, -812, 3.00001, -817, 670, 1757, 217)
 
 [node name="tv_left" type="AnimatedSprite2D" parent="main_camera"]
@@ -192,3 +192,5 @@ position = Vector2(0.833334, -6.66666)
 scale = Vector2(0.470455, 0.470455)
 sprite_frames = SubResource("SpriteFrames_or1oq")
 autoplay = "default"
+
+[connection signal="body_entered" from="main_camera/camera/detector" to="." method="_on_detector_body_entered"]

@@ -76,11 +76,13 @@ func _randomize_button() -> void:
 
 func _button_pressed(_id: int) -> void:
 	if is_doing:
+		$click.play()
 		if _id == _current_button:
 			$timer.stop()
 			success.emit()
 			_leave()
 		else:
+			$buzzer.play()
 			if $task/ui_panel/ui_panel_animation.is_playing():
 				await $task/ui_panel/ui_panel_animation.animation_finished
 			$task/ui_panel/ui_panel_animation.play("shake")
@@ -97,5 +99,6 @@ func _physics_process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if is_doing:
 		$task/ui_panel/ui_panel_animation.play("shake")
+		$buzzer.play()
 		_randomize_button()
 		failed.emit()

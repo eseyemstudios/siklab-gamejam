@@ -1,0 +1,636 @@
+[gd_scene load_steps=20 format=3 uid="uid://bf72kogehjogn"]
+
+[ext_resource type="Script" uid="uid://b72ig1pr67xf2" path="res://scenes/mainmenu_tutorial/scr/about_us.gd" id="1_ypw0d"]
+[ext_resource type="Texture2D" uid="uid://d0crxix62plse" path="res://assets/dev/tv.png" id="5_r2xgr"]
+[ext_resource type="Texture2D" uid="uid://cc4q4ar4mrhaa" path="res://assets/common/textures/wires.png" id="14_8v4as"]
+[ext_resource type="Texture2D" uid="uid://cx46o8yas3rml" path="res://assets/common/textures/background.png" id="16_uvb27"]
+[ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="35_nshv1"]
+[ext_resource type="Texture2D" uid="uid://cyakbejgoovvn" path="res://dev/logo/godot.png" id="36_cti8s"]
+[ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="43_abmie"]
+[ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/noise.png" id="49_r4u46"]
+
+[sub_resource type="Gradient" id="Gradient_ms3su"]
+offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
+colors = PackedColorArray(0, 0.606816, 0.969364, 1, 1, 0.654318, 0.273672, 1, 0.962899, 0.901133, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0yi7g"]
+gradient = SubResource("Gradient_ms3su")
+
+[sub_resource type="Environment" id="Environment_utgvn"]
+background_mode = 3
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.9
+glow_bloom = 0.15
+adjustment_color_correction = SubResource("GradientTexture1D_0yi7g")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kbr4"]
+atlas = ExtResource("5_r2xgr")
+region = Rect2(216, 0, 73, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2pje"]
+atlas = ExtResource("5_r2xgr")
+region = Rect2(0, 0, 72, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypw0d"]
+atlas = ExtResource("5_r2xgr")
+region = Rect2(0, 87, 72, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b422i"]
+atlas = ExtResource("5_r2xgr")
+region = Rect2(144, 0, 72, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvh36"]
+atlas = ExtResource("5_r2xgr")
+region = Rect2(72, 0, 72, 87)
+
+[sub_resource type="Animation" id="Animation_i2pje"]
+resource_name = "about us"
+length = 23.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, -2500), Vector2(576, 342)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(22.9667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"return_to_menu"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gui/fx/fade:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(20, 23),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ypw0d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, -2500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/fx/fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b422i"]
+_data = {
+&"RESET": SubResource("Animation_ypw0d"),
+&"about us": SubResource("Animation_i2pje")
+}
+
+[node name="about_us" type="Node"]
+script = ExtResource("1_ypw0d")
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_utgvn")
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(576, -2500)
+limit_left = 0
+limit_top = -2824
+limit_right = 3122
+limit_bottom = 648
+limit_smoothed = true
+editor_draw_limits = true
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="environment" type="Node2D" parent="objects"]
+
+[node name="background" type="Node2D" parent="objects/environment"]
+
+[node name="background" type="Sprite2D" parent="objects/environment/background"]
+z_index = -1
+position = Vector2(576, -722)
+scale = Vector2(9, 10.6212)
+texture = ExtResource("16_uvb27")
+
+[node name="wires_4" type="Sprite2D" parent="objects/environment/background"]
+self_modulate = Color(1, 1, 1, 0.678431)
+position = Vector2(584, -521)
+rotation = 4.71239
+scale = Vector2(7.98265, 9.11016)
+texture = ExtResource("14_8v4as")
+
+[node name="gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="siklab" type="TextureRect" parent="gui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -813.0
+offset_top = -2901.0
+offset_right = 267.0
+offset_bottom = -1821.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(540, 540)
+texture = ExtResource("35_nshv1")
+stretch_mode = 5
+
+[node name="godot" type="TextureRect" parent="gui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1053.0
+offset_top = -2668.0
+offset_right = 1480.0
+offset_bottom = -1588.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(1266.5, 540)
+texture = ExtResource("36_cti8s")
+stretch_mode = 5
+
+[node name="desc" type="Label" parent="gui"]
+self_modulate = Color(0.140447, 0.140447, 0.140447, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = -1559.0
+offset_right = 12.0
+offset_bottom = -1355.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "SIKLAB"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_2" type="Label" parent="gui"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 241.0
+offset_top = -1047.0
+offset_right = -499.0
+offset_bottom = -843.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_3" type="Label" parent="gui"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 645.0
+offset_top = -850.0
+offset_right = -95.0
+offset_bottom = -646.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Jasper"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_4" type="Label" parent="gui"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 303.0
+offset_top = -613.0
+offset_right = -437.0
+offset_bottom = -409.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Precious"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_5" type="Label" parent="gui"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 634.0
+offset_top = -391.0
+offset_right = -106.0
+offset_bottom = -187.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Jhovic"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_6" type="Label" parent="gui"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 276.0
+offset_top = -173.0
+offset_right = -464.0
+offset_bottom = 31.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Sam"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_7" type="Label" parent="gui"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 375.0
+offset_top = 54.0
+offset_right = 668.0
+offset_bottom = 258.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Lead Developer & Programmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_8" type="Label" parent="gui"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 278.0
+offset_top = 244.0
+offset_right = -102.0
+offset_bottom = 448.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_10" type="Label" parent="gui"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 220.0
+offset_top = 332.0
+offset_right = -160.0
+offset_bottom = 536.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Sound Design"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_11" type="Label" parent="gui"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 146.0
+offset_top = 428.0
+offset_right = -234.0
+offset_bottom = 632.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Game Design"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_12" type="Label" parent="gui"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 344.0
+offset_top = 160.0
+offset_right = -36.0
+offset_bottom = 364.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Lead Designer"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_9" type="Label" parent="gui"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 77.0
+offset_top = 532.0
+offset_right = -303.0
+offset_bottom = 736.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Asset Designers"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_13" type="Label" parent="gui"]
+self_modulate = Color(0.12103, 0.12103, 0.12103, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 835.0
+offset_top = 58.0
+offset_right = 455.0
+offset_bottom = 262.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_14" type="Label" parent="gui"]
+self_modulate = Color(0.12103, 0.12103, 0.12103, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 627.0
+offset_top = 160.0
+offset_right = 727.0
+offset_bottom = 364.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja, Jasper & Jhovic"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_15" type="Label" parent="gui"]
+self_modulate = Color(0.12103, 0.12103, 0.12103, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 486.0
+offset_top = 248.0
+offset_right = 586.0
+offset_bottom = 452.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja & Jasper"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_16" type="Label" parent="gui"]
+self_modulate = Color(0.12103, 0.12103, 0.12103, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 425.0
+offset_top = 340.0
+offset_right = 525.0
+offset_bottom = 544.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja & Jasper"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_17" type="Label" parent="gui"]
+self_modulate = Color(0.12103, 0.12103, 0.12103, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 393.0
+offset_top = 440.0
+offset_right = 493.0
+offset_bottom = 644.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja, Sam & Precious"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc_18" type="Label" parent="gui"]
+self_modulate = Color(0.12103, 0.12103, 0.12103, 1)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 372.0
+offset_top = 539.0
+offset_right = 1122.0
+offset_bottom = 743.0
+grow_horizontal = 2
+scale = Vector2(0.352197, 0.352197)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("43_abmie")
+theme_override_font_sizes/font_size = 191
+text = "Shannja, Jasper, Jhovic Sam & Precious"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="picture" type="TextureRect" parent="gui"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = -1355.0
+offset_right = 564.0
+offset_bottom = -1019.0
+rotation = 0.151239
+scale = Vector2(1.09428, 1.09428)
+texture = SubResource("AtlasTexture_1kbr4")
+
+[node name="picture_2" type="TextureRect" parent="gui"]
+layout_mode = 0
+offset_left = 604.0
+offset_top = -1132.0
+offset_right = 886.0
+offset_bottom = -796.0
+rotation = -0.128401
+scale = Vector2(1.09428, 1.09428)
+texture = SubResource("AtlasTexture_i2pje")
+
+[node name="picture_3" type="TextureRect" parent="gui"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = -449.0
+offset_right = 516.0
+offset_bottom = -113.0
+rotation = -0.215182
+scale = Vector2(1.09428, 1.09428)
+texture = SubResource("AtlasTexture_ypw0d")
+
+[node name="picture_4" type="TextureRect" parent="gui"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = -692.0
+offset_right = 960.0
+offset_bottom = -356.0
+rotation = 0.113807
+scale = Vector2(1.09428, 1.09428)
+texture = SubResource("AtlasTexture_b422i")
+
+[node name="picture_5" type="TextureRect" parent="gui"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = -897.0
+offset_right = 551.0
+offset_bottom = -561.0
+rotation = -0.0739732
+scale = Vector2(1.09428, 1.09428)
+texture = SubResource("AtlasTexture_qvh36")
+
+[node name="fx" type="CanvasLayer" parent="gui"]
+layer = 2
+
+[node name="fade" type="ColorRect" parent="gui/fx"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="noise" type="TextureRect" parent="gui/fx"]
+self_modulate = Color(1, 1, 1, 0.0980392)
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("49_r4u46")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="animation_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b422i")
+}
+autoplay = "about us"

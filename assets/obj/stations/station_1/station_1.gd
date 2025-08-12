@@ -89,6 +89,7 @@ func _untoggle_btns() -> void:
 func _lever_toggled(_toggled: bool, _identifier: int, _button: TextureButton) -> void:
 	if is_doing:
 		if _toggled:
+			$click.play()
 			_player_button_order.append(_identifier)
 			_button.disabled = true
 		if _player_button_order.size() >= 4:
@@ -97,6 +98,7 @@ func _lever_toggled(_toggled: bool, _identifier: int, _button: TextureButton) ->
 				success.emit()
 				_leave()
 			else:
+				$buzzer.play()
 				if $task/ui_panel/ui_panel_animation.is_playing():
 					await $task/ui_panel/ui_panel_animation.animation_finished
 				$task/ui_panel/ui_panel_animation.play("shake")
@@ -127,3 +129,4 @@ func _on_timer_timeout() -> void:
 		_create_timer()
 		_randomize_order()
 		_untoggle_btns()
+		$buzzer.play()

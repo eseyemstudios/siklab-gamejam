@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dbvulrs8xbgp2"]
+[gd_scene load_steps=47 format=3 uid="uid://dbvulrs8xbgp2"]
 
 [ext_resource type="Script" uid="uid://db04fwy6nrjhs" path="res://assets/obj/stations/station_1/station_1.gd" id="1_b168l"]
 [ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="1_gvy64"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://if8tmnhe2who" path="res://assets/common/ui/lever.png" id="6_yoj1l"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="9_6kc5b"]
 [ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="11_hk6gf"]
+[ext_resource type="AudioStream" uid="uid://dyyq8lpk47mtp" path="res://assets/common/sfx/alarm/244932__kwahmah_02__short-buzzer.wav" id="12_wg7em"]
+[ext_resource type="AudioStream" uid="uid://3kyj4xb52e1f" path="res://assets/common/sfx/button/lever.mp3" id="13_gbb6g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
 size = Vector2(192, 180)
@@ -329,6 +331,7 @@ libraries = {
 
 [node name="tutorial_station" type="AnimatedSprite2D" parent="."]
 z_index = -2
+position = Vector2(0, 8)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_2q8tn")
 
@@ -565,12 +568,18 @@ expand_mode = 1
 
 [node name="highlight" type="AnimatedSprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 1, 1, 0.419608)
+self_modulate = Color(0.827451, 0.827451, 0.827451, 0.682353)
 z_index = 6
 position = Vector2(0, 15)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_wg7em")
 autoplay = "default"
+
+[node name="buzzer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_wg7em")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_gbb6g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

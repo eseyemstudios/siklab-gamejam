@@ -98,6 +98,7 @@ position = Vector2(0, -0.480006)
 scale = Vector2(0.963199, 1.0016)
 sprite_frames = SubResource("SpriteFrames_b4olg")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

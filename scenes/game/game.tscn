@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=64 format=3 uid="uid://n1eoac3rraic"]
 
 [ext_resource type="Script" uid="uid://q68tph2ji6rt" path="res://scenes/game/game.gd" id="1_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
@@ -13,24 +13,24 @@
 [ext_resource type="Texture2D" uid="uid://dltdqn4nro8wf" path="res://assets/common/textures/tv_center.png" id="6_vaxfo"]
 [ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="7_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/noise.png" id="8_87uf6"]
+[ext_resource type="Texture2D" uid="uid://dv0cmi2ss1o6v" path="res://assets/common/textures/tutorial_station.png" id="9_5v6r0"]
+[ext_resource type="Texture2D" uid="uid://masmsjwlxj66" path="res://assets/obj/npc/idle.png" id="10_uyinl"]
 [ext_resource type="PackedScene" uid="uid://bytmy83qy612" path="res://assets/obj/stations/station_1/station_11.tscn" id="10_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://cf5k6msb0mbp" path="res://assets/obj/camera/camera.tscn" id="11_5jirj"]
 [ext_resource type="PackedScene" uid="uid://bkd53rg632fjc" path="res://assets/obj/stations/station_2/station_22.tscn" id="11_ftsea"]
+[ext_resource type="AudioStream" uid="uid://vxka4glbaevy" path="res://assets/common/sfx/public_announcements/propaganda/PA2.wav" id="20_3jaai"]
+[ext_resource type="AudioStream" uid="uid://mm4he6cuvaqb" path="res://assets/common/sfx/public_announcements/propaganda/PA3.wav" id="21_1iff4"]
+[ext_resource type="AudioStream" uid="uid://x6j4y7cugf8u" path="res://assets/common/sfx/public_announcements/propaganda/PA4.wav" id="22_4vuph"]
+[ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="22_8b66f"]
 
-[sub_resource type="Gradient" id="Gradient_kp23o"]
-offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
-colors = PackedColorArray(0, 0.606816, 0.969364, 1, 1, 0.654318, 0.273672, 1, 0.962899, 0.901133, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcx18"]
-gradient = SubResource("Gradient_kp23o")
-
-[sub_resource type="Environment" id="Environment_5jirj"]
+[sub_resource type="Environment" id="Environment_8b66f"]
 background_mode = 3
+background_canvas_max_layer = 4
 tonemap_mode = 2
 glow_enabled = true
 glow_intensity = 0.9
 glow_bloom = 0.15
-adjustment_color_correction = SubResource("GradientTexture1D_gcx18")
+adjustment_enabled = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sr1o"]
 atlas = ExtResource("1_7h61r")
@@ -192,18 +192,142 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtcun"]
+atlas = ExtResource("10_uyinl")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcrx"]
+atlas = ExtResource("10_uyinl")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgsdl"]
+atlas = ExtResource("10_uyinl")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek2np"]
+atlas = ExtResource("10_uyinl")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opnm"]
+atlas = ExtResource("10_uyinl")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_648do"]
+atlas = ExtResource("10_uyinl")
+region = Rect2(80, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10c2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtcun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrcrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgsdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek2np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_648do")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
 size = Vector2(3632, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sr1o"]
 size = Vector2(73, 544)
 
+[sub_resource type="Animation" id="Animation_wdnak"]
+resource_name = "sound"
+length = 120.0
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_3jaai")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("21_1iff4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22_4vuph")
+}],
+"times": PackedFloat32Array(0.966667, 41.7, 84.0667)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_h48ew"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fty5b"]
+_data = {
+&"RESET": SubResource("Animation_h48ew"),
+&"sound": SubResource("Animation_wdnak")
+}
+
+[sub_resource type="Animation" id="Animation_8b66f"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3jaai"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1iff4"]
+_data = {
+&"RESET": SubResource("Animation_3jaai"),
+&"fade": SubResource("Animation_8b66f")
+}
+
 [node name="game" type="Node"]
 script = ExtResource("1_5v6r0")
 metadata/_edit_horizontal_guides_ = [241.0]
 
 [node name="world_environment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_5jirj")
+environment = SubResource("Environment_8b66f")
 
 [node name="objects" type="Node2D" parent="."]
 
@@ -374,6 +498,7 @@ sprite_frames = SubResource("SpriteFrames_3xj4h")
 autoplay = "default"
 
 [node name="tv_front_2" type="AnimatedSprite2D" parent="objects/background"]
+z_index = 1
 position = Vector2(2961, 209)
 scale = Vector2(6.24533, 6.24533)
 sprite_frames = SubResource("SpriteFrames_3xj4h")
@@ -386,10 +511,47 @@ scale = Vector2(3.35174, 4.47299)
 texture = ExtResource("7_3xj4h")
 
 [node name="wires_11" type="Sprite2D" parent="objects/background"]
-position = Vector2(2966, 542)
+position = Vector2(2966, 389)
 rotation = 3.14159
 scale = Vector2(3.35174, 4.47299)
 texture = ExtResource("7_3xj4h")
+
+[node name="npc_3" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3566, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="npc_4" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3489, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="npc_6" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(1272, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="npc_7" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(1195, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="npc_5" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(2409, 469)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="platform" type="Node2D" parent="objects"]
 
@@ -428,16 +590,57 @@ texture = ExtResource("1_sul5r")
 [node name="stations" type="Node2D" parent="objects/physics"]
 z_index = 2
 
+[node name="tutorial_station_3" type="Sprite2D" parent="objects/physics/stations"]
+position = Vector2(2769, 448)
+scale = Vector2(6, 6)
+texture = ExtResource("9_5v6r0")
+
+[node name="npc" type="AnimatedSprite2D" parent="objects/physics/stations/tutorial_station_3"]
+position = Vector2(-2.16667, 3.49999)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="tutorial_station_5" type="Sprite2D" parent="objects/physics/stations"]
+position = Vector2(764, 448)
+scale = Vector2(6, 6)
+texture = ExtResource("9_5v6r0")
+
+[node name="npc" type="AnimatedSprite2D" parent="objects/physics/stations/tutorial_station_5"]
+position = Vector2(-6.5, 3.49999)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="npc_2" type="AnimatedSprite2D" parent="objects/physics/stations/tutorial_station_5"]
+position = Vector2(6, 3.49999)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="tutorial_station_4" type="Sprite2D" parent="objects/physics/stations"]
+position = Vector2(3153, 448)
+scale = Vector2(6, 6)
+texture = ExtResource("9_5v6r0")
+
+[node name="npc_2" type="AnimatedSprite2D" parent="objects/physics/stations/tutorial_station_4"]
+position = Vector2(-2.49999, 3.5)
+sprite_frames = SubResource("SpriteFrames_10c2w")
+animation = &"idle"
+autoplay = "idle"
+
 [node name="station_5" parent="objects/physics/stations" instance=ExtResource("5_bdhmt")]
-position = Vector2(2607, 448)
+position = Vector2(956, 448)
 can_interacted = false
 
 [node name="station_8" parent="objects/physics/stations" instance=ExtResource("5_bdhmt")]
-position = Vector2(3313, 448)
+position = Vector2(3344, 448)
 can_interacted = false
 
 [node name="station_6" parent="objects/physics/stations" instance=ExtResource("6_5i0tg")]
-position = Vector2(897, 454)
+position = Vector2(2577, 454)
 can_interacted = false
 
 [node name="station_7" parent="objects/physics/stations" instance=ExtResource("6_5i0tg")]
@@ -500,7 +703,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="fx" type="CanvasLayer" parent="gui"]
-layer = 2
+layer = 10
 
 [node name="noise" type="TextureRect" parent="gui/fx"]
 self_modulate = Color(1, 1, 1, 0.0980392)
@@ -516,3 +719,33 @@ mouse_filter = 2
 texture = ExtResource("8_87uf6")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="fade" type="ColorRect" parent="gui/fx"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[node name="PA" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = &"Propaganda"
+
+[node name="PA_animation" type="AnimationPlayer" parent="PA"]
+libraries = {
+&"": SubResource("AnimationLibrary_fty5b")
+}
+autoplay = "sound"
+
+[node name="drone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_8b66f")
+volume_db = -15.0
+autoplay = true
+
+[node name="game_animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1iff4")
+}
+autoplay = "fade"
