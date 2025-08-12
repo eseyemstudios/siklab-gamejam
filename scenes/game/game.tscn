@@ -1,5 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=47 format=3 uid="uid://n1eoac3rraic"]
 
+[ext_resource type="Script" uid="uid://q68tph2ji6rt" path="res://scenes/game/game.gd" id="1_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
 [ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="1_sul5r"]
 [ext_resource type="Texture2D" uid="uid://cc4q4ar4mrhaa" path="res://assets/common/textures/wires.png" id="2_kelw5"]
@@ -10,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://dlnol0d6ac4a0" path="res://assets/obj/stations/station_2/station_2.tscn" id="5_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://dbvulrs8xbgp2" path="res://assets/obj/stations/station_1/station_1.tscn" id="6_5i0tg"]
 [ext_resource type="Texture2D" uid="uid://dltdqn4nro8wf" path="res://assets/common/textures/tv_center.png" id="6_vaxfo"]
+[ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="7_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://ds11h64jdsb34" path="res://assets/common/vfx/noise.png" id="8_87uf6"]
 [ext_resource type="PackedScene" uid="uid://bytmy83qy612" path="res://assets/obj/stations/station_1/station_11.tscn" id="10_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://cf5k6msb0mbp" path="res://assets/obj/camera/camera.tscn" id="11_5jirj"]
+[ext_resource type="PackedScene" uid="uid://bkd53rg632fjc" path="res://assets/obj/stations/station_2/station_22.tscn" id="11_ftsea"]
 
 [sub_resource type="Gradient" id="Gradient_kp23o"]
 offsets = PackedFloat32Array(0, 0.261261, 0.738739, 1)
@@ -196,6 +199,7 @@ size = Vector2(3632, 112)
 size = Vector2(73, 544)
 
 [node name="game" type="Node"]
+script = ExtResource("1_5v6r0")
 metadata/_edit_horizontal_guides_ = [241.0]
 
 [node name="world_environment" type="WorldEnvironment" parent="."]
@@ -237,8 +241,8 @@ texture = SubResource("AtlasTexture_lfrn8")
 scroll_scale = Vector2(0.7, 0.7)
 
 [node name="text_4" type="Sprite2D" parent="objects/background/landscape/back_4"]
-position = Vector2(1816, 327.5)
-scale = Vector2(7.10156, 2.52896)
+position = Vector2(1816, 164.5)
+scale = Vector2(7.10156, 3.78765)
 texture = SubResource("AtlasTexture_5i0tg")
 
 [node name="back_5" type="Parallax2D" parent="objects/background/landscape"]
@@ -246,8 +250,8 @@ scroll_scale = Vector2(0.9, 0.9)
 scroll_offset = Vector2(-666, 0)
 
 [node name="text_5" type="Sprite2D" parent="objects/background/landscape/back_5"]
-position = Vector2(2480.44, 327.5)
-scale = Vector2(7.09379, 2.52896)
+position = Vector2(2480.44, 47.0002)
+scale = Vector2(7.09379, 4.69498)
 texture = SubResource("AtlasTexture_bdhmt")
 
 [node name="wires_2" type="Sprite2D" parent="objects/background"]
@@ -285,7 +289,7 @@ scale = Vector2(4.5, 4.625)
 texture = SubResource("AtlasTexture_2a8rs")
 
 [node name="wires_8" type="Sprite2D" parent="objects/background"]
-position = Vector2(2713, 29)
+position = Vector2(2770, 54)
 scale = Vector2(4.5, 4.625)
 texture = SubResource("AtlasTexture_2a8rs")
 flip_h = true
@@ -302,6 +306,20 @@ scale = Vector2(4.72513, 4.72513)
 sprite_frames = SubResource("SpriteFrames_ftsea")
 autoplay = "default"
 
+[node name="tv_left_2" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(2651, 73)
+rotation = 0.187232
+scale = Vector2(2.75055, 2.75055)
+sprite_frames = SubResource("SpriteFrames_ftsea")
+autoplay = "default"
+
+[node name="tv_left_3" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(2560, 54)
+rotation = 0.187232
+scale = Vector2(2.08749, 2.08749)
+sprite_frames = SubResource("SpriteFrames_ftsea")
+autoplay = "default"
+
 [node name="tv_right" type="AnimatedSprite2D" parent="objects/background"]
 position = Vector2(424, 176)
 scale = Vector2(3.73284, 3.73284)
@@ -314,11 +332,64 @@ scale = Vector2(2.01525, 2.01525)
 sprite_frames = SubResource("SpriteFrames_otnwt")
 autoplay = "default"
 
+[node name="tv_right_3" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3570, 83)
+rotation = -0.294981
+scale = Vector2(3.73284, 3.73284)
+sprite_frames = SubResource("SpriteFrames_otnwt")
+autoplay = "default"
+
+[node name="tv_right_5" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3304, 145)
+rotation = -0.294981
+scale = Vector2(3.73284, 3.73284)
+sprite_frames = SubResource("SpriteFrames_otnwt")
+autoplay = "default"
+
+[node name="tv_right_6" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3439, 72.0001)
+rotation = -0.294981
+scale = Vector2(2.3271, 2.3271)
+sprite_frames = SubResource("SpriteFrames_otnwt")
+autoplay = "default"
+
+[node name="tv_right_7" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3439, 205)
+rotation = -0.294981
+scale = Vector2(2.3271, 2.3271)
+sprite_frames = SubResource("SpriteFrames_otnwt")
+autoplay = "default"
+
+[node name="tv_right_4" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(3575, 219)
+rotation = -0.294981
+scale = Vector2(2.01525, 2.01525)
+sprite_frames = SubResource("SpriteFrames_otnwt")
+autoplay = "default"
+
 [node name="tv_front" type="AnimatedSprite2D" parent="objects/background"]
 position = Vector2(584, 120)
 scale = Vector2(6.24533, 6.24533)
 sprite_frames = SubResource("SpriteFrames_3xj4h")
 autoplay = "default"
+
+[node name="tv_front_2" type="AnimatedSprite2D" parent="objects/background"]
+position = Vector2(2961, 209)
+scale = Vector2(6.24533, 6.24533)
+sprite_frames = SubResource("SpriteFrames_3xj4h")
+autoplay = "default"
+
+[node name="wires_10" type="Sprite2D" parent="objects/background"]
+position = Vector2(572, 542)
+rotation = 3.14159
+scale = Vector2(3.35174, 4.47299)
+texture = ExtResource("7_3xj4h")
+
+[node name="wires_11" type="Sprite2D" parent="objects/background"]
+position = Vector2(2966, 542)
+rotation = 3.14159
+scale = Vector2(3.35174, 4.47299)
+texture = ExtResource("7_3xj4h")
 
 [node name="platform" type="Node2D" parent="objects"]
 
@@ -359,18 +430,27 @@ z_index = 2
 
 [node name="station_5" parent="objects/physics/stations" instance=ExtResource("5_bdhmt")]
 position = Vector2(2607, 448)
+can_interacted = false
 
 [node name="station_8" parent="objects/physics/stations" instance=ExtResource("5_bdhmt")]
 position = Vector2(3313, 448)
+can_interacted = false
 
 [node name="station_6" parent="objects/physics/stations" instance=ExtResource("6_5i0tg")]
 position = Vector2(897, 454)
+can_interacted = false
 
 [node name="station_7" parent="objects/physics/stations" instance=ExtResource("6_5i0tg")]
 position = Vector2(276, 454)
+can_interacted = false
 
 [node name="station_1" parent="objects/physics/stations" instance=ExtResource("10_vaxfo")]
 position = Vector2(573, 449)
+can_interacted = false
+
+[node name="station_2" parent="objects/physics/stations" instance=ExtResource("11_ftsea")]
+position = Vector2(2961, 448)
+can_interacted = false
 
 [node name="platform" type="StaticBody2D" parent="objects/physics"]
 
@@ -387,7 +467,9 @@ position = Vector2(-36.5, 272)
 shape = SubResource("RectangleShape2D_0sr1o")
 
 [node name="player" parent="objects/physics" instance=ExtResource("3_0sr1o")]
-position = Vector2(1383, 472)
+z_index = 10
+z_as_relative = false
+position = Vector2(1506, 472)
 scale = Vector2(6, 6)
 can_move = true
 
@@ -401,6 +483,8 @@ limit_smoothed = true
 editor_draw_limits = true
 
 [node name="camera" parent="objects/physics" instance=ExtResource("11_5jirj")]
+z_index = 11
+z_as_relative = false
 position = Vector2(1915, 96)
 
 [node name="gui" type="Control" parent="."]

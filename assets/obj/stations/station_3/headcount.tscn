@@ -1,0 +1,314 @@
+[gd_scene load_steps=27 format=3 uid="uid://4lqlsboflbcf"]
+
+[ext_resource type="Texture2D" uid="uid://masmsjwlxj66" path="res://assets/obj/npc/idle.png" id="1_d3myp"]
+[ext_resource type="Script" uid="uid://kwv8morxhke" path="res://assets/obj/stations/station_3/headcount.gd" id="1_jrcrx"]
+[ext_resource type="Texture2D" uid="uid://vpcgreuc1mmb" path="res://assets/obj/npc/idle_red.png" id="2_vtcun"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtcun"]
+atlas = ExtResource("1_d3myp")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcrx"]
+atlas = ExtResource("1_d3myp")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgsdl"]
+atlas = ExtResource("1_d3myp")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek2np"]
+atlas = ExtResource("1_d3myp")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opnm"]
+atlas = ExtResource("1_d3myp")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_648do"]
+atlas = ExtResource("1_d3myp")
+region = Rect2(80, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fhtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtcun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrcrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgsdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek2np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_648do")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3myp"]
+size = Vector2(8, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fhtu"]
+atlas = ExtResource("2_vtcun")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0ssg"]
+atlas = ExtResource("2_vtcun")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u6hx"]
+atlas = ExtResource("2_vtcun")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyiud"]
+atlas = ExtResource("2_vtcun")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc7xk"]
+atlas = ExtResource("2_vtcun")
+region = Rect2(80, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epk0l"]
+atlas = ExtResource("2_vtcun")
+region = Rect2(96, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrkjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fhtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0ssg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u6hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyiud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc7xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epk0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_u3yay"]
+offsets = PackedFloat32Array(0, 0.166667, 0.865079, 1)
+colors = PackedColorArray(0, 0, 0, 0.933333, 0, 0, 0, 0.733276, 0, 0, 0, 0.034918, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jrcrx"]
+gradient = SubResource("Gradient_u3yay")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4opnm"]
+bg_color = Color(0.0534209, 0.0534209, 0.0534208, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_648do"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_rvmmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("progress_bar:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(51, 658.44)]
+}
+
+[sub_resource type="Animation" id="Animation_gcx18"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("progress_bar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(51, 668), Vector2(51, 585)]
+}
+
+[sub_resource type="Animation" id="Animation_bbj8b"]
+resource_name = "shake"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0572501, 0.186063, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(1, 0.0196078, 0.0196078, 1), Color(1, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fmn8"]
+_data = {
+&"RESET": SubResource("Animation_rvmmw"),
+&"intro": SubResource("Animation_gcx18"),
+&"shake": SubResource("Animation_bbj8b")
+}
+
+[node name="station" type="Area2D"]
+monitorable = false
+script = ExtResource("1_jrcrx")
+
+[node name="npc" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 0)
+sprite_frames = SubResource("SpriteFrames_6fhtu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="npc_2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-25, 0)
+sprite_frames = SubResource("SpriteFrames_6fhtu")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.199326
+
+[node name="npc_3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-38, 0)
+sprite_frames = SubResource("SpriteFrames_6fhtu")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.199326
+
+[node name="npc_5" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, 0)
+sprite_frames = SubResource("SpriteFrames_6fhtu")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.199326
+
+[node name="npc_6" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 0)
+sprite_frames = SubResource("SpriteFrames_6fhtu")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.199326
+
+[node name="npc_7" type="AnimatedSprite2D" parent="."]
+position = Vector2(36, 0)
+sprite_frames = SubResource("SpriteFrames_6fhtu")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.199326
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d3myp")
+
+[node name="highlight" type="AnimatedSprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.419608)
+sprite_frames = SubResource("SpriteFrames_hrkjk")
+autoplay = "default"
+
+[node name="timer" type="Timer" parent="."]
+
+[node name="task" type="CanvasLayer" parent="."]
+
+[node name="fade_2" type="ColorRect" parent="task"]
+z_index = -7
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 0)
+
+[node name="fade" type="TextureRect" parent="task"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_jrcrx")
+
+[node name="progress_bar" type="ProgressBar" parent="task"]
+z_index = 1
+offset_left = 51.0
+offset_top = 658.44
+offset_right = 1090.0
+offset_bottom = 685.44
+theme_override_styles/background = SubResource("StyleBoxFlat_4opnm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_648do")
+show_percentage = false
+
+[node name="ui_panel_animation" type="AnimationPlayer" parent="task"]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_5fmn8")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bytmy83qy612"]
+[gd_scene load_steps=47 format=3 uid="uid://bytmy83qy612"]
 
 [ext_resource type="Script" uid="uid://b7uvv2i452bx1" path="res://assets/obj/stations/station_1/station_11.gd" id="1_x27su"]
 [ext_resource type="Texture2D" uid="uid://cuyalntldllt1" path="res://assets/common/ui/movement_interact_buttons.png" id="2_h3644"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="7_yrgog"]
 [ext_resource type="Texture2D" uid="uid://if8tmnhe2who" path="res://assets/common/ui/lever.png" id="8_s5l3v"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="9_shit8"]
+[ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="11_mpy3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
 size = Vector2(192, 180)
@@ -278,6 +279,49 @@ region = Rect2(14, 0, 14, 31)
 atlas = ExtResource("8_s5l3v")
 region = Rect2(14, 0, 14, 31)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_daeqd"]
+atlas = ExtResource("11_mpy3f")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss1l4"]
+atlas = ExtResource("11_mpy3f")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w642k"]
+atlas = ExtResource("11_mpy3f")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qx00"]
+atlas = ExtResource("11_mpy3f")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1sb2"]
+atlas = ExtResource("11_mpy3f")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0mobi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daeqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss1l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w642k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qx00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1sb2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="station_1" type="Area2D"]
 monitorable = false
 script = ExtResource("1_x27su")
@@ -533,6 +577,15 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_shit8")
 expand_mode = 1
+
+[node name="highlight" type="AnimatedSprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.419608)
+z_index = 6
+position = Vector2(0, 21)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_0mobi")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dbvulrs8xbgp2"]
+[gd_scene load_steps=45 format=3 uid="uid://dbvulrs8xbgp2"]
 
 [ext_resource type="Script" uid="uid://db04fwy6nrjhs" path="res://assets/obj/stations/station_1/station_1.gd" id="1_b168l"]
 [ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="1_gvy64"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="5_bnhpa"]
 [ext_resource type="Texture2D" uid="uid://if8tmnhe2who" path="res://assets/common/ui/lever.png" id="6_yoj1l"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="9_6kc5b"]
+[ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="11_hk6gf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
 size = Vector2(192, 180)
@@ -263,6 +264,49 @@ region = Rect2(14, 0, 14, 31)
 [sub_resource type="AtlasTexture" id="AtlasTexture_eg2l4"]
 atlas = ExtResource("6_yoj1l")
 region = Rect2(14, 0, 14, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlucw"]
+atlas = ExtResource("11_hk6gf")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08blb"]
+atlas = ExtResource("11_hk6gf")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n14x4"]
+atlas = ExtResource("11_hk6gf")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4ons"]
+atlas = ExtResource("11_hk6gf")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx4ur"]
+atlas = ExtResource("11_hk6gf")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wg7em"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlucw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08blb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n14x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4ons")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx4ur")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="station_1" type="Area2D"]
 monitorable = false
@@ -518,6 +562,15 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("9_6kc5b")
 expand_mode = 1
+
+[node name="highlight" type="AnimatedSprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.419608)
+z_index = 6
+position = Vector2(0, 15)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_wg7em")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

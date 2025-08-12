@@ -49,6 +49,7 @@ func _leave() -> void:
 			if $task/ui_panel/ui_panel_animation.is_playing():
 				await $task/ui_panel/ui_panel_animation.animation_finished
 			$task/ui_panel/ui_panel_animation.play_backwards("intro")
+			$e/interact_animation.play_backwards("interact")
 			await $task/ui_panel/ui_panel_animation.animation_finished
 
 # Main logic.

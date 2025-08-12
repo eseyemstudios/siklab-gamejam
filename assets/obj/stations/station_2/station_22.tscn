@@ -1,8 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://bkd53rg632fjc"]
+[gd_scene load_steps=45 format=3 uid="uid://bkd53rg632fjc"]
 
-[ext_resource type="Script" uid="uid://bcf3hacoa3rxd" path="res://assets/obj/stations/station_2/station_2.gd" id="1_yya5o"]
+[ext_resource type="Script" uid="uid://04swmfdekwdl" path="res://assets/obj/stations/station_2/station_22.gd" id="1_yya5o"]
 [ext_resource type="Texture2D" uid="uid://cuyalntldllt1" path="res://assets/common/ui/movement_interact_buttons.png" id="2_hhgol"]
-[ext_resource type="Texture2D" uid="uid://dkda2frj64pkd" path="res://assets/obj/stations/station_2/station_2.png" id="3_mdxyy"]
+[ext_resource type="Texture2D" uid="uid://cuo3g6qib7s63" path="res://assets/obj/stations/station_2/station_22.png" id="3_hhgol"]
 [ext_resource type="Texture2D" uid="uid://onlwdkg1e77v" path="res://assets/common/vfx/light_2.png" id="4_tevho"]
 [ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="5_06lal"]
 [ext_resource type="Texture2D" uid="uid://di4lka2n12m7b" path="res://assets/common/ui/ui_screen.png" id="6_3xaee"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ctgqafj5vni17" path="res://assets/common/textures/circles.png" id="9_cqv6l"]
 [ext_resource type="Texture2D" uid="uid://de70hjnrjoiyd" path="res://assets/common/ui/circle_button.png" id="10_3ho51"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="11_yy1rk"]
+[ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="12_hhgol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
 size = Vector2(192, 176)
@@ -56,77 +57,77 @@ _data = {
 &"interact": SubResource("Animation_b168l")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbj8b"]
-atlas = ExtResource("3_mdxyy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdxyy"]
+atlas = ExtResource("3_hhgol")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_03eaf"]
-atlas = ExtResource("3_mdxyy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tevho"]
+atlas = ExtResource("3_hhgol")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvqq0"]
-atlas = ExtResource("3_mdxyy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_06lal"]
+atlas = ExtResource("3_hhgol")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iedbu"]
-atlas = ExtResource("3_mdxyy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xaee"]
+atlas = ExtResource("3_hhgol")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_86k2f"]
-atlas = ExtResource("3_mdxyy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpfc4"]
+atlas = ExtResource("3_hhgol")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7m0f"]
-atlas = ExtResource("3_mdxyy")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkuw4"]
+atlas = ExtResource("3_hhgol")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wefsd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cqv6l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bbj8b")
+"texture": SubResource("AtlasTexture_mdxyy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_03eaf")
+"texture": SubResource("AtlasTexture_tevho")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uvqq0")
+"texture": SubResource("AtlasTexture_06lal")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iedbu")
+"texture": SubResource("AtlasTexture_3xaee")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_86k2f")
+"texture": SubResource("AtlasTexture_hpfc4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r7m0f")
+"texture": SubResource("AtlasTexture_jkuw4")
 }],
 "loop": false,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_u3yay"]
+[sub_resource type="Gradient" id="Gradient_hhgol"]
 offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_pphws"]
-gradient = SubResource("Gradient_u3yay")
+gradient = SubResource("Gradient_hhgol")
 width = 128
 height = 128
 use_hdr = true
 fill_from = Vector2(1, 0.422414)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2xvfm"]
-atlas = ExtResource("3_mdxyy")
-region = Rect2(160, 0, 32, 30)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kc5b"]
 bg_color = Color(0.0534209, 0.0534209, 0.0534208, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m81lr"]
 bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yya5o"]
+atlas = ExtResource("3_hhgol")
+region = Rect2(160, 0, 32, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wefsd"]
 atlas = ExtResource("9_cqv6l")
@@ -155,50 +156,50 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ui_panel:position")
+tracks/0/path = NodePath("fade_2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(570, 685)]
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("fade:modulate")
+tracks/1/path = NodePath("fade:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ui_panel/ui_screen:position")
+tracks/2/path = NodePath("ui_panel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(0.5),
 "update": 0,
-"values": [Vector2(56, 13)]
+"values": [Vector2(570, 685)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("fade_2:color")
+tracks/3/path = NodePath("ui_panel/ui_screen:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(0.5),
 "update": 0,
-"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
+"values": [Vector2(56, 25)]
 }
 
 [sub_resource type="Animation" id="Animation_gcx18"]
@@ -206,26 +207,26 @@ resource_name = "intro"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ui_panel:position")
+tracks/0/path = NodePath("fade:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667, 1),
-"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
-"values": [Vector2(570, 685), Vector2(570, 247), Vector2(570, 268.975)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("fade:modulate")
+tracks/1/path = NodePath("ui_panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.766667, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(570, 685), Vector2(570, 247), Vector2(570, 268.975)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -246,29 +247,29 @@ length = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ui_panel:position")
+tracks/0/path = NodePath("fade_2:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.247742),
-"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5),
-"update": 0,
-"values": [Vector2(570, 268.975), Vector2(597, 272), Vector2(567, 259), Vector2(630, 284), Vector2(570, 268.975)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("fade_2:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0572501, 0.186063, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(1, 0.0196078, 0.0196078, 1), Color(1, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ui_panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.247742),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(570, 268.975), Vector2(597, 272), Vector2(567, 259), Vector2(630, 284), Vector2(570, 268.975)]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_77brv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhgol"]
 _data = {
 &"RESET": SubResource("Animation_rvmmw"),
 &"intro": SubResource("Animation_gcx18"),
@@ -282,6 +283,49 @@ region = Rect2(0, 0, 32, 31)
 [sub_resource type="AtlasTexture" id="AtlasTexture_atdf7"]
 atlas = ExtResource("10_3ho51")
 region = Rect2(32, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqv6l"]
+atlas = ExtResource("12_hhgol")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ho51"]
+atlas = ExtResource("12_hhgol")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy1rk"]
+atlas = ExtResource("12_hhgol")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f667"]
+atlas = ExtResource("12_hhgol")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1pmd"]
+atlas = ExtResource("12_hhgol")
+region = Rect2(64, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdxyy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqv6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ho51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy1rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f667")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1pmd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="station_2" type="Area2D"]
 monitorable = false
@@ -306,11 +350,11 @@ libraries = {
 [node name="tutorial_station" type="AnimatedSprite2D" parent="."]
 z_index = -2
 scale = Vector2(6, 6)
-sprite_frames = SubResource("SpriteFrames_wefsd")
+sprite_frames = SubResource("SpriteFrames_cqv6l")
 
 [node name="light_6" type="Sprite2D" parent="tutorial_station"]
 self_modulate = Color(1, 0, 0, 0.345098)
-position = Vector2(0, -4.16667)
+position = Vector2(0.166667, 1.33333)
 scale = Vector2(0.17432, 0.164154)
 texture = ExtResource("4_tevho")
 
@@ -349,16 +393,26 @@ texture = ExtResource("5_06lal")
 z_index = -1
 layout_mode = 0
 offset_left = 56.0
-offset_top = 13.0
+offset_top = 25.0
 offset_right = 493.0
-offset_bottom = 231.0
+offset_bottom = 243.0
 texture = ExtResource("6_3xaee")
+
+[node name="progress_bar" type="ProgressBar" parent="task/ui_panel/ui_screen"]
+z_index = 1
+offset_left = -48.0
+offset_top = 521.025
+offset_right = 484.0
+offset_bottom = 548.025
+theme_override_styles/background = SubResource("StyleBoxFlat_6kc5b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m81lr")
+show_percentage = false
 
 [node name="tutorial_station" type="Sprite2D" parent="task/ui_panel/ui_screen"]
 z_index = -2
 position = Vector2(-327, 324.119)
 scale = Vector2(18.6309, 18.6309)
-texture = SubResource("AtlasTexture_2xvfm")
+texture = SubResource("AtlasTexture_yya5o")
 
 [node name="wires" type="TextureRect" parent="task/ui_panel/ui_screen"]
 z_index = -1
@@ -368,17 +422,6 @@ offset_top = 200.0
 offset_right = 430.0
 offset_bottom = 256.0
 texture = ExtResource("7_hpfc4")
-
-[node name="progress_bar" type="ProgressBar" parent="task/ui_panel/ui_screen"]
-z_index = 1
-layout_mode = 0
-offset_left = -49.0
-offset_top = 511.0
-offset_right = 483.0
-offset_bottom = 538.0
-theme_override_styles/background = SubResource("StyleBoxFlat_6kc5b")
-theme_override_styles/fill = SubResource("StyleBoxFlat_m81lr")
-show_percentage = false
 
 [node name="screen_text" type="Label" parent="task/ui_panel/ui_screen"]
 layout_mode = 0
@@ -413,7 +456,7 @@ sprite_frames = SubResource("SpriteFrames_bj7c4")
 root_node = NodePath("../..")
 callback_mode_process = 0
 libraries = {
-&"": SubResource("AnimationLibrary_77brv")
+&"": SubResource("AnimationLibrary_hhgol")
 }
 
 [node name="button" type="TextureButton" parent="task/ui_panel"]
@@ -465,6 +508,15 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("11_yy1rk")
 expand_mode = 1
+
+[node name="highlight" type="AnimatedSprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.419608)
+z_index = 6
+position = Vector2(0, 21)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_mdxyy")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
