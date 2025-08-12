@@ -29,7 +29,7 @@ func _on_play_pressed() -> void:
 func _tutorial_manager() -> void:
 	# Sequence changes.
 	if _count == 0: 
-		create_tween().tween_property($gui/logo_sticky/logo_animation/main_pa, "volume_db", -20, 2)
+		create_tween().tween_property($gui/logo_sticky/logo_animation/main_pa, "volume_db", -40, 2)
 	elif _count == 5:
 		$objects/physics/player/button_animation.play("show_buttons")
 		$objects/physics/player.can_move = true

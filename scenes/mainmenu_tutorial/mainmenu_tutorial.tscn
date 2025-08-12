@@ -2142,8 +2142,7 @@ libraries = {
 }
 
 [node name="tutorial_pa" type="AudioStreamPlayer" parent="game_animation"]
-volume_db = -15.0
-max_polyphony = 2
+volume_db = -20.0
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(576, -2500)
@@ -2279,7 +2278,7 @@ position = Vector2(2816, 449)
 can_interacted = false
 
 [node name="station_1" parent="objects/environment/background" instance=ExtResource("50_j0834")]
-z_index = 2
+z_index = 3
 position = Vector2(583, 446)
 can_interacted = false
 
@@ -3525,6 +3524,7 @@ polygon = PackedVector2Array(5.28693, 4.6261, 992.296, -186.035, 987.339, 273.27
 [node name="drone_sfx" type="AudioStreamPlayer2D" parent="objects/environment/foreground/drone/drone"]
 rotation = 3.14159
 stream = ExtResource("12_dp0uh")
+volume_db = -10.0
 max_distance = 1500.0
 
 [node name="drone_2" type="Sprite2D" parent="objects/environment/foreground/drone"]
@@ -3541,6 +3541,7 @@ polygon = PackedVector2Array(5.28693, 4.6261, 450.684, -62.453, 419.222, 109.439
 [node name="drone_sfx" type="AudioStreamPlayer2D" parent="objects/environment/foreground/drone/drone_2"]
 rotation = 3.14159
 stream = ExtResource("12_dp0uh")
+volume_db = -10.0
 max_distance = 1500.0
 
 [node name="light" type="Sprite2D" parent="objects/environment/foreground"]
@@ -3903,6 +3904,7 @@ offset_bottom = 256.0
 texture = ExtResource("3_5rooo")
 
 [node name="screen_text" type="Label" parent="gui/task/ui_panel/ui_screen"]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 22.0
 offset_right = 414.0
