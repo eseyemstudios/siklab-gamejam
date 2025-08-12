@@ -878,27 +878,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwxt4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8krtj"]
 atlas = ExtResource("6_003fc")
 region = Rect2(0, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ln8l6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fydea"]
 atlas = ExtResource("6_003fc")
 region = Rect2(32, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mtgiv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_af6p5"]
 atlas = ExtResource("6_003fc")
 region = Rect2(64, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8r3cy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mumkj"]
 atlas = ExtResource("6_003fc")
 region = Rect2(96, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dav1i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vph8"]
 atlas = ExtResource("6_003fc")
 region = Rect2(128, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qla1x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gkf7"]
 atlas = ExtResource("6_003fc")
 region = Rect2(160, 0, 32, 48)
 
@@ -906,22 +906,22 @@ region = Rect2(160, 0, 32, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iwxt4")
+"texture": SubResource("AtlasTexture_8krtj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ln8l6")
+"texture": SubResource("AtlasTexture_fydea")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mtgiv")
+"texture": SubResource("AtlasTexture_af6p5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8r3cy")
+"texture": SubResource("AtlasTexture_mumkj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dav1i")
+"texture": SubResource("AtlasTexture_2vph8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qla1x")
+"texture": SubResource("AtlasTexture_0gkf7")
 }],
 "loop": true,
 "name": &"default",
@@ -3760,13 +3760,13 @@ autoplay = "intro"
 
 [node name="main_pa" type="AudioStreamPlayer" parent="gui/logo_sticky/logo_animation"]
 stream = ExtResource("4_y6dqa")
-volume_db = 1.5
+volume_db = -10.0
 bus = &"Propaganda"
 
 [node name="walk_sfx" type="AudioStreamPlayer2D" parent="gui/logo_sticky/logo_animation"]
 position = Vector2(592, -1047)
 stream = ExtResource("5_lln6m")
-volume_db = -5.0
+volume_db = -15.0
 max_distance = 1500.0
 
 [node name="menu" type="CanvasLayer" parent="gui"]
@@ -3900,21 +3900,6 @@ offset_top = 200.0
 offset_right = 430.0
 offset_bottom = 256.0
 texture = ExtResource("3_5rooo")
-
-[node name="screen_text" type="Label" parent="gui/task/ui_panel/ui_screen"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 22.0
-offset_right = 414.0
-offset_bottom = 196.0
-theme_override_fonts/font = ExtResource("25_rvmmw")
-theme_override_font_sizes/font_size = 51
-text = "Press ALL THE LEVERS.
-EFFICIENT PRESSING IS A MUST."
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-uppercase = true
 
 [node name="ui_panel_animation" type="AnimationPlayer" parent="gui/task/ui_panel"]
 root_node = NodePath("../..")
@@ -4096,6 +4081,20 @@ mouse_filter = 2
 texture = ExtResource("16_1xkwi")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="screen_text" type="Label" parent="gui/fx"]
+offset_left = 649.0
+offset_top = 720.0
+offset_right = 1040.0
+offset_bottom = 894.0
+theme_override_fonts/font = ExtResource("25_rvmmw")
+theme_override_font_sizes/font_size = 51
+text = "Press ALL THE LEVERS.
+EFFICIENT PRESSING IS A MUST."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
 
 [connection signal="body_entered" from="objects/physics/tutorial/anchor/highlight/checker" to="." method="_on_checker_body_entered"]
 [connection signal="body_exited" from="objects/physics/tutorial/anchor/highlight/checker" to="." method="_on_checker_body_exited"]

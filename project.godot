@@ -24,6 +24,7 @@ boot_splash/defaults/default_clear_color=Color(0.960784, 0.960784, 0.960784, 1)
 window/size/resizable=false
 window/size/borderless=true
 window/size/always_on_top=true
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=2
 
 [editor]

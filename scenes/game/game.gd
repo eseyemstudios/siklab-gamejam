@@ -96,8 +96,9 @@ func _update_saturation() -> void:
 
 # Ending functions (implement these yourself)
 func _trigger_compliance_ending() -> void:
-	print("Ending: Compliance - You drowned in monotony.")
-	# TODO: show message, fade out, end game
+	$game_animation.play("compliance")
+	await $game_animation.animation_finished
+	get_tree().change_scene_to_file("res://scenes/mainmenu_tutorial/mainmenu_tutorial.tscn")
 
 func _trigger_caught_ending() -> void:
 	print("Ending: Caught - Surveillance consumed you.")

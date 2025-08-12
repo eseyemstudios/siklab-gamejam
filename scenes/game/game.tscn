@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=85 format=3 uid="uid://n1eoac3rraic"]
 
 [ext_resource type="Script" uid="uid://q68tph2ji6rt" path="res://scenes/game/game.gd" id="1_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
@@ -23,8 +23,10 @@
 [ext_resource type="AudioStream" uid="uid://vxka4glbaevy" path="res://assets/common/sfx/public_announcements/propaganda/PA2.wav" id="20_3jaai"]
 [ext_resource type="Texture2D" uid="uid://br0w60eqetm0d" path="res://assets/common/ui/next_button.png" id="20_h48ew"]
 [ext_resource type="AudioStream" uid="uid://mm4he6cuvaqb" path="res://assets/common/sfx/public_announcements/propaganda/PA3.wav" id="21_1iff4"]
+[ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="21_fty5b"]
 [ext_resource type="AudioStream" uid="uid://x6j4y7cugf8u" path="res://assets/common/sfx/public_announcements/propaganda/PA4.wav" id="22_4vuph"]
 [ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="22_8b66f"]
+[ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="22_h48ew"]
 [ext_resource type="AudioStream" uid="uid://by5hrnigkjec1" path="res://assets/common/sfx/public_announcements/tutorial/comply.wav" id="26_wdnak"]
 
 [sub_resource type="Environment" id="Environment_8b66f"]
@@ -405,6 +407,56 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("20_h48ew")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8krtj"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fydea"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af6p5"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mumkj"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vph8"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gkf7"]
+atlas = ExtResource("6_vaxfo")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ehwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8krtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fydea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af6p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mumkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vph8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gkf7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_wdnak"]
 resource_name = "sound"
 length = 120.0
@@ -525,10 +577,99 @@ tracks/1/keys = {
 "update": 0,
 "values": [-20.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("world_environment:environment:adjustment_brightness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("world_environment:environment:adjustment_saturation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gui/fx/fade/compliance:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fty5b"]
+resource_name = "compliance"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("world_environment:environment:adjustment_brightness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("world_environment:environment:adjustment_saturation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/fade/compliance:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1iff4"]
 _data = {
 &"RESET": SubResource("Animation_3jaai"),
+&"compliance": SubResource("Animation_fty5b"),
 &"fade": SubResource("Animation_8b66f")
 }
 
@@ -962,6 +1103,88 @@ stretch_mode = 0
 [node name="fx" type="CanvasLayer" parent="gui"]
 layer = 10
 
+[node name="vignette" type="TextureRect" parent="gui/fx"]
+self_modulate = Color(1, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("21_fty5b")
+expand_mode = 1
+
+[node name="tv_front" type="AnimatedSprite2D" parent="gui/fx/vignette"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(576.75, 322.75)
+scale = Vector2(38.5157, 14.0729)
+sprite_frames = SubResource("SpriteFrames_6ehwc")
+autoplay = "default"
+
+[node name="deviation" type="Label" parent="gui/fx/vignette"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 34.0
+offset_bottom = 515.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_h48ew")
+theme_override_font_sizes/font_size = 451
+text = "DEVIATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="desc" type="Label" parent="gui/fx/vignette"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 6
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 444.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_h48ew")
+theme_override_font_sizes/font_size = 191
+text = "YOU MUST BE PROPER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="fade" type="ColorRect" parent="gui/fx"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[node name="compliance" type="Label" parent="gui/fx/fade"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 1135.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("22_h48ew")
+theme_override_font_sizes/font_size = 81
+text = "You did everything they asked.  
+
+The world fades to grey.  
+
+And you disappear into the routine."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
 [node name="noise" type="TextureRect" parent="gui/fx"]
 self_modulate = Color(1, 1, 1, 0.0980392)
 z_index = 10
@@ -976,15 +1199,6 @@ mouse_filter = 2
 texture = ExtResource("8_87uf6")
 expand_mode = 1
 metadata/_edit_lock_ = true
-
-[node name="fade" type="ColorRect" parent="gui/fx"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 
 [node name="PA" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
