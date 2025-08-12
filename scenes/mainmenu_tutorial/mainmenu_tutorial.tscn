@@ -1985,12 +1985,12 @@ region = Rect2(0, 0, 14, 31)
 atlas = ExtResource("41_04f3a")
 region = Rect2(14, 0, 14, 31)
 
-[sub_resource type="Gradient" id="Gradient_u3yay"]
+[sub_resource type="Gradient" id="Gradient_j0834"]
 offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1xkwi"]
-gradient = SubResource("Gradient_u3yay")
+gradient = SubResource("Gradient_j0834")
 width = 128
 height = 128
 use_hdr = true

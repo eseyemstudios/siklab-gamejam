@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://n1eoac3rraic"]
+[gd_scene load_steps=75 format=3 uid="uid://n1eoac3rraic"]
 
 [ext_resource type="Script" uid="uid://q68tph2ji6rt" path="res://scenes/game/game.gd" id="1_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://b5tn8hgp2stwq" path="res://assets/common/textures/background2.png" id="1_7h61r"]
@@ -18,10 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://bytmy83qy612" path="res://assets/obj/stations/station_1/station_11.tscn" id="10_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://cf5k6msb0mbp" path="res://assets/obj/camera/camera.tscn" id="11_5jirj"]
 [ext_resource type="PackedScene" uid="uid://bkd53rg632fjc" path="res://assets/obj/stations/station_2/station_22.tscn" id="11_ftsea"]
+[ext_resource type="Script" uid="uid://bkp1u1q7po8p6" path="res://scenes/mainmenu_tutorial/scr/dialog.gd" id="18_4vuph"]
+[ext_resource type="FontFile" uid="uid://clfg4nisvbn5s" path="res://assets/common/fonts/bstyle/BStyle_R.ttf" id="19_wdnak"]
 [ext_resource type="AudioStream" uid="uid://vxka4glbaevy" path="res://assets/common/sfx/public_announcements/propaganda/PA2.wav" id="20_3jaai"]
+[ext_resource type="Texture2D" uid="uid://br0w60eqetm0d" path="res://assets/common/ui/next_button.png" id="20_h48ew"]
 [ext_resource type="AudioStream" uid="uid://mm4he6cuvaqb" path="res://assets/common/sfx/public_announcements/propaganda/PA3.wav" id="21_1iff4"]
 [ext_resource type="AudioStream" uid="uid://x6j4y7cugf8u" path="res://assets/common/sfx/public_announcements/propaganda/PA4.wav" id="22_4vuph"]
 [ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="22_8b66f"]
+[ext_resource type="AudioStream" uid="uid://by5hrnigkjec1" path="res://assets/common/sfx/public_announcements/tutorial/comply.wav" id="26_wdnak"]
 
 [sub_resource type="Environment" id="Environment_8b66f"]
 background_mode = 3
@@ -248,6 +252,159 @@ size = Vector2(3632, 112)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0sr1o"]
 size = Vector2(73, 544)
 
+[sub_resource type="Gradient" id="Gradient_u3yay"]
+offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fty5b"]
+gradient = SubResource("Gradient_u3yay")
+width = 128
+height = 128
+use_hdr = true
+fill_from = Vector2(0.965517, 0)
+fill_to = Vector2(1, 0.347701)
+
+[sub_resource type="Animation" id="Animation_dav1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("skip:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8r3cy"]
+resource_name = "show_dialog"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.03333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.573333, 1.03333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dialog:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.03333, 2),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("skip:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qla1x"]
+_data = {
+&"RESET": SubResource("Animation_dav1i"),
+&"show_dialog": SubResource("Animation_8r3cy")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2dhg"]
+atlas = ExtResource("20_h48ew")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_firvq"]
+atlas = ExtResource("20_h48ew")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="Animation" id="Animation_wdnak"]
 resource_name = "sound"
 length = 120.0
@@ -287,7 +444,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_8b66f"]
 resource_name = "fade"
-length = 2.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -299,6 +456,47 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/gameplay/dialog_fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.93333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Look around to know where you should comply. It will have a distinct glow to it."],
+"method": &"dialog"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("instruction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("26_wdnak")
+}],
+"times": PackedFloat32Array(0.566667)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PA:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.93333, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-30.0, -30.0, -10.0]
 }
 
 [sub_resource type="Animation" id="Animation_3jaai"]
@@ -314,6 +512,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.0196078, 0.0196078, 0.0196078, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PA:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1iff4"]
@@ -674,7 +884,6 @@ z_index = 10
 z_as_relative = false
 position = Vector2(1506, 472)
 scale = Vector2(6, 6)
-can_move = true
 
 [node name="camera" type="Camera2D" parent="objects/physics/player"]
 position = Vector2(62.8333, -22.1667)
@@ -701,6 +910,54 @@ offset_right = -8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="gameplay" type="CanvasLayer" parent="gui"]
+
+[node name="dialog_fade" type="TextureRect" parent="gui/gameplay"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_fty5b")
+script = ExtResource("18_4vuph")
+
+[node name="dialog" type="Label" parent="gui/gameplay/dialog_fade"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 43.0
+offset_top = 47.0
+offset_right = -182.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("19_wdnak")
+theme_override_font_sizes/font_size = 41
+text = "Lorem"
+autowrap_mode = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="dialog_animation" type="AnimationPlayer" parent="gui/gameplay/dialog_fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_qla1x")
+}
+
+[node name="skip" type="TextureButton" parent="gui/gameplay/dialog_fade"]
+visible = false
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 50.0
+offset_right = 1103.0
+offset_bottom = 88.0
+disabled = true
+texture_normal = SubResource("AtlasTexture_l2dhg")
+texture_hover = SubResource("AtlasTexture_firvq")
+stretch_mode = 0
 
 [node name="fx" type="CanvasLayer" parent="gui"]
 layer = 10
@@ -730,7 +987,7 @@ mouse_filter = 2
 color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 
 [node name="PA" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
+volume_db = -20.0
 bus = &"Propaganda"
 
 [node name="PA_animation" type="AnimationPlayer" parent="PA"]
@@ -744,8 +1001,14 @@ stream = ExtResource("22_8b66f")
 volume_db = -15.0
 autoplay = true
 
+[node name="instruction" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+autoplay = true
+
 [node name="game_animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_1iff4")
 }
 autoplay = "fade"
+
+[connection signal="pressed" from="gui/gameplay/dialog_fade/skip" to="gui/gameplay/dialog_fade" method="_on_skip_pressed"]

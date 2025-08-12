@@ -4,8 +4,13 @@ var _tasklist: Array[Area2D] = []
 var _current_task: Area2D = null
 var _last_task: Area2D = null
 
-var routine_task_count := 0
+
+const MAX_FAIL_BEFORE_CAUGHT := 3
+const DEFIANCE_FAIL_THRESHOLD := 5
 const MAX_TASKS := 10
+var routine_task_count := 0
+var fail_count := 0
+var defiance_active := false
 
 @onready var _env: Environment = $world_environment.environment
 
@@ -16,9 +21,14 @@ func _ready() -> void:
 			_task.connect("success", Callable(self, "_on_task_success"))
 			_task.connect("failed", Callable(self, "_on_task_failed"))
 	
+	$gui/gameplay/dialog_fade.connect("next", Callable(self, "_enable_movement"))
+	
 	$objects/physics/camera.start_watching($objects/physics/player)
 	_shuffle_task_positions()
 	_select_task()
+
+func _enable_movement() -> void:
+	$objects/physics/player.can_move = true
 
 func _shuffle_task_positions() -> void:
 	var positions := []
@@ -48,26 +58,51 @@ func _select_task() -> void:
 	if _current_task.has_method("start_task"):
 		_current_task.start_task(5.0)
 
-#---------------------------------------------------------------
 func _on_task_success() -> void:
 	$objects/physics/camera.finish_task()
 	routine_task_count = clamp(routine_task_count + 1, 0, MAX_TASKS)
+	fail_count = 0  # reset fail streak on success
 	_update_saturation()
-	_select_task()
+
+	if routine_task_count >= MAX_TASKS:
+		_trigger_compliance_ending()
+	else:
+		_select_task()
 
 func _on_task_failed() -> void:
-	if $objects/physics/camera.state == $objects/physics/camera.CameraState.PATROL:
-		$objects/physics/camera.start_watching($objects/physics/player)
-	elif $objects/physics/camera.state == $objects/physics/camera.CameraState.WATCH:
-		print("Warning")
+	fail_count += 1
 	
-	routine_task_count = clamp(routine_task_count - 1, 0, MAX_TASKS)
+	var camera_state = $objects/physics/camera.state
+	if camera_state == $objects/physics/camera.CameraState.PATROL:
+		$objects/physics/camera.start_watching($objects/physics/player)
+	elif camera_state == $objects/physics/camera.CameraState.WATCH:
+		# Player caught by camera due to fail
+		if fail_count >= MAX_FAIL_BEFORE_CAUGHT:
+			_trigger_caught_ending()
+	
 	_update_saturation()
-
-#---------------------------------------------------------------
+	routine_task_count = clamp(routine_task_count - 1, 0, MAX_TASKS)
+	
+	# Defiance condition: fails without being caught repeatedly
+	if camera_state != $objects/physics/camera.CameraState.WATCH and fail_count >= DEFIANCE_FAIL_THRESHOLD and not defiance_active:
+		defiance_active = true
+		_trigger_defiance_ending()
 
 func _update_saturation() -> void:
 	var t = float(routine_task_count) / MAX_TASKS
 	_env.adjustment_enabled = true
 	_env.adjustment_saturation = lerp(1.0, 0.0, t)
 	_env.adjustment_brightness = lerp(1.0, 0.0, t)
+
+# Ending functions (implement these yourself)
+func _trigger_compliance_ending() -> void:
+	print("Ending: Compliance - You drowned in monotony.")
+	# TODO: show message, fade out, end game
+
+func _trigger_caught_ending() -> void:
+	print("Ending: Caught - Surveillance consumed you.")
+	# TODO: show message, alarm sounds, end game
+
+func _trigger_defiance_ending() -> void:
+	print("Ending: Defiance - You broke the cycle!")
+	# TODO: restore saturation, show message, play uplifting audio, end game
