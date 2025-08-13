@@ -493,18 +493,6 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("20_h48ew")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyhjx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41gcl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5q2xh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sikks"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ah1mj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5owt"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8krtj"]
 atlas = ExtResource("6_vaxfo")
 region = Rect2(0, 0, 32, 48)
@@ -640,6 +628,18 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyhjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41gcl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5q2xh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sikks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ah1mj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5owt"]
 
 [sub_resource type="Animation" id="Animation_h48ew"]
 length = 0.001
@@ -1187,31 +1187,31 @@ tracks/41/keys = {
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("gui/fx/fade/paused:self_modulate")
+tracks/42/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [0]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("gui/fx/fade/paused/menu:self_modulate")
+tracks/43/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [0]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("gui/fx/fade/paused/continue:self_modulate")
+tracks/44/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
@@ -1223,26 +1223,26 @@ tracks/44/keys = {
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("gui/fx/fade/paused/menu:mouse_filter")
+tracks/45/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("gui/fx/fade/paused/continue:mouse_filter")
+tracks/46/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_fty5b"]
@@ -2066,7 +2066,7 @@ resource_name = "pause"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/path = NodePath("gui/fx/pause_fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -2078,31 +2078,31 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gui/fx/fade/paused:self_modulate")
+tracks/1/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.958333),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [2, 0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("gui/fx/fade/paused/menu:self_modulate")
+tracks/2/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.50637, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [2, 0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("gui/fx/fade/paused/continue:self_modulate")
+tracks/3/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -2114,26 +2114,26 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("gui/fx/fade/paused/menu:mouse_filter")
+tracks/4/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.50637, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 0]
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("gui/fx/fade/paused/continue:mouse_filter")
+tracks/5/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.958333),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 0]
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_sikks"]
@@ -2142,43 +2142,43 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/path = NodePath("gui/fx/pause_fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.0196078, 0.0196078, 0.0196078, 1)]
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gui/fx/fade/paused:self_modulate")
+tracks/1/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("gui/fx/fade/paused/menu:self_modulate")
+tracks/2/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("gui/fx/fade/paused/continue:self_modulate")
+tracks/3/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -2190,26 +2190,26 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("gui/fx/fade/paused/menu:mouse_filter")
+tracks/4/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("gui/fx/fade/paused/continue:mouse_filter")
+tracks/5/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tyhjx"]
@@ -2742,56 +2742,6 @@ vertical_alignment = 1
 clip_text = true
 uppercase = true
 
-[node name="paused" type="Label" parent="gui/fx/fade"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 23.0
-offset_top = 22.0
-offset_right = 1135.0
-offset_bottom = 640.0
-theme_override_fonts/font = ExtResource("22_h48ew")
-theme_override_font_sizes/font_size = 81
-text = "Paused
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-uppercase = true
-
-[node name="continue" type="Button" parent="gui/fx/fade/paused"]
-process_mode = 2
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 511.0
-offset_top = 305.0
-offset_right = 596.0
-offset_bottom = 352.0
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("19_wdnak")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tyhjx")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_41gcl")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_5q2xh")
-text = "continue"
-flat = true
-
-[node name="menu" type="Button" parent="gui/fx/fade/paused"]
-process_mode = 2
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 502.0
-offset_top = 355.0
-offset_right = 608.0
-offset_bottom = 402.0
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("19_wdnak")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sikks")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ah1mj")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_t5owt")
-text = "main menu"
-flat = true
-
 [node name="vignette" type="TextureRect" parent="gui/fx"]
 self_modulate = Color(1, 0, 0, 0)
 z_index = 1
@@ -2935,6 +2885,66 @@ scale = Vector2(6.56657, 6.56657)
 sprite_frames = SubResource("SpriteFrames_uw24m")
 autoplay = "default"
 
+[node name="pause_fade" type="ColorRect" parent="gui/fx"]
+z_index = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 0)
+
+[node name="paused" type="Label" parent="gui/fx/pause_fade"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 22.0
+offset_right = 1135.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("22_h48ew")
+theme_override_font_sizes/font_size = 81
+text = "Paused
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="continue" type="Button" parent="gui/fx/pause_fade/paused"]
+process_mode = 2
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 511.0
+offset_top = 305.0
+offset_right = 596.0
+offset_bottom = 352.0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_wdnak")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tyhjx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_41gcl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5q2xh")
+text = "continue"
+flat = true
+
+[node name="menu" type="Button" parent="gui/fx/pause_fade/paused"]
+process_mode = 2
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 502.0
+offset_top = 355.0
+offset_right = 608.0
+offset_bottom = 402.0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("19_wdnak")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sikks")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ah1mj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t5owt")
+text = "main menu"
+flat = true
+
 [node name="noise" type="TextureRect" parent="gui/fx"]
 self_modulate = Color(1, 1, 1, 0.0980392)
 z_index = 10
@@ -2992,8 +3002,8 @@ libraries = {
 }
 
 [connection signal="pressed" from="gui/gameplay/dialog_fade/skip" to="gui/gameplay/dialog_fade" method="_on_skip_pressed"]
-[connection signal="pressed" from="gui/fx/fade/paused/continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="gui/fx/fade/paused/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="gui/fx/pause_fade/paused/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="gui/fx/pause_fade/paused/menu" to="." method="_on_menu_pressed"]
 
 [editable path="objects/background/decoys/decoy_npc_6"]
 [editable path="objects/physics/camera"]
