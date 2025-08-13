@@ -1,10 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://dbvulrs8xbgp2"]
+[gd_scene load_steps=58 format=3 uid="uid://dbvulrs8xbgp2"]
 
 [ext_resource type="Script" uid="uid://db04fwy6nrjhs" path="res://assets/obj/stations/station_1/station_1.gd" id="1_b168l"]
 [ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="1_gvy64"]
 [ext_resource type="Texture2D" uid="uid://cuyalntldllt1" path="res://assets/common/ui/movement_interact_buttons.png" id="1_wpubl"]
 [ext_resource type="Texture2D" uid="uid://coa02cijdor2m" path="res://assets/obj/stations/station_1/station_1.png" id="1_xf5h8"]
 [ext_resource type="Texture2D" uid="uid://di4lka2n12m7b" path="res://assets/common/ui/ui_screen.png" id="2_xf5h8"]
+[ext_resource type="Texture2D" uid="uid://btddbp8kgvsf0" path="res://assets/obj/stations/station_1/station_1_broken.png" id="3_k54v6"]
 [ext_resource type="Texture2D" uid="uid://onlwdkg1e77v" path="res://assets/common/vfx/light_2.png" id="4_m81lr"]
 [ext_resource type="Texture2D" uid="uid://cqs4y0csjeu16" path="res://assets/common/textures/wires2.png" id="4_q18rl"]
 [ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="5_bnhpa"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="11_hk6gf"]
 [ext_resource type="AudioStream" uid="uid://dyyq8lpk47mtp" path="res://assets/common/sfx/alarm/244932__kwahmah_02__short-buzzer.wav" id="12_wg7em"]
 [ext_resource type="AudioStream" uid="uid://3kyj4xb52e1f" path="res://assets/common/sfx/button/lever.mp3" id="13_gbb6g"]
+[ext_resource type="AudioStream" uid="uid://bmdkx1fc37si3" path="res://assets/common/sfx/cinematics/buzz.wav" id="15_m3ruv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
 size = Vector2(192, 180)
@@ -58,6 +60,38 @@ _data = {
 &"interact": SubResource("Animation_b168l")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vty3d"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(0, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwalx"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(32, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuv3y"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(64, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj42r"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(96, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32a54"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(128, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txi6g"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(160, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd87m"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(192, 0, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5hv6"]
+atlas = ExtResource("3_k54v6")
+region = Rect2(224, 0, 32, 30)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fy3if"]
 atlas = ExtResource("1_xf5h8")
 region = Rect2(0, 0, 32, 30)
@@ -86,6 +120,35 @@ region = Rect2(160, 0, 32, 30)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vty3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwalx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuv3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj42r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32a54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txi6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd87m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5hv6")
+}],
+"loop": false,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fy3if")
 }, {
 "duration": 1.0,
@@ -108,12 +171,16 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_u3yay"]
+[sub_resource type="Gradient" id="Gradient_k54v6"]
+offsets = PackedFloat32Array(0, 0.203252, 0.357724, 0.569106, 0.772358, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 1, 1, 1, 0.52549, 0, 1, 0, 0, 1, 1, 0.370479, 0.48502, 1, 1, 0.0392157, 1, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_m3ruv"]
 offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.933333, 0, 0, 0, 0.717647, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_pphws"]
-gradient = SubResource("Gradient_u3yay")
+gradient = SubResource("Gradient_m3ruv")
 width = 128
 height = 128
 use_hdr = true
@@ -340,6 +407,22 @@ self_modulate = Color(1, 0, 0, 0.345098)
 position = Vector2(-0.666667, -9)
 scale = Vector2(0.167109, 0.104368)
 texture = ExtResource("4_m81lr")
+
+[node name="particles" type="CPUParticles2D" parent="tutorial_station"]
+position = Vector2(-1.33333, -9.16667)
+emitting = false
+amount = 50
+emission_shape = 3
+emission_rect_extents = Vector2(10, 5)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+angle_min = -1006.0
+angle_max = 720.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_k54v6")
 
 [node name="task" type="CanvasLayer" parent="."]
 
@@ -577,9 +660,15 @@ autoplay = "default"
 
 [node name="buzzer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_wg7em")
+volume_db = -10.0
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_gbb6g")
+volume_db = -10.0
+
+[node name="destroy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_m3ruv")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

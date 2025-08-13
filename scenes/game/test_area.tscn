@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpiu5253rbnve"]
+
+[ext_resource type="Texture2D" uid="uid://dtq1hmwka7ejq" path="res://assets/common/textures/platform.png" id="10_tsymk"]
+[ext_resource type="PackedScene" uid="uid://dlnol0d6ac4a0" path="res://assets/obj/stations/station_2/station_2.tscn" id="12_u8ish"]
+[ext_resource type="PackedScene" uid="uid://dbvulrs8xbgp2" path="res://assets/obj/stations/station_1/station_1.tscn" id="13_v7seb"]
+[ext_resource type="PackedScene" uid="uid://bytmy83qy612" path="res://assets/obj/stations/station_1/station_11.tscn" id="14_cbijb"]
+[ext_resource type="PackedScene" uid="uid://bkd53rg632fjc" path="res://assets/obj/stations/station_2/station_22.tscn" id="15_6ciw0"]
+[ext_resource type="PackedScene" uid="uid://buihw70l3xuk" path="res://assets/obj/player/player.tscn" id="16_6euj7"]
+
+[sub_resource type="Environment" id="Environment_8b66f"]
+background_mode = 3
+background_canvas_max_layer = 4
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.9
+glow_bloom = 0.15
+adjustment_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h61r"]
+size = Vector2(3632, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sr1o"]
+size = Vector2(73, 544)
+
+[node name="game" type="Node"]
+metadata/_edit_horizontal_guides_ = [241.0]
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8b66f")
+
+[node name="objects" type="Node2D" parent="."]
+
+[node name="platform" type="Node2D" parent="objects"]
+
+[node name="platform" type="Sprite2D" parent="objects/platform"]
+position = Vector2(318.671, 599.451)
+scale = Vector2(9.95848, 9.24182)
+texture = ExtResource("10_tsymk")
+
+[node name="platform_2" type="Sprite2D" parent="objects/platform"]
+position = Vector2(955.671, 599.451)
+scale = Vector2(9.95848, 9.24182)
+texture = ExtResource("10_tsymk")
+
+[node name="platform_3" type="Sprite2D" parent="objects/platform"]
+position = Vector2(1592.67, 599.402)
+scale = Vector2(9.95848, 9.23365)
+texture = ExtResource("10_tsymk")
+
+[node name="platform_4" type="Sprite2D" parent="objects/platform"]
+position = Vector2(2229.67, 599.402)
+scale = Vector2(9.95848, 9.23365)
+texture = ExtResource("10_tsymk")
+
+[node name="platform_5" type="Sprite2D" parent="objects/platform"]
+position = Vector2(2867, 599.451)
+scale = Vector2(9.95848, 9.24182)
+texture = ExtResource("10_tsymk")
+
+[node name="platform_6" type="Sprite2D" parent="objects/platform"]
+position = Vector2(3409.5, 599.451)
+scale = Vector2(7.01562, 9.24182)
+texture = ExtResource("10_tsymk")
+
+[node name="physics" type="Node2D" parent="objects"]
+
+[node name="stations" type="Node2D" parent="objects/physics"]
+z_index = 2
+
+[node name="station_8" parent="objects/physics/stations" instance=ExtResource("12_u8ish")]
+position = Vector2(2108, 448)
+
+[node name="station_7" parent="objects/physics/stations" instance=ExtResource("13_v7seb")]
+position = Vector2(1003, 454)
+
+[node name="station_1" parent="objects/physics/stations" instance=ExtResource("14_cbijb")]
+position = Vector2(1300, 449)
+
+[node name="station_2" parent="objects/physics/stations" instance=ExtResource("15_6ciw0")]
+position = Vector2(1725, 448)
+
+[node name="platform" type="StaticBody2D" parent="objects/physics"]
+
+[node name="shape" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(1816, 600)
+shape = SubResource("RectangleShape2D_7h61r")
+
+[node name="shape_2" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(3661, 272)
+shape = SubResource("RectangleShape2D_0sr1o")
+
+[node name="shape_3" type="CollisionShape2D" parent="objects/physics/platform"]
+position = Vector2(-36.5, 272)
+shape = SubResource("RectangleShape2D_0sr1o")
+
+[node name="player" parent="objects/physics" instance=ExtResource("16_6euj7")]
+z_index = 10
+z_as_relative = false
+position = Vector2(1506, 472)
+scale = Vector2(6, 6)
+can_move = true
+
+[node name="camera" type="Camera2D" parent="objects/physics/player"]
+position = Vector2(62.8333, -22.1667)
+limit_left = 0
+limit_top = 0
+limit_right = 3632
+limit_bottom = 648
+limit_smoothed = true
+editor_draw_limits = true

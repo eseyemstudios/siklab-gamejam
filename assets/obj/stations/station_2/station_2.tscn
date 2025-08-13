@@ -1,7 +1,8 @@
-[gd_scene load_steps=47 format=3 uid="uid://dlnol0d6ac4a0"]
+[gd_scene load_steps=56 format=3 uid="uid://dlnol0d6ac4a0"]
 
 [ext_resource type="Script" uid="uid://bcf3hacoa3rxd" path="res://assets/obj/stations/station_2/station_2.gd" id="1_2xvfm"]
 [ext_resource type="Texture2D" uid="uid://cuyalntldllt1" path="res://assets/common/ui/movement_interact_buttons.png" id="2_h3644"]
+[ext_resource type="Texture2D" uid="uid://cq56dkrev3eoy" path="res://assets/obj/stations/station_2/station_2_broken.png" id="3_86k2f"]
 [ext_resource type="Texture2D" uid="uid://dkda2frj64pkd" path="res://assets/obj/stations/station_2/station_2.png" id="3_iay0x"]
 [ext_resource type="Texture2D" uid="uid://onlwdkg1e77v" path="res://assets/common/vfx/light_2.png" id="4_iay0x"]
 [ext_resource type="Texture2D" uid="uid://c36xhv5vox8ew" path="res://assets/common/ui/ui_panel.png" id="4_owck1"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="12_03eaf"]
 [ext_resource type="AudioStream" uid="uid://dyyq8lpk47mtp" path="res://assets/common/sfx/alarm/244932__kwahmah_02__short-buzzer.wav" id="13_iedbu"]
 [ext_resource type="AudioStream" uid="uid://8jqmjirmbgwh" path="res://assets/common/sfx/button/277645__coral_island_studios__button-10.mp3" id="14_86k2f"]
+[ext_resource type="AudioStream" uid="uid://bmdkx1fc37si3" path="res://assets/common/sfx/cinematics/buzz.wav" id="16_r7m0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
 size = Vector2(192, 176)
@@ -59,6 +61,30 @@ _data = {
 &"interact": SubResource("Animation_b168l")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qbbb"]
+atlas = ExtResource("3_86k2f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csoi5"]
+atlas = ExtResource("3_86k2f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_477n7"]
+atlas = ExtResource("3_86k2f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xga5c"]
+atlas = ExtResource("3_86k2f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tt2u"]
+atlas = ExtResource("3_86k2f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3yt0"]
+atlas = ExtResource("3_86k2f")
+region = Rect2(64, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbj8b"]
 atlas = ExtResource("3_iay0x")
 region = Rect2(0, 0, 32, 32)
@@ -87,6 +113,29 @@ region = Rect2(160, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5qbbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csoi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_477n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xga5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tt2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3yt0")
+}],
+"loop": false,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bbj8b")
 }, {
 "duration": 1.0,
@@ -108,6 +157,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_86k2f"]
+offsets = PackedFloat32Array(0, 0.203252, 0.357724, 0.569106, 0.772358, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 1, 1, 1, 0.52549, 0, 1, 0, 0, 1, 1, 0.370479, 0.48502, 1, 1, 0.0392157, 1, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_u3yay"]
 offsets = PackedFloat32Array(0, 0.293651, 0.547619, 1)
@@ -351,6 +404,7 @@ libraries = {
 
 [node name="tutorial_station" type="AnimatedSprite2D" parent="."]
 z_index = -2
+position = Vector2(0, -4.76837e-07)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_wefsd")
 
@@ -359,6 +413,22 @@ self_modulate = Color(1, 0, 0, 0.345098)
 position = Vector2(0, -4.16667)
 scale = Vector2(0.17432, 0.164154)
 texture = ExtResource("4_iay0x")
+
+[node name="particles" type="CPUParticles2D" parent="tutorial_station"]
+position = Vector2(0, -6)
+emitting = false
+amount = 75
+emission_shape = 3
+emission_rect_extents = Vector2(15, 10)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+angle_min = -1006.0
+angle_max = 720.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_86k2f")
 
 [node name="task" type="CanvasLayer" parent="."]
 
@@ -523,9 +593,15 @@ autoplay = "default"
 
 [node name="buzzer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_iedbu")
+volume_db = -10.0
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_86k2f")
+volume_db = -10.0
+
+[node name="destroy" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_r7m0f")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
