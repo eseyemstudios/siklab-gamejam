@@ -149,6 +149,8 @@ func _trigger_defiance() -> void:
 	
 	await _camera_tween.finished
 	$game_animation.play("defiance")
+	await $game_animation.animation_finished
+	get_tree().change_scene_to_file("res://scenes/mainmenu_tutorial/about_us.tscn")
 
 # Decoys
 func _on_decoy_activated(decoy: Area2D) -> void:

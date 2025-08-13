@@ -2051,6 +2051,18 @@ tracks/26/keys = {
 "update": 0,
 "values": [0, 5]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("PA:volume_db")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(10.4667, 10.7877),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-30.0, -80.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1iff4"]
 _data = {
@@ -2898,10 +2910,10 @@ color = Color(0.0196078, 0.0196078, 0.0196078, 0)
 [node name="paused" type="Label" parent="gui/fx/pause_fade"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 23.0
-offset_top = 22.0
-offset_right = 1135.0
-offset_bottom = 640.0
+offset_left = 34.0
+offset_top = -145.0
+offset_right = 1146.0
+offset_bottom = 473.0
 theme_override_fonts/font = ExtResource("22_h48ew")
 theme_override_font_sizes/font_size = 81
 text = "Paused
