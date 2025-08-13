@@ -14,7 +14,6 @@ var decoy_active: bool = false
 const MAX_TASKS := 5                # Max successful routine tasks before losing (Monotony)
 const MAX_FAIL_BEFORE_CAUGHT := 3    # Fails while under camera WATCH triggers Deviation
 
-var defiance_level: int = 0
 var routine_task_count := 0           # Number of successful routine tasks
 var fail_count := 0                   # Consecutive fails
 var defiance_active := false

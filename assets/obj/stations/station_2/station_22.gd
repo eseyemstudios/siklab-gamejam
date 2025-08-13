@@ -91,7 +91,6 @@ func _button_pressed(_id: int) -> void:
 		if _id == _current_button:
 			$timer.stop()
 			success.emit()
-			_fail_count = 0
 			_leave()
 		else:
 			_handling_fail = true

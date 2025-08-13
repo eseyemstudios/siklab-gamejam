@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=3 uid="uid://ddxkhg5xeu2vu"]
+[gd_scene load_steps=167 format=3 uid="uid://ddxkhg5xeu2vu"]
 
 [ext_resource type="Texture2D" uid="uid://tm2lxt4j2fdh" path="res://dev/logo/siklab_1080.png" id="1_knm4p"]
 [ext_resource type="Script" uid="uid://ce56g2u35wj2c" path="res://scenes/mainmenu_tutorial/mainmenu_tutorial.gd" id="1_suexf"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://dwyxnechl6s1w" path="res://assets/common/ui/icon_button.png" id="34_o5f4m"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="39_21qtn"]
 [ext_resource type="Texture2D" uid="uid://if8tmnhe2who" path="res://assets/common/ui/lever.png" id="41_04f3a"]
+[ext_resource type="AudioStream" uid="uid://3kyj4xb52e1f" path="res://assets/common/sfx/button/lever.mp3" id="46_8jg6w"]
 [ext_resource type="PackedScene" uid="uid://dbvulrs8xbgp2" path="res://assets/obj/stations/station_1/station_1.tscn" id="50_j0834"]
 
 [sub_resource type="Environment" id="Environment_utgvn"]
@@ -3917,6 +3918,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 uppercase = true
+
+[node name="click" type="AudioStreamPlayer2D" parent="gui/task/ui_panel/ui_screen"]
+stream = ExtResource("46_8jg6w")
+volume_db = -10.0
 
 [node name="ui_panel_animation" type="AnimationPlayer" parent="gui/task/ui_panel"]
 root_node = NodePath("../..")
