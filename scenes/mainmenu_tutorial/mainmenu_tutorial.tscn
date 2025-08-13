@@ -3611,17 +3611,17 @@ position = Vector2(303, 459)
 scale = Vector2(6, 6)
 
 [node name="e" type="Sprite2D" parent="objects/physics/player"]
-z_index = -1
+z_index = 5
 scale = Vector2(1e-05, 1e-05)
 texture = SubResource("AtlasTexture_u6r83")
 
 [node name="d" type="Sprite2D" parent="objects/physics/player"]
-z_index = -1
+z_index = 5
 scale = Vector2(1e-05, 1e-05)
 texture = SubResource("AtlasTexture_n7yua")
 
 [node name="a" type="Sprite2D" parent="objects/physics/player"]
-z_index = -1
+z_index = 5
 scale = Vector2(1e-05, 1e-05)
 texture = SubResource("AtlasTexture_y7py5")
 

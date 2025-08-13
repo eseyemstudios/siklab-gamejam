@@ -14,7 +14,7 @@ var decoy_active: bool = false
 const MAX_TASKS := 5                # Max successful routine tasks before losing (Monotony)
 const MAX_FAIL_BEFORE_CAUGHT := 3    # Fails while under camera WATCH triggers Deviation
 
-# States
+var defiance_level: int = 0
 var routine_task_count := 0           # Number of successful routine tasks
 var fail_count := 0                   # Consecutive fails
 var defiance_active := false
@@ -102,17 +102,24 @@ func _on_task_failed() -> void:
 	_update_saturation()
 	routine_task_count = clamp(routine_task_count - 1, 0, MAX_TASKS)
 
-# Task broken
 func _on_task_broken(task: Area2D) -> void:
 	# Visual explode effect
 	task.get_node("explosion").play()
 	task_list.erase(task)
 	
+	# Calculate proportional defiance level (0–5)
+	var destroyed_consoles = 6 - task_list.size()  # 6 is total stations
+	var defiance_level = int(clamp(float(destroyed_consoles) / 6.0 * 5.0, 0.0, 5.0))
+	
+	# Update player animations
+	if $objects/physics/player.has_method("set_defiance_level"):
+		$objects/physics/player.set_defiance_level(defiance_level)
+	
+	# Trigger ending or pick next target
 	if task_list.is_empty():
 		_trigger_defiance()
 	else:
 		_select_next_task()
-
 
 # Environment / Saturation Feedback
 func _update_saturation() -> void:

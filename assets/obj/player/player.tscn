@@ -507,7 +507,7 @@ script = ExtResource("1_b4olg")
 position = Vector2(0, -0.480006)
 scale = Vector2(0.963199, 1.0016)
 sprite_frames = SubResource("SpriteFrames_oj5mt")
-animation = &"idle_0"
+animation = &"idle_1"
 autoplay = "idle_0"
 
 [node name="shape" type="CollisionShape2D" parent="."]

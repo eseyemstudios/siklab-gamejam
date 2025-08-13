@@ -34,6 +34,7 @@ func _tutorial_manager() -> void:
 		$objects/physics/player/button_animation.play("show_buttons")
 		$objects/physics/player.can_move = true
 	elif _count == 7:
+		$objects/physics/player.can_move = true
 		$objects/physics/tutorial/anchor/animation_player.play("walk")
 	elif _count == 9:
 		$objects/physics/player.can_move = false
@@ -48,6 +49,11 @@ func _tutorial_manager() -> void:
 func _on_checker_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if _count == 6:
+			await get_tree().create_timer(0.5).timeout
+			$objects/physics/player.can_move = false
+			$objects/physics/player.velocity = Vector2.ZERO
+			$objects/physics/player/texture.play("idle_0")
+			
 			_tutorial_manager()
 
 func _on_checker_body_exited(body: Node2D) -> void:
