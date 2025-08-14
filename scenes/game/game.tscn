@@ -27,10 +27,10 @@
 [ext_resource type="AudioStream" uid="uid://mm4he6cuvaqb" path="res://assets/common/sfx/public_announcements/propaganda/PA3.wav" id="21_1iff4"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="21_fty5b"]
 [ext_resource type="AudioStream" uid="uid://x6j4y7cugf8u" path="res://assets/common/sfx/public_announcements/propaganda/PA4.wav" id="22_4vuph"]
-[ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/538980__cmpotluck__a-drone.mp3" id="22_8b66f"]
+[ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/drone.mp3" id="22_8b66f"]
 [ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="22_h48ew"]
 [ext_resource type="AudioStream" uid="uid://by5hrnigkjec1" path="res://assets/common/sfx/public_announcements/tutorial/comply.wav" id="26_wdnak"]
-[ext_resource type="AudioStream" uid="uid://bf72srrio622y" path="res://assets/common/sfx/alarm/619096__badjefferboat__blaring-facility-emergency-alarm.wav" id="29_l2dhg"]
+[ext_resource type="AudioStream" uid="uid://bf72srrio622y" path="res://assets/common/sfx/alarm/blare.wav" id="29_l2dhg"]
 [ext_resource type="AudioStream" uid="uid://f1ivee7cgr7f" path="res://assets/common/sfx/public_announcements/tutorial/citizen.wav" id="30_firvq"]
 [ext_resource type="AudioStream" uid="uid://cu8upj5n7b5qc" path="res://assets/common/sfx/public_announcements/tutorial/deviation.wav" id="31_8krtj"]
 [ext_resource type="AudioStream" uid="uid://d1xx42o2jjoxb" path="res://assets/common/sfx/cinematics/riser.wav" id="33_af6p5"]
@@ -1297,404 +1297,6 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_8b66f"]
-resource_name = "fade"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gui/fx/fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gui/gameplay/dialog_fade")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.93333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["Look around to know where you should comply. It will have a distinct glow to it."],
-"method": &"dialog"
-}]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("instruction")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("26_wdnak")
-}],
-"times": PackedFloat32Array(0.566667)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PA:volume_db")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 8.93333, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-40.0, -40.0, -30.0]
-}
-
-[sub_resource type="Animation" id="Animation_l2dhg"]
-resource_name = "deviation"
-length = 10.0
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("instruction")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 51.963,
-"start_offset": 0.0,
-"stream": ExtResource("29_l2dhg")
-}],
-"times": PackedFloat32Array(0.0666667)
-}
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gui/fx/vignette:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gui/fx/vignette/deviation:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.77, 0.9, 1.02),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, true, false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gui/fx/vignette/desc:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("gui/fx/vignette/tv_front:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.5214),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("gui/fx/vignette/tv_left:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 3.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("gui/fx/vignette/tv_left_2:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 4.50625),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("gui/fx/vignette/tv_left_5:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 4.03582),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("gui/fx/vignette/tv_left_6:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 5.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("gui/fx/vignette/tv_left_7:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 4.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("gui/fx/vignette/tv_right:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 3.63333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("gui/fx/vignette/tv_right_3:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 4.13333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("gui/fx/vignette/tv_right_2:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 5.87548),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("gui/fx/vignette/tv_right_5:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 6.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("gui/fx/vignette/tv_right_4:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 6.86667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("drone:playing")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/16/type = "audio"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("deviation")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_firvq")
-}],
-"times": PackedFloat32Array(0.0637539, 3.16667, 3.50905, 3.89158, 4.11471, 4.49724, 4.93333, 5.3, 5.86667, 6.4, 6.9, 7.7, 8.2, 8.66667)
-}
-tracks/16/use_blend = true
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("gui/fx/vignette:modulate")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(9.03333, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("deviation:volume_db")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(3.15582, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-25.0, -15.0]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("drone:volume_db")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(3.17176, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-25.0, -15.0]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("gui/fx/fade:color")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0, 0.466667, 9.03333, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(1, 1, 1, 1)]
-}
-tracks/21/type = "audio"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("PA")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 1.06788,
-"stream": ExtResource("31_8krtj")
-}],
-"times": PackedFloat32Array(0.1)
-}
-tracks/21/use_blend = true
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("PA:volume_db")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-20.0, -40.0]
-}
-
 [sub_resource type="Animation" id="Animation_fydea"]
 resource_name = "defiance"
 length = 31.0
@@ -2064,6 +1666,404 @@ tracks/27/keys = {
 "values": [-30.0, -80.0]
 }
 
+[sub_resource type="Animation" id="Animation_l2dhg"]
+resource_name = "deviation"
+length = 10.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("instruction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 51.963,
+"start_offset": 0.0,
+"stream": ExtResource("29_l2dhg")
+}],
+"times": PackedFloat32Array(0.0666667)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/fx/vignette:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0), Color(1, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gui/fx/vignette/deviation:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.77, 0.9, 1.02),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/vignette/desc:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gui/fx/vignette/tv_front:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.5214),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("gui/fx/vignette/tv_left:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("gui/fx/vignette/tv_left_2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.50625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("gui/fx/vignette/tv_left_5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.03582),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("gui/fx/vignette/tv_left_6:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("gui/fx/vignette/tv_left_7:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("gui/fx/vignette/tv_right:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 3.63333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("gui/fx/vignette/tv_right_3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("gui/fx/vignette/tv_right_2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5.87548),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("gui/fx/vignette/tv_right_5:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 6.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("gui/fx/vignette/tv_right_4:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 6.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("drone:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "audio"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("deviation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_firvq")
+}],
+"times": PackedFloat32Array(0.0637539, 3.16667, 3.50905, 3.89158, 4.11471, 4.49724, 4.93333, 5.3, 5.86667, 6.4, 6.9, 7.7, 8.2, 8.66667)
+}
+tracks/16/use_blend = true
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("gui/fx/vignette:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(9.03333, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("deviation:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(3.15582, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-25.0, -15.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("drone:volume_db")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(3.17176, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-25.0, -15.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("gui/fx/fade:color")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.466667, 9.03333, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0196078, 0.0196078, 0.0196078, 0), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(0.0196078, 0.0196078, 0.0196078, 1), Color(1, 1, 1, 1)]
+}
+tracks/21/type = "audio"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("PA")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 1.06788,
+"stream": ExtResource("31_8krtj")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/21/use_blend = true
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("PA:volume_db")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-20.0, -40.0]
+}
+
+[sub_resource type="Animation" id="Animation_8b66f"]
+resource_name = "fade"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/fx/fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.0196078, 0.0196078, 0.0196078, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/gameplay/dialog_fade")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.93333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Look around to know where you should comply. It will have a distinct glow to it."],
+"method": &"dialog"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("instruction")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("26_wdnak")
+}],
+"times": PackedFloat32Array(0.566667)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PA:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.93333, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-40.0, -40.0, -30.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1iff4"]
 _data = {
 &"RESET": SubResource("Animation_3jaai"),
@@ -2071,81 +2071,6 @@ _data = {
 &"defiance": SubResource("Animation_fydea"),
 &"deviation": SubResource("Animation_l2dhg"),
 &"fade": SubResource("Animation_8b66f")
-}
-
-[sub_resource type="Animation" id="Animation_5q2xh"]
-resource_name = "pause"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gui/fx/pause_fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.958333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.74902)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2, 0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2, 0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.50637, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.50637, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.958333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_sikks"]
@@ -2222,6 +2147,81 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5q2xh"]
+resource_name = "pause"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gui/fx/pause_fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.958333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.74902)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.50637, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.50637, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.958333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_tyhjx"]

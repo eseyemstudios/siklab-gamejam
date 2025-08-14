@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://de70hjnrjoiyd" path="res://assets/common/ui/circle_button.png" id="9_iay0x"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="9_shit8"]
 [ext_resource type="Texture2D" uid="uid://duul5ljp7fbgh" path="res://assets/obj/npc/idle_white.png" id="12_03eaf"]
-[ext_resource type="AudioStream" uid="uid://dyyq8lpk47mtp" path="res://assets/common/sfx/alarm/244932__kwahmah_02__short-buzzer.wav" id="13_iedbu"]
-[ext_resource type="AudioStream" uid="uid://8jqmjirmbgwh" path="res://assets/common/sfx/button/277645__coral_island_studios__button-10.mp3" id="14_86k2f"]
+[ext_resource type="AudioStream" uid="uid://dyyq8lpk47mtp" path="res://assets/common/sfx/alarm/buzzer.wav" id="13_iedbu"]
+[ext_resource type="AudioStream" uid="uid://8jqmjirmbgwh" path="res://assets/common/sfx/button/button.mp3" id="14_86k2f"]
 [ext_resource type="AudioStream" uid="uid://bmdkx1fc37si3" path="res://assets/common/sfx/cinematics/buzz.wav" id="16_r7m0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvy64"]
