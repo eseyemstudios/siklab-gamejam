@@ -4111,4 +4111,8 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="gui/menu/ui_panel/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="gui/menu/ui_panel/about" to="." method="_on_about_pressed"]
 [connection signal="animation_finished" from="gui/menu/ui_panel/ui_screen/screen_text/text_animation" to="gui/menu/ui_panel/ui_screen/screen_text" method="_on_text_animation_animation_finished"]
+[connection signal="pressed" from="gui/task/ui_panel/lever" to="." method="_on_lever_pressed"]
+[connection signal="pressed" from="gui/task/ui_panel/lever_2" to="." method="_on_lever_pressed"]
+[connection signal="pressed" from="gui/task/ui_panel/lever_3" to="." method="_on_lever_pressed"]
+[connection signal="pressed" from="gui/task/ui_panel/lever_4" to="." method="_on_lever_pressed"]
 [connection signal="pressed" from="gui/gameplay/dialog_fade/skip" to="gui/gameplay/dialog_fade" method="_on_skip_pressed"]

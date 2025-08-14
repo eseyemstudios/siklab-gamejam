@@ -94,3 +94,6 @@ func _on_about_pressed() -> void:
 	_tween.tween_property($gui/fx/fade, "color", Color.html("F5F5F5"), 3)
 	await _tween.finished
 	get_tree().change_scene_to_file("res://scenes/mainmenu_tutorial/about_us.tscn")
+
+func _on_lever_pressed() -> void:
+	$gui/task/ui_panel/ui_screen/click.play()
