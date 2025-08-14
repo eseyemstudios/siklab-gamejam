@@ -3919,6 +3919,7 @@ clip_text = true
 uppercase = true
 
 [node name="click" type="AudioStreamPlayer2D" parent="gui/task/ui_panel/ui_screen"]
+position = Vector2(216, 142)
 stream = ExtResource("46_8jg6w")
 bus = &"Buttons"
 
