@@ -39,7 +39,7 @@ func _ready() -> void:
 
 	# Unlock movement after intro/dialog
 	$gui/gameplay/dialog_fade.connect("next", Callable(self, "_enable_movement"))
-
+	
 	$objects/physics/camera.start_watching($objects/physics/player)
 	_shuffle_task_positions()
 	_select_next_task()

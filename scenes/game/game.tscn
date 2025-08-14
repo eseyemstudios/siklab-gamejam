@@ -22,14 +22,14 @@
 [ext_resource type="Texture2D" uid="uid://5ct024kacrny" path="res://assets/common/vfx/explosion.png" id="13_l2dhg"]
 [ext_resource type="Script" uid="uid://bkp1u1q7po8p6" path="res://scenes/mainmenu_tutorial/scr/dialog.gd" id="18_4vuph"]
 [ext_resource type="FontFile" uid="uid://clfg4nisvbn5s" path="res://assets/common/fonts/bstyle/BStyle_R.ttf" id="19_wdnak"]
-[ext_resource type="AudioStream" uid="uid://vxka4glbaevy" path="res://assets/common/sfx/public_announcements/propaganda/PA2.wav" id="20_3jaai"]
 [ext_resource type="Texture2D" uid="uid://br0w60eqetm0d" path="res://assets/common/ui/next_button.png" id="20_h48ew"]
-[ext_resource type="AudioStream" uid="uid://mm4he6cuvaqb" path="res://assets/common/sfx/public_announcements/propaganda/PA3.wav" id="21_1iff4"]
 [ext_resource type="Texture2D" uid="uid://ccs8wrov80j8q" path="res://assets/common/vfx/vignette.png" id="21_fty5b"]
-[ext_resource type="AudioStream" uid="uid://x6j4y7cugf8u" path="res://assets/common/sfx/public_announcements/propaganda/PA4.wav" id="22_4vuph"]
 [ext_resource type="AudioStream" uid="uid://djens6f1bodnw" path="res://assets/common/sfx/drone/drone.mp3" id="22_8b66f"]
 [ext_resource type="FontFile" uid="uid://dg5mc5vbepj5v" path="res://assets/common/fonts/maitai/Mai Tai.otf" id="22_h48ew"]
+[ext_resource type="AudioStream" uid="uid://cuspfhtyhf5km" path="res://assets/common/sfx/public_announcements/propaganda/PA2.ogg" id="26_tyhjx"]
 [ext_resource type="AudioStream" uid="uid://by5hrnigkjec1" path="res://assets/common/sfx/public_announcements/tutorial/comply.wav" id="26_wdnak"]
+[ext_resource type="AudioStream" uid="uid://hki8o4v1h8km" path="res://assets/common/sfx/public_announcements/propaganda/PA3.ogg" id="27_5q2xh"]
+[ext_resource type="AudioStream" uid="uid://b6au834tws8cl" path="res://assets/common/sfx/public_announcements/propaganda/PA4.ogg" id="28_sikks"]
 [ext_resource type="AudioStream" uid="uid://bf72srrio622y" path="res://assets/common/sfx/alarm/blare.wav" id="29_l2dhg"]
 [ext_resource type="AudioStream" uid="uid://f1ivee7cgr7f" path="res://assets/common/sfx/public_announcements/tutorial/citizen.wav" id="30_firvq"]
 [ext_resource type="AudioStream" uid="uid://cu8upj5n7b5qc" path="res://assets/common/sfx/public_announcements/tutorial/deviation.wav" id="31_8krtj"]
@@ -390,18 +390,6 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../PA:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-30.0]
-}
 
 [sub_resource type="Animation" id="Animation_8r3cy"]
 resource_name = "show_dialog"
@@ -465,18 +453,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../../PA:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-30.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qla1x"]
@@ -658,15 +634,15 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("20_3jaai")
+"stream": ExtResource("26_tyhjx")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("21_1iff4")
+"stream": ExtResource("27_5q2xh")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("22_4vuph")
+"stream": ExtResource("28_sikks")
 }],
 "times": PackedFloat32Array(0.966667, 41.7, 84.0667)
 }
@@ -695,19 +671,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PA:volume_db")
+tracks/1/path = NodePath("world_environment:environment:adjustment_brightness")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-30.0]
+"values": [1.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("world_environment:environment:adjustment_brightness")
+tracks/2/path = NodePath("world_environment:environment:adjustment_saturation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -719,43 +695,43 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("world_environment:environment:adjustment_saturation")
+tracks/3/path = NodePath("gui/fx/fade/compliance:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("gui/fx/fade/compliance:self_modulate")
+tracks/4/path = NodePath("gui/fx/vignette:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 0, 0, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("gui/fx/vignette:self_modulate")
+tracks/5/path = NodePath("gui/fx/vignette/deviation:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("gui/fx/vignette/deviation:visible")
+tracks/6/path = NodePath("gui/fx/vignette/desc:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -767,7 +743,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("gui/fx/vignette/desc:visible")
+tracks/7/path = NodePath("gui/fx/vignette/tv_front:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -779,7 +755,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("gui/fx/vignette/tv_front:visible")
+tracks/8/path = NodePath("gui/fx/vignette/tv_left:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -791,7 +767,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("gui/fx/vignette/tv_left:visible")
+tracks/9/path = NodePath("gui/fx/vignette/tv_left_2:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -803,7 +779,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("gui/fx/vignette/tv_left_2:visible")
+tracks/10/path = NodePath("gui/fx/vignette/tv_left_5:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -815,7 +791,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("gui/fx/vignette/tv_left_5:visible")
+tracks/11/path = NodePath("gui/fx/vignette/tv_left_6:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -827,7 +803,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("gui/fx/vignette/tv_left_6:visible")
+tracks/12/path = NodePath("gui/fx/vignette/tv_left_7:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -839,7 +815,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("gui/fx/vignette/tv_left_7:visible")
+tracks/13/path = NodePath("gui/fx/vignette/tv_right:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -851,7 +827,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("gui/fx/vignette/tv_right:visible")
+tracks/14/path = NodePath("gui/fx/vignette/tv_right_3:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -863,7 +839,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("gui/fx/vignette/tv_right_3:visible")
+tracks/15/path = NodePath("gui/fx/vignette/tv_right_2:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -875,7 +851,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("gui/fx/vignette/tv_right_2:visible")
+tracks/16/path = NodePath("gui/fx/vignette/tv_right_5:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -887,7 +863,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("gui/fx/vignette/tv_right_5:visible")
+tracks/17/path = NodePath("gui/fx/vignette/tv_right_4:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -899,7 +875,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("gui/fx/vignette/tv_right_4:visible")
+tracks/18/path = NodePath("drone:playing")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -911,199 +887,199 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("drone:playing")
+tracks/19/path = NodePath("gui/fx/vignette:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("gui/fx/vignette:modulate")
+tracks/20/path = NodePath("world_environment:environment:adjustment_color_correction:gradient:colors")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("deviation:volume_db")
+tracks/21/path = NodePath("objects/physics/camera/main_camera/camera:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-20.0]
+"values": [0.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("drone:volume_db")
+tracks/22/path = NodePath("objects/physics/camera/main_camera/camera/detector/shape_2:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-30.0]
+"update": 1,
+"values": [true]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("world_environment:environment:adjustment_color_correction:gradient:colors")
+tracks/23/path = NodePath("objects/physics/camera/main_camera/camera:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)]
+"values": [Vector2(1.50001, 13.5)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("objects/physics/camera/main_camera/camera:rotation")
+tracks/24/path = NodePath("objects:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0, 0)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("objects/physics/camera/main_camera/camera/detector/shape_2:visible")
+tracks/25/path = NodePath("deviation:max_polyphony")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [10]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("objects/physics/camera/main_camera/camera:position")
+tracks/26/path = NodePath("deviation:stream")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.50001, 13.5)]
+"update": 1,
+"values": [null]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("objects:position")
+tracks/27/path = NodePath("objects/physics/camera/explosion:frame")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [0]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("deviation:max_polyphony")
+tracks/28/path = NodePath("objects/physics/camera/main_camera/tv_left:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
+"update": 0,
+"values": [Vector2(15.3333, -4.66666)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("deviation:stream")
+tracks/29/path = NodePath("objects/physics/camera/main_camera/tv_right:position")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
+"update": 0,
+"values": [Vector2(-11.6667, -0.166667)]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("objects/physics/camera/explosion:frame")
+tracks/30/path = NodePath("objects/physics/camera/main_camera/tv_right_2:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(-10.5, -10.8334)]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("objects/physics/camera/main_camera/tv_left:position")
+tracks/31/path = NodePath("objects/physics/camera/main_camera/tv_front:position")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(15.3333, -4.66666)]
+"values": [Vector2(0.833334, -6.66666)]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("objects/physics/camera/main_camera/tv_right:position")
+tracks/32/path = NodePath("objects/physics/camera/main_camera/tv_front:rotation")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-11.6667, -0.166667)]
+"values": [0.0]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("objects/physics/camera/main_camera/tv_right_2:position")
+tracks/33/path = NodePath("objects/physics/camera/main_camera/tv_left:rotation")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-10.5, -10.8334)]
+"values": [0.0]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("objects/physics/camera/main_camera/tv_front:position")
+tracks/34/path = NodePath("objects/physics/camera/main_camera/tv_right:rotation")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.833334, -6.66666)]
+"values": [0.0]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("objects/physics/camera/main_camera/tv_front:rotation")
+tracks/35/path = NodePath("objects/physics/camera/main_camera/tv_right_2:rotation")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
@@ -1115,130 +1091,94 @@ tracks/35/keys = {
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("objects/physics/camera/main_camera/tv_left:rotation")
+tracks/36/path = NodePath("objects/physics/camera/explosion_2:frame")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0720575),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [0]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("objects/physics/camera/main_camera/tv_right:rotation")
+tracks/37/path = NodePath("objects/physics/camera/explosion_3:frame")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0720575),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [0]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("objects/physics/camera/main_camera/tv_right_2:rotation")
+tracks/38/path = NodePath("objects/physics/camera/explosion_4:frame")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0720575),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [0]
 }
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("objects/physics/camera/explosion_2:frame")
+tracks/39/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
-"times": PackedFloat32Array(0.0720575),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("objects/physics/camera/explosion_3:frame")
+tracks/40/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
-"times": PackedFloat32Array(0.0720575),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [0]
 }
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("objects/physics/camera/explosion_4:frame")
+tracks/41/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
-"times": PackedFloat32Array(0.0720575),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("gui/fx/pause_fade/paused/continue:mouse_filter")
+tracks/42/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("gui/fx/pause_fade/paused/menu:mouse_filter")
+tracks/43/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0]
-}
-tracks/44/type = "value"
-tracks/44/imported = false
-tracks/44/enabled = true
-tracks/44/path = NodePath("gui/fx/pause_fade/paused/continue:self_modulate")
-tracks/44/interp = 1
-tracks/44/loop_wrap = true
-tracks/44/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/45/type = "value"
-tracks/45/imported = false
-tracks/45/enabled = true
-tracks/45/path = NodePath("gui/fx/pause_fade/paused/menu:self_modulate")
-tracks/45/interp = 1
-tracks/45/loop_wrap = true
-tracks/45/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/46/type = "value"
-tracks/46/imported = false
-tracks/46/enabled = true
-tracks/46/path = NodePath("gui/fx/pause_fade/paused:self_modulate")
-tracks/46/interp = 1
-tracks/46/loop_wrap = true
-tracks/46/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1357,8 +1297,12 @@ tracks/3/keys = {
 "end_offset": 52.2737,
 "start_offset": 0.0,
 "stream": ExtResource("29_l2dhg")
+}, {
+"end_offset": 1.15292,
+"start_offset": 0.0,
+"stream": ExtResource("37_6ehwc")
 }],
-"times": PackedFloat32Array(0.433333)
+"times": PackedFloat32Array(0.433333, 15.6532)
 }
 tracks/3/use_blend = true
 tracks/4/type = "audio"
@@ -1417,12 +1361,8 @@ tracks/7/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("36_tyhjx")
-}, {
-"end_offset": 1.15292,
-"start_offset": 0.0,
-"stream": ExtResource("37_6ehwc")
 }],
-"times": PackedFloat32Array(9.63333, 15.5333)
+"times": PackedFloat32Array(9.63333)
 }
 tracks/7/use_blend = true
 tracks/8/type = "value"
@@ -1459,7 +1399,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.592298),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-20.0, -15.0]
+"values": [-25.0, -20.0]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -1953,7 +1893,7 @@ tracks/18/keys = {
 "times": PackedFloat32Array(3.15582, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-25.0, -15.0]
+"values": [-5.0, 0.0]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
@@ -1994,18 +1934,6 @@ tracks/21/keys = {
 "times": PackedFloat32Array(0.1)
 }
 tracks/21/use_blend = true
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("PA:volume_db")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-20.0, -40.0]
-}
 
 [sub_resource type="Animation" id="Animation_8b66f"]
 resource_name = "fade"
@@ -2051,18 +1979,6 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.566667)
 }
 tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PA:volume_db")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 8.93333, 10),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-40.0, -40.0, -30.0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1iff4"]
 _data = {
@@ -2977,7 +2893,7 @@ metadata/_edit_lock_ = true
 [node name="PA" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 volume_db = -30.0
-bus = &"Propaganda"
+bus = &"Jazz"
 
 [node name="PA_animation" type="AnimationPlayer" parent="PA"]
 libraries = {
@@ -2988,19 +2904,20 @@ autoplay = "sound"
 [node name="drone" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = ExtResource("22_8b66f")
-volume_db = -30.0
+volume_db = -25.0
 autoplay = true
+bus = &"SFX"
 
 [node name="instruction" type="AudioStreamPlayer" parent="."]
 process_mode = 1
-volume_db = -25.0
-bus = &"Propaganda"
+volume_db = -5.0
+bus = &"Voiceover"
 
 [node name="deviation" type="AudioStreamPlayer" parent="."]
 process_mode = 1
-volume_db = -20.0
+volume_db = -25.0
 max_polyphony = 10
-bus = &"Propaganda"
+bus = &"SFX"
 
 [node name="game_animation" type="AnimationPlayer" parent="."]
 process_mode = 1

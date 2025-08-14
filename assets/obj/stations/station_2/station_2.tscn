@@ -593,15 +593,15 @@ autoplay = "default"
 
 [node name="buzzer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_iedbu")
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_86k2f")
-volume_db = -10.0
+bus = &"SFX"
 
 [node name="destroy" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_r7m0f")
-volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
